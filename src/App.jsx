@@ -387,62 +387,52 @@ function Skills() {
   )
 }
 
-/* ──────────── TECH STACK (3D muted theme) ──────────── */
+/* ──────────── TECH STACK (SVG Icons) ──────────── */
 const techStackData = [
   {
     category: 'Languages',
     items: [
-      { name: 'Python', color: '#3670A0', logo: 'python' },
-      { name: 'HTML5', color: '#E34F26', logo: 'html5' },
-      { name: 'CSS3', color: '#1572B6', logo: 'css3' },
-      { name: 'Markdown', color: '#000000', logo: 'markdown' },
+      { name: 'Python', icon: '🐍', gradient: 'linear-gradient(135deg, #3670A0, #4B8BBE)', level: 95 },
+      { name: 'HTML5', icon: '🌐', gradient: 'linear-gradient(135deg, #E34F26, #EF6530)', level: 85 },
+      { name: 'CSS3', icon: '🎨', gradient: 'linear-gradient(135deg, #1572B6, #33A9DC)', level: 82 },
+      { name: 'JavaScript', icon: '⚡', gradient: 'linear-gradient(135deg, #F7DF1E, #E8D44D)', level: 78 },
     ],
   },
   {
     category: 'Frameworks & Libraries',
     items: [
-      { name: 'Flask', color: '#000', logo: 'flask' },
-      { name: 'FastAPI', color: '#005571', logo: 'fastapi' },
-      { name: 'Django', color: '#092E20', logo: 'django' },
-      { name: 'Node.js', color: '#6DA55F', logo: 'node.js' },
-      { name: 'PyTorch', color: '#EE4C2C', logo: 'pytorch' },
-      { name: 'TensorFlow', color: '#FF6F00', logo: 'tensorflow' },
-      { name: 'Pandas', color: '#150458', logo: 'pandas' },
-      { name: 'scikit-learn', color: '#F7931E', logo: 'scikit-learn' },
+      { name: 'FastAPI', icon: '🚀', gradient: 'linear-gradient(135deg, #009688, #005571)', level: 90 },
+      { name: 'Django', icon: '🎯', gradient: 'linear-gradient(135deg, #092E20, #44B78B)', level: 82 },
+      { name: 'Flask', icon: '🧪', gradient: 'linear-gradient(135deg, #000, #333)', level: 80 },
+      { name: 'PyTorch', icon: '🔥', gradient: 'linear-gradient(135deg, #EE4C2C, #F97316)', level: 88 },
+      { name: 'Node.js', icon: '💚', gradient: 'linear-gradient(135deg, #6DA55F, #8BC34A)', level: 72 },
+      { name: 'Pandas', icon: '📊', gradient: 'linear-gradient(135deg, #150458, #3F3485)', level: 85 },
     ],
   },
   {
     category: 'Databases',
     items: [
-      { name: 'PostgreSQL', color: '#316192', logo: 'postgresql' },
-      { name: 'MySQL', color: '#4479A1', logo: 'mysql' },
-      { name: 'MongoDB', color: '#4ea94b', logo: 'mongodb' },
-      { name: 'SQLite', color: '#07405e', logo: 'sqlite' },
-      { name: 'Supabase', color: '#3ECF8E', logo: 'supabase' },
-      { name: 'Firebase', color: '#039BE5', logo: 'firebase' },
-      { name: 'Oracle', color: '#F80000', logo: 'oracle' },
+      { name: 'PostgreSQL', icon: '🐘', gradient: 'linear-gradient(135deg, #316192, #336791)', level: 80 },
+      { name: 'MongoDB', icon: '🍃', gradient: 'linear-gradient(135deg, #4EA94B, #589632)', level: 75 },
+      { name: 'Firebase', icon: '🔶', gradient: 'linear-gradient(135deg, #039BE5, #FFCA28)', level: 75 },
+      { name: 'Supabase', icon: '🟢', gradient: 'linear-gradient(135deg, #3ECF8E, #2EA876)', level: 70 },
     ],
   },
   {
     category: 'Cloud & DevOps',
     items: [
-      { name: 'AWS', color: '#FF9900', logo: 'amazon-aws' },
-      { name: 'Vercel', color: '#000', logo: 'vercel' },
-      { name: 'Docker', color: '#0db7ed', logo: 'docker' },
-      { name: 'Git', color: '#F05033', logo: 'git' },
-      { name: 'GitHub', color: '#121011', logo: 'github' },
+      { name: 'AWS', icon: '☁️', gradient: 'linear-gradient(135deg, #FF9900, #FFB84D)', level: 78 },
+      { name: 'Docker', icon: '🐳', gradient: 'linear-gradient(135deg, #0DB7ED, #2496ED)', level: 85 },
+      { name: 'Git / GitHub', icon: '🔀', gradient: 'linear-gradient(135deg, #F05033, #6e40c9)', level: 88 },
     ],
   },
   {
-    category: 'Design & Tools',
+    category: 'Automation & AI',
     items: [
-      { name: 'Photoshop', color: '#31A8FF', logo: 'adobe photoshop' },
-      { name: 'Blender', color: '#F5792A', logo: 'blender' },
-      { name: 'Canva', color: '#00C4CC', logo: 'canva' },
-      { name: 'Power BI', color: '#F2C811', logo: 'powerbi' },
-      { name: 'Postman', color: '#FF6C37', logo: 'postman' },
-      { name: 'Playwright', color: '#2EAD33', logo: 'playwright' },
-      { name: 'Jira', color: '#0A0FFF', logo: 'jira' },
+      { name: 'n8n', icon: '🔗', gradient: 'linear-gradient(135deg, #EA4B71, #FF6B8A)', level: 92 },
+      { name: 'Zapier', icon: '⚙️', gradient: 'linear-gradient(135deg, #FF4A00, #FF7A00)', level: 88 },
+      { name: 'Make.com', icon: '🧩', gradient: 'linear-gradient(135deg, #6D28D9, #8B5CF6)', level: 85 },
+      { name: 'Vapi', icon: '📞', gradient: 'linear-gradient(135deg, #06B6D4, #0891B2)', level: 80 },
     ],
   },
 ]
@@ -454,18 +444,26 @@ function TechStack() {
       <div className="section-inner" ref={ref}>
         <p className="section-label">Tech Stack</p>
         <h2 className="section-heading">Technologies & <span className="gradient-text">tools I work with</span></h2>
-        <div className={`techstack-grid ${vis ? 'in-view' : ''}`}>
+        <div className={`techstack-grid-3d ${vis ? 'in-view' : ''}`}>
           {techStackData.map((group, gi) => (
-            <div className="techstack-group" key={group.category} style={{ transitionDelay: `${gi * 0.1}s` }}>
+            <div className="techstack-group-3d" key={group.category} style={{ transitionDelay: `${gi * 0.1}s` }}>
               <h3 className="techstack-group-title">{group.category}</h3>
-              <div className="techstack-logos">
+              <div className="techstack-items">
                 {group.items.map((t) => (
-                  <div className="tech-logo-card" key={t.name} data-hover>
-                    <img
-                      src={`https://img.shields.io/badge/${t.name.replace(/ /g, '%20')}-${t.color.replace('#', '')}?style=for-the-badge&logo=${t.logo}&logoColor=white&labelColor=${t.color.replace('#', '')}`}
-                      alt={t.name}
-                      loading="lazy"
-                    />
+                  <div className="tech-item-3d" key={t.name} data-hover>
+                    <div className="tech-icon-wrapper" style={{ background: t.gradient }}>
+                      <span className="tech-emoji">{t.icon}</span>
+                    </div>
+                    <div className="tech-info">
+                      <span className="tech-name">{t.name}</span>
+                      <div className="tech-bar-bg">
+                        <div className="tech-bar-fill" style={{
+                          width: vis ? `${t.level}%` : '0%',
+                          background: t.gradient,
+                          transitionDelay: `${gi * 0.1 + 0.3}s`,
+                        }} />
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
