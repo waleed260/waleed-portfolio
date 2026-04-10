@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
 import LaserFlow from './LaserFlow'
+import MagicBento from './MagicBento'
 import './App.css'
 
 /* ──────────── helpers ──────────── */
@@ -933,6 +934,20 @@ export default function App() {
         <Projects />
         <GlowDivider />
         <Collaboration />
+        <GlowDivider />
+        <MagicBento
+          textAutoHide={true}
+          enableStars
+          enableSpotlight
+          enableBorderGlow={true}
+          enableTilt={false}
+          enableMagnetism={false}
+          clickEffect
+          spotlightRadius={400}
+          particleCount={12}
+          glowColor="132, 0, 255"
+          disableAnimations={false}
+        />
         <GlowDivider />
         <Journey />
         <GlowDivider />
