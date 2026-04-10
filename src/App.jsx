@@ -201,14 +201,29 @@ function Hero() {
       <div className="hero-grid" style={{ transform: `translate(${offset.x * 0.5}px,${offset.y * 0.5}px)` }}>
         <div className="hero-content">
           <p className={`hero-greeting ${loaded ? 'fade-up' : ''}`}>Hello, I'm</p>
-          <h1 className={`hero-name ${loaded ? 'fade-up' : ''}`}>
-            Waleed <span className="gradient-text">Hassan</span>
-          </h1>
-          <p className={`hero-title ${loaded ? 'fade-up' : ''}`}>AI Automation Engineer & Agentic Systems Builder</p>
-          <p className={`hero-tagline ${loaded ? 'fade-up' : ''}`}>
-            Building intelligent systems with Python, automation, and multi-agent workflows.<br />
-            Where code meets intelligence, motion, and design.
+          <div className={`hero-intro-3d ${loaded ? 'fade-up' : ''}`}>
+            <span className="intro-full-name">Waleed Hassan</span>
+          </div>
+          <p className={`hero-intro-tagline ${loaded ? 'fade-up' : ''}`}>
+            Building Agentic AI systems and visual automation workflows. Where code meets intelligence, motion, and design.
           </p>
+          <p className={`hero-tagline ${loaded ? 'fade-up' : ''}`}>
+            AI Automation Engineer · Agentic Systems Builder · Python Developer
+          </p>
+          <div className={`hero-socials ${loaded ? 'fade-up' : ''}`}>
+            <a href="https://www.linkedin.com/in/waleed-hassan-20438b3a8/" target="_blank" rel="noopener" className="social-btn" data-hover aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://instagram.com/waleed__o16" target="_blank" rel="noopener" className="social-btn" data-hover aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              <span>Instagram</span>
+            </a>
+            <a href="mailto:vkdeku20@gmail.com" className="social-btn" data-hover aria-label="Email">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+              <span>Email</span>
+            </a>
+          </div>
           <div className={`hero-ctas ${loaded ? 'fade-up' : ''}`}>
             <a href="#projects" className="btn btn-primary" data-hover>View Projects</a>
             <a href="#contact" className="btn btn-outline" data-hover>Get in Touch</a>
@@ -258,14 +273,18 @@ function About() {
             <p className="section-label">About Me</p>
             <h2 className="section-heading">Turning complex workflows into<br /><span className="gradient-text">elegant AI-powered experiences</span></h2>
             <p>
-              I'm <strong>Waleed Hassan</strong> — a developer deeply fascinated by the intersection of artificial intelligence, automation, and human-centered design. My journey began in the world of Python scripting and evolved into building full-scale agentic AI systems that can reason, plan, and act autonomously.
+              I'm <strong>Waleed Hassan</strong> — a developer deeply fascinated by the intersection of artificial intelligence, automation, and human-centered design. I'm currently working on <strong>Building Agentic AI systems and visual automation workflows</strong>.
             </p>
             <p>
-              I specialize in <strong>advanced RAG pipelines</strong>, <strong>multi-agent orchestration</strong>, <strong>visual automation workflows</strong> (n8n, Zapier, Make.com), and <strong>advanced PyTorch</strong> models. I believe the future belongs to those who can chain intelligence together — and that's exactly what I do.
+              I specialize in <strong>advanced RAG pipelines</strong>, <strong>multi-agent orchestration</strong>, <strong>visual automation workflows</strong> (n8n, Zapier, Make.com), and <strong>advanced PyTorch</strong> models. I'm currently learning agentic workflows and advanced PyTorch.
             </p>
             <p>
-              Beyond code, I'm passionate about open-source collaboration, Linux/Ubuntu ecosystems, and pushing the boundaries of what autonomous AI systems can achieve. I'm always exploring the next frontier.
+              I'm looking to collaborate on open-source Agentic AI frameworks, data-driven Python projects, and low-code workflows. Beyond code, I'm passionate about Ubuntu/Linux ecosystems and pushing the boundaries of what autonomous AI systems can achieve.
             </p>
+            <div className="about-quote">
+              <span className="quote-icon">⚡</span>
+              <p><em>I can set up a full development environment in the terminal faster than most people can open a browser.</em></p>
+            </div>
             <div className="about-tags">
               {['Agentic AI', 'Multi-Agent Systems', 'Advanced RAG', 'Python', 'PyTorch', 'n8n', 'Zapier', 'Make.com', 'Vapi', 'Ubuntu/Linux', 'Docker', 'AWS'].map(t => (
                 <span key={t} className="about-tag">{t}</span>
@@ -344,6 +363,119 @@ function Skills() {
               ))}
             </div>
           ))}
+        </div>
+      </div>
+    </Section>
+  )
+}
+
+/* ──────────── TECH STACK ──────────── */
+const techStackData = [
+  {
+    category: 'Languages',
+    items: [
+      { name: 'Python', color: '#3670A0', logo: 'python' },
+      { name: 'HTML5', color: '#E34F26', logo: 'html5' },
+      { name: 'CSS3', color: '#1572B6', logo: 'css3' },
+      { name: 'Markdown', color: '#000000', logo: 'markdown' },
+    ],
+  },
+  {
+    category: 'Frameworks & Libraries',
+    items: [
+      { name: 'Flask', color: '#000', logo: 'flask' },
+      { name: 'FastAPI', color: '#005571', logo: 'fastapi' },
+      { name: 'Django', color: '#092E20', logo: 'django' },
+      { name: 'Node.js', color: '#6DA55F', logo: 'node.js' },
+      { name: 'PyTorch', color: '#EE4C2C', logo: 'pytorch' },
+      { name: 'TensorFlow', color: '#FF6F00', logo: 'tensorflow' },
+      { name: 'Pandas', color: '#150458', logo: 'pandas' },
+      { name: 'scikit-learn', color: '#F7931E', logo: 'scikit-learn' },
+    ],
+  },
+  {
+    category: 'Databases',
+    items: [
+      { name: 'PostgreSQL', color: '#316192', logo: 'postgresql' },
+      { name: 'MySQL', color: '#4479A1', logo: 'mysql' },
+      { name: 'MongoDB', color: '#4ea94b', logo: 'mongodb' },
+      { name: 'SQLite', color: '#07405e', logo: 'sqlite' },
+      { name: 'Supabase', color: '#3ECF8E', logo: 'supabase' },
+      { name: 'Firebase', color: '#039BE5', logo: 'firebase' },
+      { name: 'Oracle', color: '#F80000', logo: 'oracle' },
+    ],
+  },
+  {
+    category: 'Cloud & DevOps',
+    items: [
+      { name: 'AWS', color: '#FF9900', logo: 'amazon-aws' },
+      { name: 'Vercel', color: '#000', logo: 'vercel' },
+      { name: 'Docker', color: '#0db7ed', logo: 'docker' },
+      { name: 'Git', color: '#F05033', logo: 'git' },
+      { name: 'GitHub', color: '#121011', logo: 'github' },
+    ],
+  },
+  {
+    category: 'Design & Tools',
+    items: [
+      { name: 'Photoshop', color: '#31A8FF', logo: 'adobe photoshop' },
+      { name: 'Blender', color: '#F5792A', logo: 'blender' },
+      { name: 'Canva', color: '#00C4CC', logo: 'canva' },
+      { name: 'Power BI', color: '#F2C811', logo: 'powerbi' },
+      { name: 'Postman', color: '#FF6C37', logo: 'postman' },
+      { name: 'Playwright', color: '#2EAD33', logo: 'playwright' },
+      { name: 'Jira', color: '#0A0FFF', logo: 'jira' },
+    ],
+  },
+]
+
+function TechStack() {
+  const [ref, vis] = useInView()
+  return (
+    <Section id="techstack">
+      <div className="section-inner" ref={ref}>
+        <p className="section-label">Tech Stack</p>
+        <h2 className="section-heading">Technologies & <span className="gradient-text">tools I work with</span></h2>
+        <div className={`techstack-grid ${vis ? 'in-view' : ''}`}>
+          {techStackData.map((group, gi) => (
+            <div className="techstack-group" key={group.category} style={{ transitionDelay: `${gi * 0.1}s` }}>
+              <h3 className="techstack-group-title">{group.category}</h3>
+              <div className="techstack-logos">
+                {group.items.map((t) => (
+                  <div className="tech-logo-card" key={t.name} data-hover>
+                    <img
+                      src={`https://img.shields.io/badge/${t.name.replace(/ /g, '%20')}-${t.color.replace('#', '')}?style=for-the-badge&logo=${t.logo}&logoColor=white&labelColor=${t.color.replace('#', '')}`}
+                      alt={t.name}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Section>
+  )
+}
+
+/* ──────────── DEV QUOTE ──────────── */
+function DevQuote() {
+  const [ref, vis] = useInView()
+  return (
+    <Section id="quote">
+      <div className="section-inner" ref={ref}>
+        <div className={`dev-quote-wrapper ${vis ? 'in-view' : ''}`}>
+          <p className="section-label">Inspiration</p>
+          <h2 className="section-heading">A <span className="gradient-text">daily dose</span> of dev wisdom</h2>
+          <div className="quote-frame">
+            <img
+              src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical"
+              alt="Random Dev Quote"
+              loading="lazy"
+              className="quote-img"
+            />
+          </div>
         </div>
       </div>
     </Section>
@@ -793,6 +925,10 @@ export default function App() {
         <About />
         <GlowDivider />
         <Skills />
+        <GlowDivider />
+        <TechStack />
+        <GlowDivider />
+        <DevQuote />
         <GlowDivider />
         <Projects />
         <GlowDivider />
