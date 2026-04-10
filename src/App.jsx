@@ -791,7 +791,6 @@ function Collaboration() {
                 </div>
               ))}
             </div>
-            <a href="#contact" className="btn btn-primary btn-lg" data-hover>Start a Conversation</a>
           </div>
         </div>
       </div>
