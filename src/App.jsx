@@ -27,50 +27,59 @@ function useMouseParallax(strength = 0.02) {
   return offset
 }
 
-/* ──────────── Custom Cursor ──────────── */
+/* ──────────── Custom Cursor (optimized) ──────────── */
 function Cursor() {
   const dot = useRef(null)
   const ring = useRef(null)
   const pos = useRef({ x: 0, y: 0 })
   const ringPos = useRef({ x: 0, y: 0 })
   const hovering = useRef(false)
+  const lastHoverState = useRef(null)
+  let rafId = null
 
   useEffect(() => {
     const move = (e) => {
       pos.current = { x: e.clientX, y: e.clientY }
-      hovering.current = e.target.matches('a,button,[data-hover]')
-      if (dot.current) {
-        dot.current.style.width = hovering.current ? '16px' : '8px'
-        dot.current.style.height = hovering.current ? '16px' : '8px'
-        dot.current.style.background = hovering.current ? 'var(--pink)' : 'var(--cyan)'
-      }
-      if (ring.current) {
-        ring.current.style.width = hovering.current ? '52px' : '36px'
-        ring.current.style.height = hovering.current ? '52px' : '36px'
-        ring.current.style.borderColor = hovering.current ? 'rgba(244, 114, 182, 0.5)' : 'rgba(168, 85, 247, 0.5)'
-        ring.current.style.background = hovering.current ? 'rgba(244, 114, 182, 0.06)' : 'transparent'
+      const isHover = e.target.matches('a,button,[data-hover]')
+      if (hovering.current !== isHover) {
+        hovering.current = isHover
       }
     }
-    window.addEventListener('mousemove', move)
-    
-    let rafId
+    window.addEventListener('mousemove', move, { passive: true })
+
     const animate = () => {
-      ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.25
-      ringPos.current.y += (pos.current.y - ringPos.current.y) * 0.25
-      
+      // Smooth ring follow
+      ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.15
+      ringPos.current.y += (pos.current.y - ringPos.current.y) * 0.15
+
+      const isHover = hovering.current
+      const stateChanged = lastHoverState.current !== isHover
+
       if (dot.current) {
-        dot.current.style.transform = `translate3d(${pos.current.x - 4}px, ${pos.current.y - 4}px, 0)`
+        dot.current.style.transform = `translate(${pos.current.x - 4}px, ${pos.current.y - 4}px)`
+        if (stateChanged) {
+          dot.current.style.width = isHover ? '16px' : '8px'
+          dot.current.style.height = isHover ? '16px' : '8px'
+          dot.current.style.background = isHover ? 'var(--pink)' : 'var(--cyan)'
+        }
       }
       if (ring.current) {
-        ring.current.style.transform = `translate3d(${ringPos.current.x - 18}px, ${ringPos.current.y - 18}px, 0)`
+        ring.current.style.transform = `translate(${ringPos.current.x - 18}px, ${ringPos.current.y - 18}px)`
+        if (stateChanged) {
+          ring.current.style.width = isHover ? '52px' : '36px'
+          ring.current.style.height = isHover ? '52px' : '36px'
+          ring.current.style.borderColor = isHover ? 'rgba(244, 114, 182, 0.5)' : 'rgba(168, 85, 247, 0.5)'
+          ring.current.style.background = isHover ? 'rgba(244, 114, 182, 0.06)' : 'transparent'
+        }
       }
+      lastHoverState.current = isHover
       rafId = requestAnimationFrame(animate)
     }
     rafId = requestAnimationFrame(animate)
-    
+
     return () => {
       window.removeEventListener('mousemove', move)
-      cancelAnimationFrame(rafId)
+      if (rafId) cancelAnimationFrame(rafId)
     }
   }, [])
 
@@ -370,7 +379,7 @@ function Skills() {
   )
 }
 
-/* ──────────── TECH STACK ──────────── */
+/* ──────────── TECH STACK (3D muted theme) ──────────── */
 const techStackData = [
   {
     category: 'Languages',

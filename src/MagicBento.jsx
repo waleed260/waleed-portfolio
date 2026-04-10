@@ -360,6 +360,8 @@ const GlobalSpotlight = ({
       opacity: 0;
       transform: translate(-50%, -50%);
       mix-blend-mode: screen;
+      left: -9999px;
+      top: -9999px;
     `;
     document.body.appendChild(spotlight);
     spotlightRef.current = spotlight;
