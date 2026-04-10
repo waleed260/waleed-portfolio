@@ -193,8 +193,10 @@ function Nav() {
 function Section({ id, className = '', children }) {
   const [ref, vis] = useInView()
   return (
-    <section id={id} ref={ref} className={`section ${className} ${vis ? 'in-view' : ''}`}>
-      {children}
+    <section id={id} ref={ref} className={`section section-transition ${className} ${vis ? 'in-view' : ''}`}>
+      <div className="section-inner section-inner-animated">
+        {vis ? children : null}
+      </div>
     </section>
   )
 }
