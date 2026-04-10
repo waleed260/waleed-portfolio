@@ -223,10 +223,7 @@ function Hero() {
             <span className="intro-full-name">Waleed Hassan</span>
           </div>
           <p className={`hero-intro-tagline ${loaded ? 'fade-up' : ''}`}>
-            Building Agentic AI systems and visual automation workflows. Where code meets intelligence, motion, and design.
-          </p>
-          <p className={`hero-tagline ${loaded ? 'fade-up' : ''}`}>
-            AI Automation Engineer · Agentic Systems Builder · Python Developer
+            I build intelligent AI systems, multi-agent workflows, and automation solutions — where code meets intelligence, motion, and design.
           </p>
           <div className={`hero-socials ${loaded ? 'fade-up' : ''}`}>
             <a href="https://www.linkedin.com/in/waleed-hassan-20438b3a8/" target="_blank" rel="noopener" className="social-btn" data-hover aria-label="LinkedIn">
