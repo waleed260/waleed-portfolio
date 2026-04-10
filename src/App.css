@@ -199,8 +199,8 @@
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: 1400px;
+  gap: 3rem;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   align-items: center;
@@ -208,6 +208,7 @@
 
 .hero-content {
   z-index: 2;
+  overflow: hidden;
 }
 
 .hero-greeting {
@@ -376,15 +377,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hero-3d-scene {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 360px;
+  height: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 
 .scene-core {
@@ -1634,19 +1637,41 @@
 
 /* Section inner wrapper */
 .section-inner {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
 }
 
 .section-inner-animated {
-  will-change: contents;
+  width: 100%;
 }
 
-/* 3D Cards with Depth */
+/* Section spacing - tight */
+.section {
+  padding: 3rem 0;
+}
+
+/* GlowDivider - bold */
+.glow-divider {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00e5ff, #a855f7, #f472b6, transparent);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 50px rgba(168, 85, 247, 0.4);
+  margin: 0 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: dividerGlow 3s ease-in-out infinite;
+}
+
+@keyframes dividerGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 50px rgba(168, 85, 247, 0.4); }
+  50% { box-shadow: 0 0 35px rgba(0, 229, 255, 1), 0 0 70px rgba(168, 85, 247, 0.6); }
+}
+
+/* 3D Cards with Depth - Bold */
 .project-card,
-.skill-group,
-.float-card {
+.skill-group {
   position: relative;
   transform-style: preserve-3d;
   perspective: 1000px;
@@ -1667,14 +1692,12 @@
 
 .project-card:hover::before,
 .skill-group:hover::before {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .project-card,
 .skill-group {
-  background: rgba(18, 16, 30, 0.7);
-  backdrop-filter: blur(20px) saturate(120%);
-  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  background: rgba(12, 10, 20, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -1682,34 +1705,32 @@
               box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               border-color 0.4s ease;
   box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 12px 48px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .project-card:hover,
 .skill-group:hover {
-  transform: perspective(1000px) translateZ(30px) translateY(-8px);
-  border-color: rgba(0, 229, 255, 0.3);
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(0, 229, 255, 0.2),
-    0 0 0 1px rgba(0, 229, 255, 0.2);
+  transform: perspective(1000px) translateZ(30px) translateY(-10px);
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(0, 229, 255, 0.25),
+    0 0 0 1px rgba(0, 229, 255, 0.3);
 }
-
-/* 3D Button Effects */
+/* 3D Button Effects - Bold */
 .btn {
   position: relative;
   display: inline-block;
   padding: 1rem 2.5rem;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   border-radius: 50px;
   overflow: hidden;
   transform: perspective(800px) translateZ(20px);
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.3),
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
@@ -1728,9 +1749,9 @@
 
 .btn:hover {
   transform: perspective(800px) translateZ(40px) translateY(-4px);
-  box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(0, 229, 255, 0.3);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(0, 229, 255, 0.4);
 }
 
 .btn:active {
@@ -1741,18 +1762,20 @@
   background: linear-gradient(135deg, #00e5ff, #a855f7);
   color: #fff;
   border: none;
+  font-weight: 700;
 }
 
 .btn-outline {
   background: transparent;
   border: 2px solid #00e5ff;
   color: #00e5ff;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+  font-weight: 700;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
 }
 
 .btn-outline:hover {
-  background: rgba(0, 229, 255, 0.1);
-  box-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
+  background: rgba(0, 229, 255, 0.12);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.5);
 }
 
 /* Smooth skill bar fills */
@@ -1870,20 +1893,21 @@
 /* 3D Code Panels */
 .code-panel {
   position: absolute;
-  padding: 0.75rem 1rem;
+  padding: 0.6rem 0.85rem;
   background: rgba(18, 16, 30, 0.9);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 229, 255, 0.3);
   border-radius: 8px;
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 229, 255, 0.2);
   transform: perspective(800px) translateZ(30px);
   animation: panelFloat 4s ease-in-out infinite;
+  white-space: nowrap;
 }
 
-.panel-left { top: 20%; left: -60px; animation-delay: 0s; }
-.panel-right { bottom: 20%; right: -60px; animation-delay: -2s; }
+.panel-left { top: 15%; left: 0; animation-delay: 0s; }
+.panel-right { bottom: 15%; right: 0; animation-delay: -2s; }
 
 @keyframes panelFloat {
   0%, 100% { transform: perspective(800px) translateZ(30px) translateY(0); }
