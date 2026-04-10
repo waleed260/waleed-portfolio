@@ -177,7 +177,12 @@ function Nav() {
       </button>
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         {links.map((l) => (
-          <li key={l}><a href={`#${l.toLowerCase()}`} data-hover onClick={() => setMenuOpen(false)}>{l}</a></li>
+          <li key={l}>
+            <a href={`#${l.toLowerCase()}`} className="nav-link-3d" data-hover onClick={() => setMenuOpen(false)}>
+              <span className="nav-link-border" />
+              <span className="nav-link-text">{l}</span>
+            </a>
+          </li>
         ))}
       </ul>
     </nav>
