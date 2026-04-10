@@ -387,52 +387,63 @@ function Skills() {
   )
 }
 
-/* ──────────── TECH STACK (SVG Icons) ──────────── */
+/* ──────────── TECH STACK (3D Shield Badges) ──────────── */
 const techStackData = [
   {
     category: 'Languages',
     items: [
-      { name: 'Python', icon: '🐍', gradient: 'linear-gradient(135deg, #3670A0, #4B8BBE)', level: 95 },
-      { name: 'HTML5', icon: '🌐', gradient: 'linear-gradient(135deg, #E34F26, #EF6530)', level: 85 },
-      { name: 'CSS3', icon: '🎨', gradient: 'linear-gradient(135deg, #1572B6, #33A9DC)', level: 82 },
-      { name: 'JavaScript', icon: '⚡', gradient: 'linear-gradient(135deg, #F7DF1E, #E8D44D)', level: 78 },
+      { name: 'Python', badge: 'https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54' },
+      { name: 'HTML5', badge: 'https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white' },
+      { name: 'CSS3', badge: 'https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white' },
+      { name: 'Markdown', badge: 'https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white' },
     ],
   },
   {
     category: 'Frameworks & Libraries',
     items: [
-      { name: 'FastAPI', icon: '🚀', gradient: 'linear-gradient(135deg, #009688, #005571)', level: 90 },
-      { name: 'Django', icon: '🎯', gradient: 'linear-gradient(135deg, #092E20, #44B78B)', level: 82 },
-      { name: 'Flask', icon: '🧪', gradient: 'linear-gradient(135deg, #000, #333)', level: 80 },
-      { name: 'PyTorch', icon: '🔥', gradient: 'linear-gradient(135deg, #EE4C2C, #F97316)', level: 88 },
-      { name: 'Node.js', icon: '💚', gradient: 'linear-gradient(135deg, #6DA55F, #8BC34A)', level: 72 },
-      { name: 'Pandas', icon: '📊', gradient: 'linear-gradient(135deg, #150458, #3F3485)', level: 85 },
+      { name: 'Flask', badge: 'https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white' },
+      { name: 'FastAPI', badge: 'https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi' },
+      { name: 'Django', badge: 'https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white' },
+      { name: 'Node.js', badge: 'https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white' },
+      { name: 'PyTorch', badge: 'https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white' },
+      { name: 'TensorFlow', badge: 'https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white' },
+      { name: 'Pandas', badge: 'https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white' },
+      { name: 'scikit-learn', badge: 'https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white' },
     ],
   },
   {
     category: 'Databases',
     items: [
-      { name: 'PostgreSQL', icon: '🐘', gradient: 'linear-gradient(135deg, #316192, #336791)', level: 80 },
-      { name: 'MongoDB', icon: '🍃', gradient: 'linear-gradient(135deg, #4EA94B, #589632)', level: 75 },
-      { name: 'Firebase', icon: '🔶', gradient: 'linear-gradient(135deg, #039BE5, #FFCA28)', level: 75 },
-      { name: 'Supabase', icon: '🟢', gradient: 'linear-gradient(135deg, #3ECF8E, #2EA876)', level: 70 },
+      { name: 'PostgreSQL', badge: 'https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white' },
+      { name: 'MySQL', badge: 'https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white' },
+      { name: 'MongoDB', badge: 'https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white' },
+      { name: 'SQLite', badge: 'https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white' },
+      { name: 'Supabase', badge: 'https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white' },
+      { name: 'Firebase', badge: 'https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase' },
+      { name: 'Oracle', badge: 'https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white' },
     ],
   },
   {
     category: 'Cloud & DevOps',
     items: [
-      { name: 'AWS', icon: '☁️', gradient: 'linear-gradient(135deg, #FF9900, #FFB84D)', level: 78 },
-      { name: 'Docker', icon: '🐳', gradient: 'linear-gradient(135deg, #0DB7ED, #2496ED)', level: 85 },
-      { name: 'Git / GitHub', icon: '🔀', gradient: 'linear-gradient(135deg, #F05033, #6e40c9)', level: 88 },
+      { name: 'AWS', badge: 'https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white' },
+      { name: 'Vercel', badge: 'https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white' },
+      { name: 'Docker', badge: 'https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white' },
+      { name: 'Git', badge: 'https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white' },
+      { name: 'GitHub', badge: 'https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white' },
     ],
   },
   {
-    category: 'Automation & AI',
+    category: 'Design & Tools',
     items: [
-      { name: 'n8n', icon: '🔗', gradient: 'linear-gradient(135deg, #EA4B71, #FF6B8A)', level: 92 },
-      { name: 'Zapier', icon: '⚙️', gradient: 'linear-gradient(135deg, #FF4A00, #FF7A00)', level: 88 },
-      { name: 'Make.com', icon: '🧩', gradient: 'linear-gradient(135deg, #6D28D9, #8B5CF6)', level: 85 },
-      { name: 'Vapi', icon: '📞', gradient: 'linear-gradient(135deg, #06B6D4, #0891B2)', level: 80 },
+      { name: 'Photoshop', badge: 'https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white' },
+      { name: 'Adobe', badge: 'https://img.shields.io/badge/adobe-%23FF0000.svg?style=for-the-badge&logo=adobe&logoColor=white' },
+      { name: 'Blender', badge: 'https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white' },
+      { name: 'Canva', badge: 'https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white' },
+      { name: 'Power BI', badge: 'https://img.shields.io/badge/power_bi-F2C811?style=for-the-badge&logo=powerbi&logoColor=black' },
+      { name: 'Postman', badge: 'https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white' },
+      { name: 'Playwright', badge: 'https://img.shields.io/badge/-playwright-%232EAD33?style=for-the-badge&logo=playwright&logoColor=white' },
+      { name: 'Jira', badge: 'https://img.shields.io/badge/jira-%230A0FFF.svg?style=for-the-badge&logo=jira&logoColor=white' },
     ],
   },
 ]
@@ -448,22 +459,16 @@ function TechStack() {
           {techStackData.map((group, gi) => (
             <div className="techstack-group-3d" key={group.category} style={{ transitionDelay: `${gi * 0.1}s` }}>
               <h3 className="techstack-group-title">{group.category}</h3>
-              <div className="techstack-items">
+              <div className="techstack-badges">
                 {group.items.map((t) => (
-                  <div className="tech-item-3d" key={t.name} data-hover>
-                    <div className="tech-icon-wrapper" style={{ background: t.gradient }}>
-                      <span className="tech-emoji">{t.icon}</span>
-                    </div>
-                    <div className="tech-info">
-                      <span className="tech-name">{t.name}</span>
-                      <div className="tech-bar-bg">
-                        <div className="tech-bar-fill" style={{
-                          width: vis ? `${t.level}%` : '0%',
-                          background: t.gradient,
-                          transitionDelay: `${gi * 0.1 + 0.3}s`,
-                        }} />
-                      </div>
-                    </div>
+                  <div className="tech-badge-3d" key={t.name} data-hover>
+                    <img
+                      src={t.badge}
+                      alt={t.name}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="badge-3d-glow" />
                   </div>
                 ))}
               </div>
