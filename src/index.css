@@ -62,28 +62,27 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Ensure only one scrollbar */
+/* Minimal slim scrollbar */
 html, body {
   scrollbar-width: thin;
-  scrollbar-color: var(--cyan) var(--bg-primary);
+  scrollbar-color: rgba(168, 85, 247, 0.3) transparent;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--cyan), var(--purple));
-  border-radius: 4px;
-  transition: background var(--duration-normal) var(--ease-smooth);
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--purple), var(--pink));
+  background: rgba(168, 85, 247, 0.5);
 }
 
 /* Custom Cursor */
