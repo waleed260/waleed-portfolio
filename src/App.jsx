@@ -221,21 +221,7 @@ function Hero() {
         <div className="hero-content">
           <p className={`hero-greeting ${loaded ? 'fade-up' : ''}`}>Hello, I'm</p>
           <div className="hero-intro-3d">
-            <span className="intro-full-name">
-              <span className="letter" style={{'--lc': '#00e5ff', '--i': 0}}>W</span>
-              <span className="letter" style={{'--lc': '#4d7cff', '--i': 1}}>a</span>
-              <span className="letter" style={{'--lc': '#a855f7', '--i': 2}}>l</span>
-              <span className="letter" style={{'--lc': '#f472b6', '--i': 3}}>e</span>
-              <span className="letter" style={{'--lc': '#00e5ff', '--i': 4}}>e</span>
-              <span className="letter" style={{'--lc': '#a855f7', '--i': 5}}>d</span>
-              &nbsp;
-              <span className="letter" style={{'--lc': '#f472b6', '--i': 6}}>H</span>
-              <span className="letter" style={{'--lc': '#4d7cff', '--i': 7}}>a</span>
-              <span className="letter" style={{'--lc': '#00e5ff', '--i': 8}}>s</span>
-              <span className="letter" style={{'--lc': '#a855f7', '--i': 9}}>s</span>
-              <span className="letter" style={{'--lc': '#f472b6', '--i': 10}}>a</span>
-              <span className="letter" style={{'--lc': '#4d7cff', '--i': 11}}>n</span>
-            </span>
+            <span className="intro-full-name">Waleed Hassan</span>
           </div>
           <p className={`hero-intro-tagline ${loaded ? 'fade-up' : ''}`}>
             I build intelligent AI systems, multi-agent workflows, and automation solutions — where code meets intelligence, motion, and design.
