@@ -2878,23 +2878,3 @@
 }
 
 /* ═══════════════════════════  3D Ball Robot  ═══════════════════════════ */
-.robot-container {
-  cursor: grab;
-  transition: none;
-}
-
-.robot-container:active {
-  cursor: grabbing;
-}
-
-.robot-emotion-label {
-  transition: color 0.8s ease, border-color 0.8s ease;
-  pointer-events: none;
-}
-
-@media (max-width: 768px) {
-  .robot-container {
-    width: 130px !important;
-    height: 130px !important;
-  }
-}
