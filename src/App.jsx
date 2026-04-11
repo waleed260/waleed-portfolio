@@ -220,7 +220,7 @@ function Hero() {
       <div className="hero-grid" style={{ transform: `translate(${offset.x * 0.5}px,${offset.y * 0.5}px)` }}>
         <div className="hero-content">
           <p className={`hero-greeting ${loaded ? 'fade-up' : ''}`}>Hello, I'm</p>
-          <div className={`hero-intro-3d ${loaded ? 'fade-up' : ''}`}>
+          <div className="hero-intro-3d">
             <span className="intro-full-name">Waleed Hassan</span>
           </div>
           <p className={`hero-intro-tagline ${loaded ? 'fade-up' : ''}`}>
