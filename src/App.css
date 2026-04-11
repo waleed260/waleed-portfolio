@@ -2304,6 +2304,25 @@
   color: var(--cyan);
 }
 
+/* WhatsApp green accent */
+.contact-card-whatsapp .contact-card-icon {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(18, 140, 68, 0.15));
+  border-color: rgba(37, 211, 102, 0.3);
+  color: #25D366;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 20px rgba(37, 211, 102, 0.1);
+}
+.contact-card-whatsapp:hover {
+  border-color: rgba(37, 211, 102, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(37, 211, 102, 0.2);
+}
+.contact-card-whatsapp:hover .contact-card-icon {
+  border-color: #25D366;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 30px rgba(37, 211, 102, 0.3);
+}
+.contact-card-whatsapp:hover .contact-card-value {
+  color: #25D366;
+}
+
 /* Contact Form 3D */
 .contact-form-3d {
   display: flex;
