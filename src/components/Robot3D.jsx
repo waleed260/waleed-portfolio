@@ -103,11 +103,14 @@ function Antenna({ color }) {
 }
 
 /* ───── tiny arms ───── */
-function Arm({ side, color }) {
+function Arm({ side, color, wave }) {
   const g = useRef()
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime()
-    if (g.current) g.current.rotation.z = side * (0.22 + Math.sin(t * 0.6 + side * 2) * 0.06)
+    if (g.current) {
+      const w = wave ? Math.sin(t * 7) * 0.5 : Math.sin(t * 0.6 + side * 2) * 0.06
+      g.current.rotation.z = side * (0.22 + w)
+    }
   })
   return (
     <group ref={g} position={[side * 0.46, -0.04, 0]}>
@@ -124,11 +127,14 @@ function Arm({ side, color }) {
 }
 
 /* ───── tiny legs ───── */
-function Leg({ side, color }) {
+function Leg({ side, color, bounce }) {
   const g = useRef()
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime()
-    if (g.current) g.current.position.y = Math.sin(t * 0.5 + side) * 0.006
+    if (g.current) {
+      const b = bounce ? Math.abs(Math.sin(t * 5)) * 0.08 : Math.sin(t * 0.5 + side) * 0.006
+      g.current.position.y = b
+    }
   })
   return (
     <group ref={g} position={[side * 0.18, -0.46, 0]}>
@@ -156,14 +162,25 @@ function Shadow() {
 
 /* ══════════ ROBOT MODEL ══════════ */
 function RobotModel({ emotion }) {
+  const groupRef = useRef()
   const bodyRef = useRef()
   const curColor = useRef(new THREE.Color(EMOTIONS.calm.body))
   const curEmissive = useRef(new THREE.Color(EMOTIONS.calm.emissive))
   const tgtColor = useRef(new THREE.Color(EMOTIONS.calm.body))
   const tgtEmissive = useRef(new THREE.Color(EMOTIONS.calm.emissive))
+  const [dancing, setDancing] = useState(false)
   const e = EMOTIONS[emotion] || EMOTIONS.calm
 
   useEffect(() => { tgtColor.current.set(e.body); tgtEmissive.current.set(e.emissive) }, [emotion])
+
+  // Periodic cute dance every 8s
+  useEffect(() => {
+    const t = setInterval(() => {
+      setDancing(true)
+      setTimeout(() => setDancing(false), 1500)
+    }, 8000)
+    return () => clearInterval(t)
+  }, [])
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime()
@@ -174,12 +191,22 @@ function RobotModel({ emotion }) {
       bodyRef.current.material.emissive.copy(curEmissive.current)
       bodyRef.current.material.emissiveIntensity = 0.18 + Math.sin(t) * 0.06
     }
+    if (groupRef.current) {
+      // Idle bob + hop
+      const hop = dancing ? Math.abs(Math.sin(t * 5)) * 0.12 : 0
+      groupRef.current.position.y = Math.sin(t * 0.8) * 0.025 + hop
+      // Slight tilt
+      const tilt = dancing ? Math.sin(t * 6) * 0.15 : 0
+      groupRef.current.rotation.z = tilt
+      // Gentle sway
+      groupRef.current.rotation.y = Math.sin(t * 0.3) * 0.08
+    }
   })
 
   const bc = curColor.current.clone()
 
   return (
-    <group>
+    <group ref={groupRef}>
       <ambientLight intensity={0.5} />
       <directionalLight position={[4, 4, 4]} intensity={0.8} />
       <pointLight position={[-2, 2, 2]} intensity={0.35} color={e.body} />
@@ -195,6 +222,16 @@ function RobotModel({ emotion }) {
         <meshStandardMaterial color={bc} transparent opacity={0.05} side={THREE.BackSide} />
       </mesh>
 
+      {/* Cute blush cheeks */}
+      <mesh position={[-0.3, -0.05, 0.25]}>
+        <sphereGeometry args={[0.04, 16, 16]} />
+        <meshStandardMaterial color="#ff6b8a" transparent opacity={0.35} />
+      </mesh>
+      <mesh position={[0.3, -0.05, 0.25]}>
+        <sphereGeometry args={[0.04, 16, 16]} />
+        <meshStandardMaterial color="#ff6b8a" transparent opacity={0.35} />
+      </mesh>
+
       {/* Face */}
       <Eye side={-1} eyeColor={e.eye} />
       <Eye side={1} eyeColor={e.eye} />
@@ -202,13 +239,13 @@ function RobotModel({ emotion }) {
 
       {/* Parts */}
       <Antenna color={e.body} />
-      <Arm side={-1} color={bc} />
-      <Arm side={1} color={bc} />
-      <Leg side={-1} color={bc} />
-      <Leg side={1} color={bc} />
+      <Arm side={-1} color={bc} wave={dancing} />
+      <Arm side={1} color={bc} wave={dancing} />
+      <Leg side={-1} color={bc} bounce={dancing} />
+      <Leg side={1} color={bc} bounce={dancing} />
 
       <Shadow />
-      <Sparkles count={12} scale={1.8} size={2} speed={0.2} color={e.body} />
+      <Sparkles count={dancing ? 20 : 12} scale={dancing ? 2.2 : 1.8} size={dancing ? 3 : 2} speed={0.2} color={e.body} />
     </group>
   )
 }
@@ -236,7 +273,7 @@ export default function Robot3D() {
   return (
     <div style={{
       position: 'fixed',
-      left: 12,
+      right: 12,
       bottom: 12,
       width: 140,
       height: 140,
