@@ -104,8 +104,8 @@ export default function Robot3D() {
       perspective: '600px',
     }}>
       <div style={{
-        width: 120,
-        height: 120,
+        width: 90,
+        height: 90,
         position: 'relative',
         animation: dancing ? 'robotDance 1.2s ease-in-out' : 'robotFloat3D 3s ease-in-out infinite',
         transformStyle: 'preserve-3d',
@@ -348,7 +348,7 @@ export default function Robot3D() {
       {/* label */}
       <div style={{
         textAlign: 'center',
-        fontSize: 9,
+        fontSize: 8,
         fontWeight: 600,
         color: c,
         background: 'rgba(0,0,0,0.6)',
