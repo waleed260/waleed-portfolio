@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState, useCallback, useMemo } from 'react'
+import { useEffect, useRef, useState, useCallback, useMemo, Suspense } from 'react'
 import LaserFlow from './LaserFlow'
 import MagicBento from './MagicBento'
+import Robot3D from './components/Robot3D'
 import './App.css'
 
 /* ──────────── helpers ──────────── */
@@ -1076,6 +1077,10 @@ export default function App() {
         <Contact />
         <Footer />
       </div>
+      {/* 3D Ball Robot - follows user across all pages */}
+      <Suspense fallback={null}>
+        <Robot3D />
+      </Suspense>
     </>
   )
 }
