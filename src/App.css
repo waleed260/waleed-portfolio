@@ -2878,41 +2878,47 @@
 }
 
 /* ═══════════════════════════  3D Ball Robot  ═══════════════════════════ */
-@keyframes robotFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+@keyframes robotFloat3D {
+  0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+  25% { transform: translateY(-8px) rotateX(3deg) rotateY(4deg); }
+  50% { transform: translateY(-4px) rotateX(0deg) rotateY(0deg); }
+  75% { transform: translateY(-8px) rotateX(-3deg) rotateY(-4deg); }
 }
 @keyframes robotDance {
-  0%   { transform: translateY(0) rotate(0); }
-  15%  { transform: translateY(-14px) rotate(-8deg); }
-  30%  { transform: translateY(0) rotate(0); }
-  45%  { transform: translateY(-14px) rotate(8deg); }
-  60%  { transform: translateY(0) rotate(0); }
-  75%  { transform: translateY(-10px) rotate(-5deg); }
-  100% { transform: translateY(0) rotate(0); }
+  0%   { transform: translateY(0) rotateX(0) rotateZ(0); }
+  15%  { transform: translateY(-16px) rotateX(-10deg) rotateZ(-10deg) scale(1.05); }
+  30%  { transform: translateY(0) rotateX(0) rotateZ(0) scale(1); }
+  45%  { transform: translateY(-16px) rotateX(10deg) rotateZ(10deg) scale(1.05); }
+  60%  { transform: translateY(0) rotateX(0) rotateZ(0) scale(1); }
+  75%  { transform: translateY(-12px) rotateX(-5deg) rotateZ(-6deg) scale(1.03); }
+  100% { transform: translateY(0) rotateX(0) rotateZ(0) scale(1); }
 }
 @keyframes robotPulse {
-  0%, 100% { transform: scale(1); opacity: 0.6; }
-  50% { transform: scale(1.08); opacity: 1; }
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+@keyframes shadowPulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.6; }
+  50% { transform: scaleX(0.85); opacity: 0.3; }
 }
 @keyframes antennaWiggle {
-  0%, 100% { transform: translateX(-50%) rotate(0); }
-  25% { transform: translateX(-50%) rotate(12deg); }
-  75% { transform: translateX(-50%) rotate(-12deg); }
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  25% { transform: translateX(-50%) rotate(15deg); }
+  75% { transform: translateX(-50%) rotate(-15deg); }
 }
 @keyframes antennaGlow {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.85); }
+  50% { opacity: 0.5; transform: scale(0.8); }
 }
 @keyframes armSway {
-  0%, 100% { transform: rotate(0); }
-  50% { transform: rotate(10deg); }
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(12deg); }
 }
 @keyframes armWave {
-  0% { transform: rotate(-20deg); }
-  100% { transform: rotate(30deg); }
+  0% { transform: rotate(-25deg); }
+  100% { transform: rotate(35deg); }
 }
 @keyframes sparkleFloat {
-  0% { opacity: 0.3; transform: scale(0.6); }
-  100% { opacity: 1; transform: scale(1.2); }
+  0% { opacity: 0.2; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1.3); }
 }
