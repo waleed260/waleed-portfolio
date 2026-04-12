@@ -1075,6 +1075,13 @@ export default function App() {
         <GlowDivider />
         <Collaboration />
         <GlowDivider />
+        <section className="section section-transition section-glass in-view">
+          <div className="section-bg-blur" />
+          <div className="section-inner section-inner-animated">
+            <p className="section-label" style={{ textAlign: 'center', display: 'block' }}>Bento Grid</p>
+            <h2 className="section-heading" style={{ textAlign: 'center' }}>Explore <span className="gradient-text">My World</span></h2>
+          </div>
+        </section>
         <MagicBento
           textAutoHide={true}
           enableStars
