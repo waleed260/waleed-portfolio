@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback, useMemo, Suspense } from 'react'
-import LaserFlow from './LaserFlow'
+import LightRays from './LightRays'
 import MagicBento from './MagicBento'
 import Robot3D from './components/Robot3D'
 import './App.css'
@@ -215,6 +215,20 @@ function Hero() {
   useEffect(() => { setTimeout(() => setLoaded(true), 100) }, [])
   return (
     <section id="hero" className="hero-section">
+      <LightRays
+        raysOrigin="top-center"
+        raysColor="#a855f7"
+        raysSpeed={0.8}
+        lightSpread={0.6}
+        rayLength={3}
+        followMouse={true}
+        mouseInfluence={0.15}
+        noiseAmount={0}
+        distortion={0}
+        pulsating={true}
+        fadeDistance={1.2}
+        saturation={1.2}
+      />
       <Particles count={90} />
       <FloatingOrbs />
       <div className="hero-grid" style={{ transform: `translate(${offset.x * 0.5}px,${offset.y * 0.5}px)` }}>
@@ -632,7 +646,7 @@ function Projects() {
   )
 }
 
-/* ──────────── LaserFlow Showcase Section ──────────── */
+/* ──────────── LightRays Showcase Section ──────────── */
 function LaserFlowShowcase() {
   const [ref, vis] = useInView()
   const revealRef = useRef(null)
@@ -661,29 +675,26 @@ function LaserFlowShowcase() {
     <Section id="interactive">
       <div className="section-inner" ref={ref}>
         <p className="section-label">Interactive 3D</p>
-        <h2 className="section-heading">Experience the <span className="gradient-text">LaserFlow</span> effect</h2>
+        <h2 className="section-heading">Experience the <span className="gradient-text">LightRays</span> effect</h2>
         <div className={`laserflow-showcase ${vis ? 'in-view' : ''}`}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           style={{ position: 'relative', height: '400px', overflow: 'hidden', borderRadius: 'var(--radius-lg)' }}
         >
-          {/* Background LaserFlow */}
-          <LaserFlow
-            horizontalBeamOffset={0.1}
-            verticalBeamOffset={0.0}
-            color="#CF9EFF"
-            horizontalSizing={0.5}
-            verticalSizing={2}
-            wispDensity={1}
-            wispSpeed={15}
-            wispIntensity={5}
-            flowSpeed={0.35}
-            flowStrength={0.25}
-            fogIntensity={0.45}
-            fogScale={0.3}
-            fogFallSpeed={0.6}
-            decay={1.1}
-            falloffStart={1.2}
+          {/* Background LightRays */}
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#a855f7"
+            raysSpeed={0.8}
+            lightSpread={0.5}
+            rayLength={3}
+            followMouse={true}
+            mouseInfluence={0.2}
+            noiseAmount={0}
+            distortion={0}
+            pulsating={true}
+            fadeDistance={1.2}
+            saturation={1.2}
           />
 
           {/* Reveal Layer */}
@@ -730,11 +741,11 @@ function LaserFlowShowcase() {
               <span className="gradient-text">Move your mouse</span> to reveal
             </h3>
             <p style={{ fontSize: '1.125rem', color: '#9a96b0', textAlign: 'center', maxWidth: '600px' }}>
-              Interactive LaserFlow reveal effect with radial mask. The hidden layer appears as you hover, creating a futuristic reveal animation.
+              Interactive LightRays reveal effect with radial mask. The hidden layer appears as you hover, creating a futuristic reveal animation.
             </p>
             <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
               <div style={{ padding: '0.5rem 1rem', background: 'rgba(0,229,255,0.1)', border: '1px solid rgba(0,229,255,0.3)', borderRadius: '20px', fontSize: '0.875rem', color: '#00e5ff' }}>WebGL Shader</div>
-              <div style={{ padding: '0.5rem 1rem', background: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.3)', borderRadius: '20px', fontSize: '0.875rem', color: '#a855f7' }}>Three.js</div>
+              <div style={{ padding: '0.5rem 1rem', background: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.3)', borderRadius: '20px', fontSize: '0.875rem', color: '#a855f7' }}>OGL</div>
               <div style={{ padding: '0.5rem 1rem', background: 'rgba(244,114,182,0.1)', border: '1px solid rgba(244,114,182,0.3)', borderRadius: '20px', fontSize: '0.875rem', color: '#f472b6' }}>React</div>
             </div>
           </div>
@@ -747,8 +758,8 @@ function LaserFlowShowcase() {
             width: 40,
             height: 40,
             borderRadius: '50%',
-            border: '2px solid #CF9EFF',
-            boxShadow: '0 0 20px #CF9EFF, 0 0 40px #CF9EFF',
+            border: '2px solid #a855f7',
+            boxShadow: '0 0 20px #a855f7, 0 0 40px #a855f7',
             pointerEvents: 'none',
             zIndex: 10,
             opacity: mousePos.x > 0 ? 1 : 0,
@@ -1019,7 +1030,7 @@ function Footer() {
 export default function App() {
   return (
     <>
-      {/* Fixed 3D LaserFlow Background */}
+      {/* Fixed LightRays Background */}
       <div style={{
         position: 'fixed',
         top: 0,
@@ -1030,22 +1041,19 @@ export default function App() {
         pointerEvents: 'none',
         overflow: 'hidden'
       }}>
-        <LaserFlow
-          horizontalBeamOffset={0.1}
-          verticalBeamOffset={0.0}
-          color="#CF9EFF"
-          horizontalSizing={0.5}
-          verticalSizing={2}
-          wispDensity={1}
-          wispSpeed={15}
-          wispIntensity={5}
-          flowSpeed={0.35}
-          flowStrength={0.25}
-          fogIntensity={0.45}
-          fogScale={0.3}
-          fogFallSpeed={0.6}
-          decay={1.1}
-          falloffStart={1.2}
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#a855f7"
+          raysSpeed={0.5}
+          lightSpread={0.4}
+          rayLength={4}
+          followMouse={true}
+          mouseInfluence={0.08}
+          noiseAmount={0}
+          distortion={0}
+          pulsating={true}
+          fadeDistance={1.5}
+          saturation={1.1}
         />
       </div>
       
