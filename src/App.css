@@ -198,14 +198,12 @@
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  max-width: 800px;
-  margin: 0;
-  padding-left: 8vw;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
-  align-items: flex-start;
-  justify-items: start;
+  align-items: center;
   position: relative;
   z-index: 2;
 }
