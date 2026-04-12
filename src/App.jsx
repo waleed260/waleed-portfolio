@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback, useMemo, Suspense } from 'react'
+import { useEffect, useRef, useState, useMemo } from 'react'
 import LightRays from './LightRays'
 import MagicBento from './MagicBento'
 import Robot3D from './components/Robot3D'
@@ -493,20 +493,21 @@ function TechStack() {
 }
 
 /* ──────────── DEV QUOTE ──────────── */
+const DEV_QUOTES = [
+  { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+  { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
+  { text: "Any sufficiently advanced technology is indistinguishable from magic.", author: "Arthur C. Clarke" },
+  { text: "I can set up a full development environment in the terminal faster than most people can open a browser.", author: "Waleed Hassan" },
+  { text: "The future belongs to those who understand that doing more with less is compassionate, prosperous, and enduring.", author: "Paul Hawken" },
+  { text: "AI is not just a tool. It's a catalyst for redefining what's possible.", author: "Waleed Hassan" },
+]
+
 function DevQuote() {
   const [ref, vis] = useInView()
-  const quotes = [
-    { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
-    { text: "The best way to predict the future is to invent it.", author: "Alan Kay" },
-    { text: "Any sufficiently advanced technology is indistinguishable from magic.", author: "Arthur C. Clarke" },
-    { text: "I can set up a full development environment in the terminal faster than most people can open a browser.", author: "Waleed Hassan" },
-    { text: "The future belongs to those who understand that doing more with less is compassionate, prosperous, and enduring.", author: "Paul Hawken" },
-    { text: "AI is not just a tool. It's a catalyst for redefining what's possible.", author: "Waleed Hassan" },
-  ]
   const [idx, setIdx] = useState(0)
 
   useEffect(() => {
-    const timer = setInterval(() => setIdx(i => (i + 1) % quotes.length), 5000)
+    const timer = setInterval(() => setIdx(i => (i + 1) % DEV_QUOTES.length), 5000)
     return () => clearInterval(timer)
   }, [])
 
@@ -520,7 +521,7 @@ function DevQuote() {
             <div className="quote-content">
               <div className="quote-mark">"</div>
               <div className="quote-text-container">
-                {quotes.map((q, i) => (
+                {DEV_QUOTES.map((q, i) => (
                   <p key={i} className={`quote-text ${i === idx ? 'active' : ''}`}>
                     {q.text}
                   </p>
@@ -528,11 +529,11 @@ function DevQuote() {
               </div>
               <div className="quote-author">
                 <div className="quote-author-line" />
-                <span className="quote-author-name">{quotes[idx].author}</span>
+                <span className="quote-author-name">{DEV_QUOTES[idx].author}</span>
               </div>
             </div>
             <div className="quote-dots">
-              {quotes.map((_, i) => (
+              {DEV_QUOTES.map((_, i) => (
                 <button
                   key={i}
                   className={`quote-dot ${i === idx ? 'active' : ''}`}
@@ -640,131 +641,6 @@ function Projects() {
               </div>
             )
           })}
-        </div>
-      </div>
-    </Section>
-  )
-}
-
-/* ──────────── LightRays Showcase Section ──────────── */
-function LaserFlowShowcase() {
-  const [ref, vis] = useInView()
-  const revealRef = useRef(null)
-  const [mousePos, setMousePos] = useState({ x: -9999, y: -9999 })
-
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    setMousePos({ x, y: y + rect.height * 0.5 })
-    if (revealRef.current) {
-      revealRef.current.style.setProperty('--mx', `${x}px`)
-      revealRef.current.style.setProperty('--my', `${y + rect.height * 0.5}px`)
-    }
-  }
-
-  const handleMouseLeave = () => {
-    setMousePos({ x: -9999, y: -9999 })
-    if (revealRef.current) {
-      revealRef.current.style.setProperty('--mx', '-9999px')
-      revealRef.current.style.setProperty('--my', '-9999px')
-    }
-  }
-
-  return (
-    <Section id="interactive">
-      <div className="section-inner" ref={ref}>
-        <p className="section-label">Interactive 3D</p>
-        <h2 className="section-heading">Experience the <span className="gradient-text">LightRays</span> effect</h2>
-        <div className={`laserflow-showcase ${vis ? 'in-view' : ''}`}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          style={{ position: 'relative', height: '400px', overflow: 'hidden', borderRadius: 'var(--radius-lg)' }}
-        >
-          {/* Background LightRays */}
-          <LightRays
-            raysOrigin="top-center"
-            raysColor="#ffffff"
-            raysSpeed={0.8}
-            lightSpread={0.5}
-            rayLength={3}
-            followMouse={true}
-            mouseInfluence={0.2}
-            noiseAmount={0}
-            distortion={0}
-            pulsating={true}
-            fadeDistance={1.2}
-            saturation={1.0}
-          />
-
-          {/* Reveal Layer */}
-          <div
-            ref={revealRef}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              zIndex: 5,
-              pointerEvents: 'none',
-              '--mx': '-9999px',
-              '--my': '-9999px',
-              WebkitMaskImage: 'radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)',
-              maskImage: 'radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)',
-              WebkitMaskRepeat: 'no-repeat',
-              maskRepeat: 'no-repeat',
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(200,200,200,0.1), rgba(255,255,255,0.1))',
-              mixBlendMode: 'screen',
-            }}
-          />
-
-          {/* Content Overlay */}
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '86%',
-            height: '60%',
-            backgroundColor: 'rgba(6, 0, 16, 0.85)',
-            backdropFilter: 'blur(20px)',
-            borderRadius: '20px',
-            border: '2px solid rgba(255,255,255,0.3)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
-            zIndex: 6,
-            padding: '1.5rem',
-            boxShadow: '0 0 40px rgba(255, 255, 255, 0.1)'
-          }}>
-            <h3 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '0.75rem', textAlign: 'center' }}>
-              <span className="gradient-text">Move your mouse</span> to reveal
-            </h3>
-            <p style={{ fontSize: '1.125rem', color: '#9a96b0', textAlign: 'center', maxWidth: '600px' }}>
-              Interactive LightRays reveal effect with radial mask. The hidden layer appears as you hover, creating a futuristic reveal animation.
-            </p>
-            <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
-              <div style={{ padding: '0.5rem 1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '20px', fontSize: '0.875rem', color: '#ffffff' }}>WebGL Shader</div>
-              <div style={{ padding: '0.5rem 1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '20px', fontSize: '0.875rem', color: '#ffffff' }}>OGL</div>
-              <div style={{ padding: '0.5rem 1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '20px', fontSize: '0.875rem', color: '#ffffff' }}>React</div>
-            </div>
-          </div>
-
-          {/* Mouse Position Indicator */}
-          <div style={{
-            position: 'absolute',
-            left: mousePos.x - 20,
-            top: mousePos.y - 20,
-            width: 40,
-            height: 40,
-            borderRadius: '50%',
-            border: '2px solid #ffffff',
-            boxShadow: '0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.25)',
-            pointerEvents: 'none',
-            zIndex: 10,
-            opacity: mousePos.x > 0 ? 1 : 0,
-            transition: 'opacity 0.3s ease',
-          }} />
         </div>
       </div>
     </Section>
@@ -1102,9 +978,7 @@ export default function App() {
         <Footer />
       </div>
       {/* 3D Ball Robot - follows user across all pages */}
-      <Suspense fallback={null}>
-        <Robot3D />
-      </Suspense>
+      <Robot3D />
     </>
   )
 }
