@@ -1,0 +1,163 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - link "WH ." [ref=e5] [cursor=pointer]:
+        - /url: "#hero"
+        - text: WH
+        - generic [ref=e6]: .
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "About" [ref=e9] [cursor=pointer]:
+            - /url: "#about"
+            - generic [ref=e10]: About
+        - listitem [ref=e11]:
+          - link "Skills" [ref=e12] [cursor=pointer]:
+            - /url: "#skills"
+            - generic [ref=e13]: Skills
+        - listitem [ref=e14]:
+          - link "Projects" [ref=e15] [cursor=pointer]:
+            - /url: "#projects"
+            - generic [ref=e16]: Projects
+        - listitem [ref=e17]:
+          - link "Collaboration" [ref=e18] [cursor=pointer]:
+            - /url: "#collaboration"
+            - generic [ref=e19]: Collaboration
+        - listitem [ref=e20]:
+          - link "Journey" [ref=e21] [cursor=pointer]:
+            - /url: "#journey"
+            - generic [ref=e23]: Journey
+        - listitem [ref=e24]:
+          - link "Contact" [ref=e25] [cursor=pointer]:
+            - /url: "#contact"
+            - generic [ref=e26]: Contact
+    - generic [ref=e27]:
+      - generic [ref=e29]:
+        - paragraph [ref=e30]: Hello, I'm
+        - generic [ref=e32]: Waleed Hassan
+        - paragraph [ref=e33]: I build intelligent AI systems, multi-agent workflows, and automation solutions — where code meets intelligence, motion, and design.
+        - generic [ref=e34]:
+          - link "LinkedIn" [ref=e35] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/waleed-hassan-20438b3a8/
+            - img [ref=e36]
+            - generic [ref=e38]: LinkedIn
+          - link "Instagram" [ref=e39] [cursor=pointer]:
+            - /url: https://instagram.com/waleed__o16
+            - img [ref=e40]
+            - generic [ref=e42]: Instagram
+          - link "Email" [ref=e43] [cursor=pointer]:
+            - /url: mailto:vkdeku20@gmail.com
+            - img [ref=e44]
+            - generic [ref=e46]: Email
+        - generic [ref=e47]:
+          - link "View Projects" [ref=e48] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Get in Touch" [ref=e49] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: 10+
+            - generic [ref=e53]: Projects
+          - generic [ref=e54]:
+            - generic [ref=e55]: 15+
+            - generic [ref=e56]: Technologies
+          - generic [ref=e57]:
+            - generic [ref=e58]: ∞
+            - generic [ref=e59]: Curiosity
+      - generic [ref=e61]: Scroll
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - generic [ref=e79]: AI Agents
+        - generic [ref=e80]:
+          - generic [ref=e81]: 🤖
+          - heading "Agentic AI Systems" [level=2] [ref=e82]
+          - paragraph [ref=e83]: Multi-agent orchestration with LangChain and autonomous AI behaviors
+      - generic [ref=e84]:
+        - generic [ref=e86]: Workflows
+        - generic [ref=e87]:
+          - generic [ref=e88]: ⚡
+          - heading "Visual Automation" [level=2] [ref=e89]
+          - paragraph [ref=e90]: n8n, Zapier, Make.com workflows for end-to-end business automation
+      - generic [ref=e91]:
+        - generic [ref=e93]: RAG
+        - generic [ref=e94]:
+          - generic [ref=e95]: 🧠
+          - heading "Advanced RAG Pipelines" [level=2] [ref=e96]
+          - paragraph [ref=e97]: Retrieval-augmented generation with re-ranking, synthesis, and knowledge graphs
+      - generic [ref=e98]:
+        - generic [ref=e100]: Backend
+        - generic [ref=e101]:
+          - generic [ref=e102]: 🐍
+          - heading "Python Engineering" [level=2] [ref=e103]
+          - paragraph [ref=e104]: FastAPI, Django, PyTorch — scalable backends and deep learning
+      - generic [ref=e105]:
+        - generic [ref=e107]: Infrastructure
+        - generic [ref=e108]:
+          - generic [ref=e109]: 🐳
+          - heading "Cloud & DevOps" [level=2] [ref=e110]
+          - paragraph [ref=e111]: Docker, AWS, CI/CD pipelines for production-ready deployments
+      - generic [ref=e112]:
+        - generic [ref=e114]: Voice AI
+        - generic [ref=e115]:
+          - generic [ref=e116]: 📞
+          - heading "Voice AI Integration" [level=2] [ref=e117]
+          - paragraph [ref=e118]: Vapi-powered conversational agents with intent recognition and context
+      - generic [ref=e119]:
+        - generic [ref=e121]: ML/DL
+        - generic [ref=e122]:
+          - generic [ref=e123]: 🔬
+          - heading "Deep Learning" [level=2] [ref=e124]
+          - paragraph [ref=e125]: Neural architecture design, transfer learning, and experiment tracking
+      - generic [ref=e126]:
+        - generic [ref=e128]: Open Source
+        - generic [ref=e129]:
+          - generic [ref=e130]: 🐧
+          - heading "Linux & Open Source" [level=2] [ref=e131]
+          - paragraph [ref=e132]: Ubuntu ecosystems, terminal mastery, and community collaboration
+    - contentinfo [ref=e137]:
+      - generic [ref=e138]:
+        - generic [ref=e139]:
+          - heading "WH ." [level=3] [ref=e140]:
+            - text: WH
+            - generic [ref=e141]: .
+          - paragraph [ref=e142]: AI Automation Engineer & Agentic Systems Builder
+        - generic [ref=e143]:
+          - heading "Get in Touch" [level=4] [ref=e144]
+          - link "vkdeku20@gmail.com" [ref=e145] [cursor=pointer]:
+            - /url: mailto:vkdeku20@gmail.com
+            - img [ref=e146]
+            - text: vkdeku20@gmail.com
+          - link "@waleed260" [ref=e149] [cursor=pointer]:
+            - /url: https://github.com/waleed260
+            - img [ref=e150]
+            - text: "@waleed260"
+          - link "Waleed Hassan" [ref=e152] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/waleed-hassan-20438b3a8/
+            - img [ref=e153]
+            - text: Waleed Hassan
+          - link "@waleed__o16" [ref=e155] [cursor=pointer]:
+            - /url: https://instagram.com/waleed__o16
+            - img [ref=e156]
+            - text: "@waleed__o16"
+        - generic [ref=e158]:
+          - heading "Follow Me" [level=4] [ref=e159]
+          - generic [ref=e160]:
+            - link "GitHub" [ref=e161] [cursor=pointer]:
+              - /url: https://github.com/waleed260
+              - img [ref=e162]
+            - link "LinkedIn" [ref=e164] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/waleed-hassan-20438b3a8/
+              - img [ref=e165]
+            - link "Instagram" [ref=e167] [cursor=pointer]:
+              - /url: https://instagram.com/waleed__o16
+              - img [ref=e168]
+            - link "Email" [ref=e170] [cursor=pointer]:
+              - /url: mailto:vkdeku20@gmail.com
+              - img [ref=e171]
+      - generic [ref=e174]:
+        - paragraph [ref=e175]:
+          - text: Designed & built by
+          - strong [ref=e176]: Waleed Hassan
+          - text: — AI Automation Engineer
+        - paragraph [ref=e177]: © 2026 — Where code meets intelligence.
+  - generic:
+    - generic: Calm

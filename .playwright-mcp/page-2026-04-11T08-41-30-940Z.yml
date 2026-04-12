@@ -1,0 +1,404 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - link "WH ." [ref=e5] [cursor=pointer]:
+        - /url: "#hero"
+        - text: WH
+        - generic [ref=e6]: .
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "About" [ref=e9] [cursor=pointer]:
+            - /url: "#about"
+            - generic [ref=e10]: About
+        - listitem [ref=e11]:
+          - link "Skills" [ref=e12] [cursor=pointer]:
+            - /url: "#skills"
+            - generic [ref=e13]: Skills
+        - listitem [ref=e14]:
+          - link "Projects" [ref=e15] [cursor=pointer]:
+            - /url: "#projects"
+            - generic [ref=e16]: Projects
+        - listitem [ref=e17]:
+          - link "Collaboration" [ref=e18] [cursor=pointer]:
+            - /url: "#collaboration"
+            - generic [ref=e19]: Collaboration
+        - listitem [ref=e20]:
+          - link "Journey" [ref=e21] [cursor=pointer]:
+            - /url: "#journey"
+            - generic [ref=e22]: Journey
+        - listitem [ref=e23]:
+          - link "Contact" [ref=e24] [cursor=pointer]:
+            - /url: "#contact"
+            - generic [ref=e25]: Contact
+    - generic [ref=e26]:
+      - generic [ref=e28]:
+        - paragraph [ref=e29]: Hello, I'm
+        - generic [ref=e31]: Waleed Hassan
+        - paragraph [ref=e32]: I build intelligent AI systems, multi-agent workflows, and automation solutions — where code meets intelligence, motion, and design.
+        - generic [ref=e33]:
+          - link "LinkedIn" [ref=e34] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/waleed-hassan-20438b3a8/
+            - img [ref=e35]
+            - generic [ref=e37]: LinkedIn
+          - link "Instagram" [ref=e38] [cursor=pointer]:
+            - /url: https://instagram.com/waleed__o16
+            - img [ref=e39]
+            - generic [ref=e41]: Instagram
+          - link "Email" [ref=e42] [cursor=pointer]:
+            - /url: mailto:vkdeku20@gmail.com
+            - img [ref=e43]
+            - generic [ref=e45]: Email
+        - generic [ref=e46]:
+          - link "View Projects" [ref=e47] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Get in Touch" [ref=e48] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - generic [ref=e51]: 10+
+            - generic [ref=e52]: Projects
+          - generic [ref=e53]:
+            - generic [ref=e54]: 15+
+            - generic [ref=e55]: Technologies
+          - generic [ref=e56]:
+            - generic [ref=e57]: ∞
+            - generic [ref=e58]: Curiosity
+      - generic [ref=e60]: Scroll
+    - generic [ref=e183]:
+      - generic [ref=e184]:
+        - paragraph [ref=e185]: About Me
+        - heading "Turning complex workflows into elegant AI-powered experiences" [level=2] [ref=e186]:
+          - text: Turning complex workflows into
+          - text: elegant AI-powered experiences
+        - paragraph [ref=e187]:
+          - text: I'm
+          - strong [ref=e188]: Waleed Hassan
+          - text: — a developer deeply fascinated by the intersection of artificial intelligence, automation, and human-centered design. I'm currently working on
+          - strong [ref=e189]: Building Agentic AI systems and visual automation workflows
+          - text: .
+        - paragraph [ref=e190]:
+          - text: I specialize in
+          - strong [ref=e191]: advanced RAG pipelines
+          - text: ","
+          - strong [ref=e192]: multi-agent orchestration
+          - text: ","
+          - strong [ref=e193]: visual automation workflows
+          - text: (n8n, Zapier, Make.com), and
+          - strong [ref=e194]: advanced PyTorch
+          - text: models. I'm currently learning agentic workflows and advanced PyTorch.
+        - paragraph [ref=e195]: I'm looking to collaborate on open-source Agentic AI frameworks, data-driven Python projects, and low-code workflows. Beyond code, I'm passionate about Ubuntu/Linux ecosystems and pushing the boundaries of what autonomous AI systems can achieve.
+        - generic [ref=e196]:
+          - generic [ref=e197]: ⚡
+          - paragraph [ref=e198]:
+            - emphasis [ref=e199]: I can set up a full development environment in the terminal faster than most people can open a browser.
+        - generic [ref=e200]:
+          - generic [ref=e201]: Agentic AI
+          - generic [ref=e202]: Multi-Agent Systems
+          - generic [ref=e203]: Advanced RAG
+          - generic [ref=e204]: Python
+          - generic [ref=e205]: PyTorch
+          - generic [ref=e206]: n8n
+          - generic [ref=e207]: Zapier
+          - generic [ref=e208]: Make.com
+          - generic [ref=e209]: Vapi
+          - generic [ref=e210]: Ubuntu/Linux
+          - generic [ref=e211]: Docker
+          - generic [ref=e212]: AWS
+      - generic [ref=e213]:
+        - generic [ref=e216]: WH
+        - generic [ref=e217]:
+          - generic [ref=e218]:
+            - generic [ref=e219]: 🤖
+            - text: AI Agents
+          - generic [ref=e220]:
+            - generic [ref=e221]: ⚡
+            - text: Automation
+          - generic [ref=e222]:
+            - generic [ref=e223]: 🧠
+            - text: Deep Learning
+          - generic [ref=e224]:
+            - generic [ref=e225]: 🔗
+            - text: Workflows
+    - generic [ref=e227]:
+      - paragraph [ref=e228]: Skills
+      - heading "Developer of agentic systems, low-code automation, and scalable AI tools" [level=2] [ref=e229]:
+        - text: Developer of agentic systems,
+        - text: low-code automation, and scalable AI tools
+      - generic [ref=e230]:
+        - generic [ref=e231]:
+          - heading "Languages & Frameworks" [level=3] [ref=e232]
+          - generic [ref=e234]:
+            - generic [ref=e235]: 🐍
+            - text: Python
+            - generic [ref=e236]: 95%
+          - generic [ref=e239]:
+            - generic [ref=e240]: 🔥
+            - text: PyTorch
+            - generic [ref=e241]: 88%
+          - generic [ref=e244]:
+            - generic [ref=e245]: ⚡
+            - text: FastAPI
+            - generic [ref=e246]: 90%
+          - generic [ref=e249]:
+            - generic [ref=e250]: 🎯
+            - text: Django
+            - generic [ref=e251]: 82%
+        - generic [ref=e253]:
+          - heading "Infrastructure & Cloud" [level=3] [ref=e254]
+          - generic [ref=e256]:
+            - generic [ref=e257]: 🐳
+            - text: Docker
+            - generic [ref=e258]: 85%
+          - generic [ref=e261]:
+            - generic [ref=e262]: ☁️
+            - text: AWS
+            - generic [ref=e263]: 78%
+          - generic [ref=e266]:
+            - generic [ref=e267]: 🗄️
+            - text: PostgreSQL
+            - generic [ref=e268]: 80%
+          - generic [ref=e271]:
+            - generic [ref=e272]: 🔥
+            - text: Firebase
+            - generic [ref=e273]: 75%
+        - generic [ref=e275]:
+          - heading "Automation & Low-Code" [level=3] [ref=e276]
+          - generic [ref=e278]:
+            - generic [ref=e279]: 🔗
+            - text: n8n
+            - generic [ref=e280]: 92%
+          - generic [ref=e283]:
+            - generic [ref=e284]: ⚙️
+            - text: Zapier
+            - generic [ref=e285]: 88%
+          - generic [ref=e288]:
+            - generic [ref=e289]: 🧩
+            - text: Make.com
+            - generic [ref=e290]: 85%
+          - generic [ref=e293]:
+            - generic [ref=e294]: 📞
+            - text: Vapi
+            - generic [ref=e295]: 80%
+        - generic [ref=e297]:
+          - heading "Platforms" [level=3] [ref=e298]
+          - generic [ref=e300]:
+            - generic [ref=e301]: 🐧
+            - text: Ubuntu / Linux
+            - generic [ref=e302]: 90%
+          - generic [ref=e305]:
+            - generic [ref=e306]: 📦
+            - text: Git / GitHub
+            - generic [ref=e307]: 88%
+          - generic [ref=e310]:
+            - generic [ref=e311]: 💻
+            - text: CLI / Bash
+            - generic [ref=e312]: 85%
+          - generic [ref=e315]:
+            - generic [ref=e316]: 🔄
+            - text: CI/CD
+            - generic [ref=e317]: 76%
+    - generic [ref=e320]:
+      - paragraph [ref=e321]: Tech Stack
+      - heading "Technologies & tools I work with" [level=2] [ref=e322]
+      - generic [ref=e323]:
+        - generic [ref=e324]:
+          - heading "Languages" [level=3] [ref=e325]
+          - generic [ref=e326]:
+            - img "Python" [ref=e328]
+            - img "HTML5" [ref=e330]
+            - img "CSS3" [ref=e332]
+            - img "Markdown" [ref=e334]
+        - generic [ref=e335]:
+          - heading "Frameworks & Libraries" [level=3] [ref=e336]
+          - generic [ref=e337]:
+            - img "Flask" [ref=e339]
+            - img "FastAPI" [ref=e341]
+            - img "Django" [ref=e343]
+            - img "Node.js" [ref=e345]
+            - img "PyTorch" [ref=e347]
+            - img "TensorFlow" [ref=e349]
+            - img "Pandas" [ref=e351]
+            - img "scikit-learn" [ref=e353]
+        - generic [ref=e354]:
+          - heading "Databases" [level=3] [ref=e355]
+          - generic [ref=e356]:
+            - img "PostgreSQL" [ref=e358]
+            - img "MySQL" [ref=e360]
+            - img "MongoDB" [ref=e362]
+            - img "SQLite" [ref=e364]
+            - img "Supabase" [ref=e366]
+            - img "Firebase" [ref=e368]
+            - img "Oracle" [ref=e370]
+        - generic [ref=e371]:
+          - heading "Cloud & DevOps" [level=3] [ref=e372]
+          - generic [ref=e373]:
+            - img "AWS" [ref=e375]
+            - img "Vercel" [ref=e377]
+            - img "Docker" [ref=e379]
+            - img "Git" [ref=e381]
+            - img "GitHub" [ref=e383]
+        - generic [ref=e384]:
+          - heading "Design & Tools" [level=3] [ref=e385]
+          - generic [ref=e386]:
+            - img "Photoshop" [ref=e388]
+            - img "Adobe" [ref=e390]
+            - img "Blender" [ref=e392]
+            - img "Canva" [ref=e394]
+            - img "Power BI" [ref=e396]
+            - img "Postman" [ref=e398]
+            - img "Playwright" [ref=e400]
+            - img "Jira" [ref=e402]
+    - generic [ref=e405]:
+      - paragraph [ref=e406]: Inspiration
+      - heading "Words that drive innovation" [level=2] [ref=e407]
+      - generic [ref=e408]:
+        - generic [ref=e409]:
+          - generic [ref=e410]: "\""
+          - generic [ref=e411]:
+            - paragraph [ref=e412]: First, solve the problem. Then, write the code.
+            - paragraph [ref=e413]: The best way to predict the future is to invent it.
+            - paragraph [ref=e414]: Any sufficiently advanced technology is indistinguishable from magic.
+            - paragraph [ref=e415]: I can set up a full development environment in the terminal faster than most people can open a browser.
+            - paragraph [ref=e416]: The future belongs to those who understand that doing more with less is compassionate, prosperous, and enduring.
+            - paragraph [ref=e417]: AI is not just a tool. It's a catalyst for redefining what's possible.
+          - generic [ref=e420]: Arthur C. Clarke
+        - generic [ref=e421]:
+          - button "Quote 1" [ref=e422] [cursor=pointer]
+          - button "Quote 2" [ref=e423] [cursor=pointer]
+          - button "Quote 3" [ref=e424] [cursor=pointer]
+          - button "Quote 4" [ref=e425] [cursor=pointer]
+          - button "Quote 5" [ref=e426] [cursor=pointer]
+          - button "Quote 6" [ref=e427] [cursor=pointer]
+    - generic [ref=e429]:
+      - paragraph [ref=e430]: Projects
+      - heading "Intelligent systems in action" [level=2] [ref=e431]
+      - generic [ref=e432]:
+        - generic [ref=e433]:
+          - generic [ref=e435]: 🧠
+          - heading "Agentic AI Research Assistant" [level=3] [ref=e437]
+          - paragraph [ref=e438]: Multi-agent system that performs literature review, summarization, and knowledge graph construction using advanced RAG and LLM orchestration.
+          - generic [ref=e439]: Multi-AgentRAGPythonLangChain
+        - generic [ref=e440]:
+          - generic [ref=e442]: ⚡
+          - heading "Intelligent Automation Hub" [level=3] [ref=e444]
+          - paragraph [ref=e445]: Visual workflow platform connecting n8n, Zapier, and custom Python microservices for end-to-end business process automation.
+          - generic [ref=e446]: n8nFastAPIDockerPostgreSQL
+        - generic [ref=e447]:
+          - generic [ref=e449]: 🎙️
+          - heading "Voice AI Agent Platform" [level=3] [ref=e451]
+          - paragraph [ref=e452]: Conversational AI system powered by Vapi with custom intent recognition, context management, and seamless handoff to human agents.
+          - generic [ref=e453]: VapiPythonAIVoice
+        - generic [ref=e454]:
+          - generic [ref=e456]: 🔬
+          - heading "Deep Learning Pipeline Toolkit" [level=3] [ref=e458]
+          - paragraph [ref=e459]: PyTorch-based toolkit for rapid prototyping of neural architectures with automated hyperparameter tuning and experiment tracking.
+          - generic [ref=e460]: PyTorchPythonMLOpsDocker
+        - generic [ref=e461]:
+          - generic [ref=e463]: 📊
+          - heading "Sales Analytics Dashboard" [level=3] [ref=e465]
+          - paragraph [ref=e466]: Real-time Amazon sales analytics with predictive modeling, anomaly detection, and automated reporting via scheduled workflows.
+          - generic [ref=e467]: DjangoPostgreSQLAnalyticsAutomation
+        - generic [ref=e468]:
+          - generic [ref=e470]: 📄
+          - heading "Document Intelligence System" [level=3] [ref=e472]
+          - paragraph [ref=e473]: AI-powered document processing pipeline with OCR, entity extraction, semantic search, and automated classification using advanced RAG.
+          - generic [ref=e474]: RAGOCRPythonAI
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - generic [ref=e78]: AI Agents
+        - generic [ref=e79]:
+          - generic [ref=e80]: 🤖
+          - heading "Agentic AI Systems" [level=2] [ref=e81]
+          - paragraph [ref=e82]: Multi-agent orchestration with LangChain and autonomous AI behaviors
+      - generic [ref=e83]:
+        - generic [ref=e85]: Workflows
+        - generic [ref=e86]:
+          - generic [ref=e87]: ⚡
+          - heading "Visual Automation" [level=2] [ref=e88]
+          - paragraph [ref=e89]: n8n, Zapier, Make.com workflows for end-to-end business automation
+      - generic [ref=e90]:
+        - generic [ref=e92]: RAG
+        - generic [ref=e93]:
+          - generic [ref=e94]: 🧠
+          - heading "Advanced RAG Pipelines" [level=2] [ref=e95]
+          - paragraph [ref=e96]: Retrieval-augmented generation with re-ranking, synthesis, and knowledge graphs
+      - generic [ref=e97]:
+        - generic [ref=e99]: Backend
+        - generic [ref=e100]:
+          - generic [ref=e101]: 🐍
+          - heading "Python Engineering" [level=2] [ref=e102]
+          - paragraph [ref=e103]: FastAPI, Django, PyTorch — scalable backends and deep learning
+      - generic [ref=e104]:
+        - generic [ref=e106]: Infrastructure
+        - generic [ref=e107]:
+          - generic [ref=e108]: 🐳
+          - heading "Cloud & DevOps" [level=2] [ref=e109]
+          - paragraph [ref=e110]: Docker, AWS, CI/CD pipelines for production-ready deployments
+      - generic [ref=e111]:
+        - generic [ref=e113]: Voice AI
+        - generic [ref=e114]:
+          - generic [ref=e115]: 📞
+          - heading "Voice AI Integration" [level=2] [ref=e116]
+          - paragraph [ref=e117]: Vapi-powered conversational agents with intent recognition and context
+      - generic [ref=e118]:
+        - generic [ref=e120]: ML/DL
+        - generic [ref=e121]:
+          - generic [ref=e122]: 🔬
+          - heading "Deep Learning" [level=2] [ref=e123]
+          - paragraph [ref=e124]: Neural architecture design, transfer learning, and experiment tracking
+      - generic [ref=e125]:
+        - generic [ref=e127]: Open Source
+        - generic [ref=e128]:
+          - generic [ref=e129]: 🐧
+          - heading "Linux & Open Source" [level=2] [ref=e130]
+          - paragraph [ref=e131]: Ubuntu ecosystems, terminal mastery, and community collaboration
+    - contentinfo [ref=e136]:
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - heading "WH ." [level=3] [ref=e139]:
+            - text: WH
+            - generic [ref=e140]: .
+          - paragraph [ref=e141]: AI Automation Engineer & Agentic Systems Builder
+        - generic [ref=e142]:
+          - heading "Get in Touch" [level=4] [ref=e143]
+          - link "vkdeku20@gmail.com" [ref=e144] [cursor=pointer]:
+            - /url: mailto:vkdeku20@gmail.com
+            - img [ref=e145]
+            - text: vkdeku20@gmail.com
+          - link "@waleed260" [ref=e148] [cursor=pointer]:
+            - /url: https://github.com/waleed260
+            - img [ref=e149]
+            - text: "@waleed260"
+          - link "Waleed Hassan" [ref=e151] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/waleed-hassan-20438b3a8/
+            - img [ref=e152]
+            - text: Waleed Hassan
+          - link "@waleed__o16" [ref=e154] [cursor=pointer]:
+            - /url: https://instagram.com/waleed__o16
+            - img [ref=e155]
+            - text: "@waleed__o16"
+        - generic [ref=e157]:
+          - heading "Follow Me" [level=4] [ref=e158]
+          - generic [ref=e159]:
+            - link "GitHub" [ref=e160] [cursor=pointer]:
+              - /url: https://github.com/waleed260
+              - img [ref=e161]
+            - link "LinkedIn" [ref=e163] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/waleed-hassan-20438b3a8/
+              - img [ref=e164]
+            - link "Instagram" [ref=e166] [cursor=pointer]:
+              - /url: https://instagram.com/waleed__o16
+              - img [ref=e167]
+            - link "Email" [ref=e169] [cursor=pointer]:
+              - /url: mailto:vkdeku20@gmail.com
+              - img [ref=e170]
+      - generic [ref=e173]:
+        - paragraph [ref=e174]:
+          - text: Designed & built by
+          - strong [ref=e175]: Waleed Hassan
+          - text: — AI Automation Engineer
+        - paragraph [ref=e176]: © 2026 — Where code meets intelligence.
+  - generic [ref=e177] [cursor=pointer]:
+    - generic: 😄
+    - generic: Happy
+    - generic: click me!

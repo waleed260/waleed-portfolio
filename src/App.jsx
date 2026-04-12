@@ -217,7 +217,7 @@ function Hero() {
     <section id="hero" className="hero-section">
       <LightRays
         raysOrigin="top-center"
-        raysColor="#a855f7"
+        raysColor="#ffffff"
         raysSpeed={0.8}
         lightSpread={0.6}
         rayLength={3}
@@ -684,7 +684,7 @@ function LaserFlowShowcase() {
           {/* Background LightRays */}
           <LightRays
             raysOrigin="top-center"
-            raysColor="#a855f7"
+            raysColor="#ffffff"
             raysSpeed={0.8}
             lightSpread={0.5}
             rayLength={3}
@@ -694,7 +694,7 @@ function LaserFlowShowcase() {
             distortion={0}
             pulsating={true}
             fadeDistance={1.2}
-            saturation={1.2}
+            saturation={1.0}
           />
 
           {/* Reveal Layer */}
@@ -711,7 +711,7 @@ function LaserFlowShowcase() {
               maskImage: 'radial-gradient(circle at var(--mx) var(--my), rgba(255,255,255,1) 0px, rgba(255,255,255,0.95) 60px, rgba(255,255,255,0.6) 120px, rgba(255,255,255,0.25) 180px, rgba(255,255,255,0) 240px)',
               WebkitMaskRepeat: 'no-repeat',
               maskRepeat: 'no-repeat',
-              background: 'linear-gradient(135deg, rgba(0,229,255,0.15), rgba(168,85,247,0.15), rgba(244,114,182,0.15))',
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(200,200,200,0.1), rgba(255,255,255,0.1))',
               mixBlendMode: 'screen',
             }}
           />
@@ -727,7 +727,7 @@ function LaserFlowShowcase() {
             backgroundColor: 'rgba(6, 0, 16, 0.85)',
             backdropFilter: 'blur(20px)',
             borderRadius: '20px',
-            border: '2px solid #FF79C6',
+            border: '2px solid rgba(255,255,255,0.3)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -735,7 +735,7 @@ function LaserFlowShowcase() {
             color: 'white',
             zIndex: 6,
             padding: '1.5rem',
-            boxShadow: '0 0 40px rgba(255, 121, 198, 0.3)'
+            boxShadow: '0 0 40px rgba(255, 255, 255, 0.1)'
           }}>
             <h3 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '0.75rem', textAlign: 'center' }}>
               <span className="gradient-text">Move your mouse</span> to reveal
@@ -744,9 +744,9 @@ function LaserFlowShowcase() {
               Interactive LightRays reveal effect with radial mask. The hidden layer appears as you hover, creating a futuristic reveal animation.
             </p>
             <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
-              <div style={{ padding: '0.5rem 1rem', background: 'rgba(0,229,255,0.1)', border: '1px solid rgba(0,229,255,0.3)', borderRadius: '20px', fontSize: '0.875rem', color: '#00e5ff' }}>WebGL Shader</div>
-              <div style={{ padding: '0.5rem 1rem', background: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.3)', borderRadius: '20px', fontSize: '0.875rem', color: '#a855f7' }}>OGL</div>
-              <div style={{ padding: '0.5rem 1rem', background: 'rgba(244,114,182,0.1)', border: '1px solid rgba(244,114,182,0.3)', borderRadius: '20px', fontSize: '0.875rem', color: '#f472b6' }}>React</div>
+              <div style={{ padding: '0.5rem 1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '20px', fontSize: '0.875rem', color: '#ffffff' }}>WebGL Shader</div>
+              <div style={{ padding: '0.5rem 1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '20px', fontSize: '0.875rem', color: '#ffffff' }}>OGL</div>
+              <div style={{ padding: '0.5rem 1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '20px', fontSize: '0.875rem', color: '#ffffff' }}>React</div>
             </div>
           </div>
 
@@ -758,8 +758,8 @@ function LaserFlowShowcase() {
             width: 40,
             height: 40,
             borderRadius: '50%',
-            border: '2px solid #a855f7',
-            boxShadow: '0 0 20px #a855f7, 0 0 40px #a855f7',
+            border: '2px solid #ffffff',
+            boxShadow: '0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.25)',
             pointerEvents: 'none',
             zIndex: 10,
             opacity: mousePos.x > 0 ? 1 : 0,
@@ -1043,7 +1043,7 @@ export default function App() {
       }}>
         <LightRays
           raysOrigin="top-center"
-          raysColor="#a855f7"
+          raysColor="#ffffff"
           raysSpeed={0.5}
           lightSpread={0.4}
           rayLength={4}
