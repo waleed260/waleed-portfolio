@@ -209,14 +209,19 @@
 }
 
 .hero-content {
-  order: 2;
+  order: 1;
   z-index: 2;
   overflow: hidden;
-  text-align: right;
+  text-align: left;
 }
 
 .hero-visual {
-  order: 1;
+  order: 2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 /* ═══════════════════════════════════════ HERO INTRO ═══════════════════════════════════════ */
@@ -259,7 +264,6 @@
   width: 120px;
   height: 4px;
   margin-top: 0.75rem;
-  margin-left: auto;
   background: linear-gradient(90deg, #00e5ff, #a855f7, #f472b6);
   border-radius: 2px;
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.5), 0 0 40px rgba(168, 85, 247, 0.3);
@@ -300,7 +304,6 @@
   line-height: 1.7;
   margin-bottom: 0.75rem;
   max-width: 560px;
-  margin-left: auto;
   opacity: 0;
 }
 
@@ -321,7 +324,6 @@
   gap: 1rem;
   flex-wrap: wrap;
   margin-bottom: 2.5rem;
-  justify-content: flex-end;
   opacity: 0;
 }
 
@@ -329,7 +331,6 @@
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  justify-content: flex-end;
   opacity: 0;
 }
 
@@ -734,7 +735,6 @@
   gap: 0.75rem;
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
-  justify-content: flex-end;
   opacity: 0;
 }
 
