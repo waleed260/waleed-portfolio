@@ -844,7 +844,7 @@ export default function App() {
         <section className="section section-transition section-glass in-view">
           <div className="section-bg-blur" />
           <div className="section-inner section-inner-animated">
-            <p className="section-label" style={{ textAlign: 'center', display: 'block' }}>Tech Stack</p>
+            <p className="section-label" style={{ textAlign: 'center', display: 'block' }}>My Toolkit</p>
             <h2 className="section-heading" style={{ textAlign: 'center' }}>Technologies & Tools I <span className="gradient-text">Work With</span></h2>
           </div>
         </section>
