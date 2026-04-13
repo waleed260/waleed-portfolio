@@ -780,11 +780,11 @@ export default function App() {
         <GlowDivider />
         <About />
         {/* Toolkit Section */}
-        <section className="section section-transition section-glass in-view toolkit-section" style={{ marginTop: '-3rem', marginBottom: '-2rem' }}>
+        <section className="section section-transition section-glass in-view toolkit-section">
           <div className="section-bg-blur" />
-          <div className="section-inner section-inner-animated" style={{ gap: '0.3rem' }}>
-            <p className="section-label" style={{ textAlign: 'center', display: 'block', marginBottom: '0.2rem', fontSize: '0.85rem' }}>My Toolkit</p>
-            <h2 className="section-heading" style={{ textAlign: 'center', marginBottom: '0.3rem', fontSize: '1.5rem' }}>Technologies & Tools I <span className="gradient-text">Work With</span></h2>
+          <div className="section-inner section-inner-animated" style={{ gap: '0.5rem' }}>
+            <p className="section-label" style={{ textAlign: 'center', display: 'block', marginBottom: '0.5rem' }}>My Toolkit</p>
+            <h2 className="section-heading" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Technologies & Tools I <span className="gradient-text">Work With</span></h2>
           </div>
         </section>
         <MagicBento

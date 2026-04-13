@@ -2936,32 +2936,4 @@
   100% { opacity: 1; transform: scale(1.3); }
 }
 
-/* Toolkit section - minimal spacing */
-.toolkit-section {
-  padding: 0.5rem 2rem !important;
-  margin-top: -3rem;
-  margin-bottom: -2rem;
-}
-
-.toolkit-section .section-inner {
-  gap: 0.3rem;
-}
-
-.toolkit-section .section-label {
-  margin-bottom: 0.2rem;
-  font-size: 0.85rem;
-}
-
-.toolkit-section .section-heading {
-  margin-bottom: 0.3rem;
-  font-size: 1.5rem;
-}
-
-/* Intro section - compact spacing */
-.intro-section {
-  padding: 1rem 2rem !important;
-}
-
-.intro-section .section-inner {
-  gap: 1rem;
-}
+/* Toolkit section - proper spacing */
