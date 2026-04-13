@@ -779,7 +779,7 @@ export default function App() {
         <Hero />
         <GlowDivider />
         <About />
-        <section className="section section-transition section-glass in-view" style={{ padding: '1rem 2rem', marginTop: '-2rem', marginBottom: '0' }}>
+        <section className="section section-transition section-glass in-view toolkit-section" style={{ marginTop: '-3rem', marginBottom: '-2rem' }}>
           <div className="section-bg-blur" />
           <div className="section-inner section-inner-animated" style={{ gap: '0.3rem' }}>
             <p className="section-label" style={{ textAlign: 'center', display: 'block', marginBottom: '0.2rem', fontSize: '0.85rem' }}>My Toolkit</p>
