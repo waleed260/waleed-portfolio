@@ -2936,4 +2936,22 @@
   100% { opacity: 1; transform: scale(1.3); }
 }
 
-/* Toolkit section - proper spacing */
+/* Toolkit section - no extra space */
+.toolkit-section {
+  padding: 1rem 2rem 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  min-height: auto;
+}
+
+.toolkit-section .section-inner {
+  gap: 0.5rem;
+}
+
+.toolkit-section .section-label {
+  margin-bottom: 0.5rem;
+}
+
+.toolkit-section .section-heading {
+  margin-bottom: 1rem;
+}
