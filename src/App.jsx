@@ -779,6 +779,53 @@ export default function App() {
         <Hero />
         <GlowDivider />
         <About />
+        {/* Introduction Section */}
+        <section className="section section-transition section-glass in-view intro-section" style={{ marginTop: '-2rem', marginBottom: '-1rem' }}>
+          <div className="section-bg-blur" />
+          <div className="section-inner section-inner-animated" style={{ gap: '1rem' }}>
+            <p className="section-label" style={{ textAlign: 'center', display: 'block', marginBottom: '0.3rem' }}>Who I Am</p>
+            <h2 className="section-heading" style={{ textAlign: 'center', marginBottom: '1rem' }}>
+              <span className="gradient-text">Waleed Hassan</span> — Agentic AI Developer
+            </h2>
+            <div className="intro-content" style={{ maxWidth: '900px', margin: '0 auto' }}>
+              <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                A passionate <strong>Agentic AI Developer</strong> based in <strong>Lahore</strong>, specializing in building intelligent systems that think, plan, and execute autonomously. I transform complex workflows into elegant AI-powered experiences — from multi-agent orchestration to visual automation platforms.
+              </p>
+              <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                Currently pursuing <strong>Intermediate (2024-2026)</strong> while diving deep into the world of AI automation, advanced RAG pipelines, and agentic systems. My mission is to push the boundaries of what autonomous AI can achieve — building smart systems that work for you, not the other way around.
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                {['Python', 'Agentic AI', 'AI Automation', 'Git & GitHub', 'Prompt Engineering', 'HTML/CSS'].map(skill => (
+                  <span key={skill} style={{
+                    padding: '0.4rem 1rem',
+                    background: 'rgba(0, 229, 255, 0.08)',
+                    border: '1px solid rgba(0, 229, 255, 0.2)',
+                    borderRadius: '20px',
+                    fontSize: '0.85rem',
+                    color: 'var(--cyan)',
+                    fontWeight: '500'
+                  }}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              <a href="/resume.docx" download style={{
+                display: 'inline-block',
+                padding: '0.6rem 1.5rem',
+                background: 'linear-gradient(135deg, var(--cyan), var(--purple))',
+                color: '#fff',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '0.9rem',
+                marginTop: '0.5rem'
+              }} data-hover>
+                📄 Download Resume
+              </a>
+            </div>
+          </div>
+        </section>
+        {/* Toolkit Section */}
         <section className="section section-transition section-glass in-view toolkit-section" style={{ marginTop: '-3rem', marginBottom: '-2rem' }}>
           <div className="section-bg-blur" />
           <div className="section-inner section-inner-animated" style={{ gap: '0.3rem' }}>

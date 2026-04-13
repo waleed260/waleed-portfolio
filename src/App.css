@@ -2956,3 +2956,12 @@
   margin-bottom: 0.3rem;
   font-size: 1.5rem;
 }
+
+/* Intro section - compact spacing */
+.intro-section {
+  padding: 1rem 2rem !important;
+}
+
+.intro-section .section-inner {
+  gap: 1rem;
+}
