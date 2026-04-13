@@ -169,7 +169,7 @@ function Nav() {
     window.addEventListener('scroll', h, { passive: true })
     return () => window.removeEventListener('scroll', h)
   }, [])
-  const links = useMemo(() => ['About', 'Skills', 'Projects', 'Journey', 'Collaboration'], [])
+  const links = useMemo(() => ['About', 'Projects', 'Journey', 'Collaboration'], [])
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <a href="#hero" className="nav-logo" data-hover>WH<span className="logo-dot">.</span></a>
@@ -333,65 +333,6 @@ function About() {
               <div className="float-card fc-4"><span>🔗</span> Workflows</div>
             </div>
           </div>
-        </div>
-      </div>
-    </Section>
-  )
-}
-
-/* ──────────── SKILLS ──────────── */
-const skillsData = [
-  { category: 'Languages & Frameworks', items: [
-    { name: 'Python', level: 95, icon: '🐍' },
-    { name: 'PyTorch', level: 88, icon: '🔥' },
-    { name: 'FastAPI', level: 90, icon: '⚡' },
-    { name: 'Django', level: 82, icon: '🎯' },
-  ]},
-  { category: 'Infrastructure & Cloud', items: [
-    { name: 'Docker', level: 85, icon: '🐳' },
-    { name: 'AWS', level: 78, icon: '☁️' },
-    { name: 'PostgreSQL', level: 80, icon: '🗄️' },
-    { name: 'Firebase', level: 75, icon: '🔥' },
-  ]},
-  { category: 'Automation & Low-Code', items: [
-    { name: 'n8n', level: 92, icon: '🔗' },
-    { name: 'Zapier', level: 88, icon: '⚙️' },
-    { name: 'Make.com', level: 85, icon: '🧩' },
-    { name: 'Vapi', level: 80, icon: '📞' },
-  ]},
-  { category: 'Platforms', items: [
-    { name: 'Ubuntu / Linux', level: 90, icon: '🐧' },
-    { name: 'Git / GitHub', level: 88, icon: '📦' },
-    { name: 'CLI / Bash', level: 85, icon: '💻' },
-    { name: 'CI/CD', level: 76, icon: '🔄' },
-  ]},
-]
-
-function Skills() {
-  const [ref, vis] = useInView()
-  return (
-    <Section id="skills">
-      <div className="section-inner" ref={ref}>
-        <p className="section-label">Skills</p>
-        <h2 className="section-heading">Developer of agentic systems,<br /><span className="gradient-text">low-code automation, and scalable AI tools</span></h2>
-        <div className={`skills-grid ${vis ? 'in-view' : ''}`}>
-          {skillsData.map((group, gi) => (
-            <div className="skill-group" key={group.category} style={{ transitionDelay: `${gi * 0.1}s` }}>
-              <h3 className="skill-group-title">{group.category}</h3>
-              {group.items.map((s, si) => (
-                <div className="skill-item" key={s.name} style={{ transitionDelay: `${(gi * 0.1) + (si * 0.06)}s` }} data-hover>
-                  <div className="skill-header">
-                    <span className="skill-icon">{s.icon}</span>
-                    <span className="skill-name">{s.name}</span>
-                    <span className="skill-level">{s.level}%</span>
-                  </div>
-                  <div className="skill-bar-bg">
-                    <div className="skill-bar-fill" style={vis ? { width: `${s.level}%` } : { width: '0%' }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          ))}
         </div>
       </div>
     </Section>
@@ -838,8 +779,6 @@ export default function App() {
         <Hero />
         <GlowDivider />
         <About />
-        <GlowDivider />
-        <Skills />
         <GlowDivider />
         <section className="section section-transition section-glass in-view">
           <div className="section-bg-blur" />
