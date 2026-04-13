@@ -841,17 +841,11 @@ export default function App() {
         <GlowDivider />
         <Skills />
         <GlowDivider />
-        <TechStack />
-        <GlowDivider />
-        <DevQuote />
-        <GlowDivider />
-        <Projects />
-        <GlowDivider />
         <section className="section section-transition section-glass in-view">
           <div className="section-bg-blur" />
           <div className="section-inner section-inner-animated">
-            <p className="section-label" style={{ textAlign: 'center', display: 'block' }}>Bento Grid</p>
-            <h2 className="section-heading" style={{ textAlign: 'center' }}>Explore <span className="gradient-text">My World</span></h2>
+            <p className="section-label" style={{ textAlign: 'center', display: 'block' }}>Tech Stack</p>
+            <h2 className="section-heading" style={{ textAlign: 'center' }}>Technologies & Tools I <span className="gradient-text">Work With</span></h2>
           </div>
         </section>
         <MagicBento
@@ -867,6 +861,10 @@ export default function App() {
           glowColor="132, 0, 255"
           disableAnimations={false}
         />
+        <GlowDivider />
+        <DevQuote />
+        <GlowDivider />
+        <Projects />
         <GlowDivider />
         <Journey />
         <GlowDivider />
