@@ -779,11 +779,11 @@ export default function App() {
         <Hero />
         <GlowDivider />
         <About />
-        <section className="section section-transition section-glass in-view">
+        <section className="section section-transition section-glass in-view" style={{ padding: '1.5rem 2rem', marginBottom: '0' }}>
           <div className="section-bg-blur" />
-          <div className="section-inner section-inner-animated">
-            <p className="section-label" style={{ textAlign: 'center', display: 'block' }}>My Toolkit</p>
-            <h2 className="section-heading" style={{ textAlign: 'center' }}>Technologies & Tools I <span className="gradient-text">Work With</span></h2>
+          <div className="section-inner section-inner-animated" style={{ gap: '0.5rem' }}>
+            <p className="section-label" style={{ textAlign: 'center', display: 'block', marginBottom: '0.25rem' }}>My Toolkit</p>
+            <h2 className="section-heading" style={{ textAlign: 'center', marginBottom: '0.5rem', fontSize: '1.75rem' }}>Technologies & Tools I <span className="gradient-text">Work With</span></h2>
           </div>
         </section>
         <MagicBento
