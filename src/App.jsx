@@ -169,7 +169,7 @@ function Nav() {
     window.addEventListener('scroll', h, { passive: true })
     return () => window.removeEventListener('scroll', h)
   }, [])
-  const links = useMemo(() => ['About', 'Skills', 'Projects', 'Collaboration', 'Journey'], [])
+  const links = useMemo(() => ['About', 'Skills', 'Projects', 'Journey', 'Collaboration'], [])
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <a href="#hero" className="nav-logo" data-hover>WH<span className="logo-dot">.</span></a>
@@ -847,8 +847,6 @@ export default function App() {
         <GlowDivider />
         <Projects />
         <GlowDivider />
-        <Collaboration />
-        <GlowDivider />
         <section className="section section-transition section-glass in-view">
           <div className="section-bg-blur" />
           <div className="section-inner section-inner-animated">
@@ -871,6 +869,8 @@ export default function App() {
         />
         <GlowDivider />
         <Journey />
+        <GlowDivider />
+        <Collaboration />
         <Footer />
       </div>
       {/* 3D Ball Robot - follows user across all pages */}
