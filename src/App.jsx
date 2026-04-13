@@ -780,49 +780,30 @@ export default function App() {
         <GlowDivider />
         <About />
         {/* Introduction Section */}
-        <section className="section section-transition section-glass in-view intro-section" style={{ marginTop: '-2rem', marginBottom: '-1rem' }}>
+        <section className="section section-transition section-glass in-view intro-section">
           <div className="section-bg-blur" />
-          <div className="section-inner section-inner-animated" style={{ gap: '0.8rem' }}>
-            <p className="section-label" style={{ textAlign: 'center', display: 'block', marginBottom: '0.3rem' }}>Who I Am</p>
+          <div className="section-inner section-inner-animated" style={{ gap: '0.6rem' }}>
+            <p className="section-label" style={{ textAlign: 'center', display: 'block', marginBottom: '0.4rem' }}>Who I Am</p>
             <h2 className="section-heading" style={{ textAlign: 'center', marginBottom: '0.8rem' }}>
               <span className="gradient-text">Waleed Hassan</span> — Agentic AI Developer
             </h2>
-            <div className="intro-content" style={{ maxWidth: '800px', margin: '0 auto' }}>
-              <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: '1.7', marginBottom: '1rem' }}>
-                A passionate <strong>Agentic AI Developer</strong> based in <strong>Lahore</strong>, specializing in building intelligent systems that think, plan, and execute autonomously. I transform complex workflows into elegant AI-powered experiences — from multi-agent orchestration to visual automation platforms.
-              </p>
-              <div style={{ display: 'flex', justifyContent: 'center', gap: '0.8rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
-                {['Python', 'Agentic AI', 'AI Automation', 'Git & GitHub', 'Prompt Engineering', 'HTML/CSS'].map(skill => (
-                  <span key={skill} style={{
-                    padding: '0.35rem 0.9rem',
-                    background: 'rgba(0, 229, 255, 0.08)',
-                    border: '1px solid rgba(0, 229, 255, 0.2)',
-                    borderRadius: '20px',
-                    fontSize: '0.8rem',
-                    color: 'var(--cyan)',
-                    fontWeight: '500'
-                  }}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <a href="/resume.docx" download style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.4rem',
-                padding: '0.5rem 1.2rem',
-                background: 'linear-gradient(135deg, var(--cyan), var(--purple))',
-                color: '#fff',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                fontWeight: '600',
-                fontSize: '0.85rem',
-                margin: '0 auto',
-                width: 'fit-content'
-              }} data-hover>
-                📄 Download Resume
-              </a>
+            <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.7', maxWidth: '700px', margin: '0 auto 0.8rem' }}>
+              A passionate <strong>Agentic AI Developer</strong> based in <strong>Lahore</strong>, specializing in building intelligent systems that think, plan, and execute autonomously. I transform complex workflows into elegant AI-powered experiences — from multi-agent orchestration to visual automation platforms.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
+              {['Python', 'Agentic AI', 'AI Automation', 'Git & GitHub', 'Prompt Engineering', 'HTML/CSS'].map(skill => (
+                <span key={skill} style={{
+                  padding: '0.3rem 0.8rem',
+                  background: 'rgba(0, 229, 255, 0.08)',
+                  border: '1px solid rgba(0, 229, 255, 0.2)',
+                  borderRadius: '20px',
+                  fontSize: '0.78rem',
+                  color: 'var(--cyan)',
+                  fontWeight: '500'
+                }}>
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
         </section>
