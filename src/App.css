@@ -960,7 +960,7 @@
   opacity: 0;
 }
 
-.techstack-grid-3d.in-view .techstack-group-3d {
+.section.in-view .techstack-group-3d {
   opacity: 1;
   transform: translateY(0);
 }

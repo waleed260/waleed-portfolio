@@ -454,13 +454,12 @@ const techStackData = [
 ]
 
 function TechStack() {
-  const [ref, vis] = useInView()
   return (
     <Section id="techstack">
-      <div className="section-inner" ref={ref}>
+      <div className="section-inner">
         <p className="section-label">Tech Stack</p>
         <h2 className="section-heading">Technologies & <span className="gradient-text">tools I work with</span></h2>
-        <div className={`techstack-grid-3d ${vis ? 'in-view' : ''}`}>
+        <div className="techstack-grid-3d">
           {techStackData.map((group, gi) => (
             <div className="techstack-group-3d" key={group.category} style={{ transitionDelay: `${gi * 0.1}s` }}>
               <h3 className="techstack-group-title">{group.category}</h3>
