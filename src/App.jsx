@@ -363,15 +363,6 @@ function About() {
             <p>
               I'm looking to collaborate on open-source Agentic AI frameworks, data-driven Python projects, and low-code workflows. Beyond code, I'm passionate about Ubuntu/Linux ecosystems and pushing the boundaries of what autonomous AI systems can achieve.
             </p>
-            <div className="about-quote">
-              <span className="quote-icon">⚡</span>
-              <p><em>I can set up a full development environment in the terminal faster than most people can open a browser.</em></p>
-            </div>
-            <div className="about-tags">
-              {['Agentic AI', 'Multi-Agent Systems', 'Advanced RAG', 'Python', 'PyTorch', 'n8n', 'Zapier', 'Make.com', 'Vapi', 'Ubuntu/Linux', 'Docker', 'AWS'].map(t => (
-                <span key={t} className="about-tag">{t}</span>
-              ))}
-            </div>
           </div>
           <div className="about-visual">
             <div className="about-avatar-ring">
