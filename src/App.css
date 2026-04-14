@@ -3218,5 +3218,146 @@
   }
 }
 
+/* ═══════════════════════════════════════ POST LOADING COLOR BURST ═══════════════════════════════════════ */
+.post-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.post-transition.active {
+  opacity: 1;
+  visibility: visible;
+  animation: post-transition-fade 1.8s ease-out forwards;
+}
+
+@keyframes post-transition-fade {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+.post-transition-grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Color blobs that burst outward */
+.post-transition-blob {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--blob-color);
+  box-shadow: 0 0 40px var(--blob-color), 0 0 80px var(--blob-color);
+  opacity: 0;
+  filter: blur(20px);
+}
+
+.post-transition.active .post-transition-blob {
+  animation: blob-burst 1s ease-out var(--blob-delay) forwards;
+}
+
+@keyframes blob-burst {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.5);
+  }
+  100% {
+    transform: 
+      translate(
+        calc(cos(var(--blob-angle)) * 600px),
+        calc(sin(var(--blob-angle)) * 600px)
+      ) 
+      scale(3);
+    opacity: 0;
+  }
+}
+
+/* Central flash */
+.post-transition-flash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 30%, transparent 70%);
+  opacity: 0;
+}
+
+.post-transition.active .post-transition-flash {
+  animation: flash-burst 0.6s ease-out var(--flash-delay) forwards;
+}
+
+@keyframes flash-burst {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(15);
+    opacity: 0;
+  }
+}
+
+/* Horizontal color sweep */
+.post-transition-sweep {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 0, 110, 0.15) 20%,
+    rgba(0, 229, 255, 0.15) 40%,
+    rgba(168, 85, 247, 0.15) 60%,
+    rgba(244, 114, 182, 0.15) 80%,
+    transparent 100%
+  );
+  filter: blur(30px);
+  opacity: 0;
+}
+
+.post-transition.active .post-transition-sweep {
+  animation: sweep-across 1.2s ease-in-out var(--sweep-delay) forwards;
+}
+
+@keyframes sweep-across {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
 
 
