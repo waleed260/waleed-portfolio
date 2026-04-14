@@ -797,24 +797,9 @@ function Footer() {
 
 /* ═══════════════════════════════════════ Post Loading Animation ═══════════════════════════════════════ */
 function PostLoadingAnimation({ triggered }) {
-  const items = [
-    { delay: 0, className: 'post-anim-line post-anim-line-1' },
-    { delay: 100, className: 'post-anim-line post-anim-line-2' },
-    { delay: 200, className: 'post-anim-line post-anim-line-3' },
-    { delay: 300, className: 'post-anim-flash post-anim-flash-1' },
-    { delay: 400, className: 'post-anim-flash post-anim-flash-2' },
-  ]
-
   return (
-    <div className={`post-loading-overlay ${triggered ? 'animating' : ''}`}>
-      {items.map((item, i) => (
-        <div
-          key={i}
-          className={item.className}
-          style={{ '--anim-delay': `${item.delay}ms` }}
-        />
-      ))}
-      <div className="post-anim-scanline" style={{ '--scan-delay': '200ms' }} />
+    <div className={`post-loading-fade ${triggered ? 'animate' : ''}`}>
+      <div className="post-loading-fade-inner"></div>
     </div>
   )
 }
