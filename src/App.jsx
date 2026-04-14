@@ -795,54 +795,13 @@ function Footer() {
   )
 }
 
-/* ═══════════════════════════════════════ Post Loading Color Burst ═══════════════════════════════════════ */
-function PostLoadingTransition({ triggered }) {
-  const colorBlobs = [
-    { angle: 0, color: '#ff006e', delay: 0 },
-    { angle: 60, color: '#00e5ff', delay: 100 },
-    { angle: 120, color: '#a855f7', delay: 200 },
-    { angle: 180, color: '#f472b6', delay: 150 },
-    { angle: 240, color: '#4d7cff', delay: 250 },
-    { angle: 300, color: '#ff6b35', delay: 180 },
-  ]
-
-  return (
-    <div className={`post-transition ${triggered ? 'active' : ''}`}>
-      <div className="post-transition-grid">
-        {colorBlobs.map((blob, i) => (
-          <div
-            key={i}
-            className="post-transition-blob"
-            style={{
-              '--blob-angle': `${blob.angle}deg`,
-              '--blob-color': blob.color,
-              '--blob-delay': `${blob.delay}ms`
-            }}
-          />
-        ))}
-      </div>
-      <div className="post-transition-flash" style={{ '--flash-delay': '300ms' }} />
-      <div className="post-transition-sweep" style={{ '--sweep-delay': '200ms' }} />
-    </div>
-  )
-}
-
 /* ═══════════════════════════════════════ APP ═══════════════════════════════════════ */
 export default function App() {
   const [loading, setLoading] = useState(true)
-  const [transitionActive, setTransitionActive] = useState(false)
-
-  useEffect(() => {
-    if (!loading) {
-      const timer = setTimeout(() => setTransitionActive(true), 50)
-      return () => clearTimeout(timer)
-    }
-  }, [loading])
 
   return (
     <>
       {loading && <LoadingScreen onLoadComplete={() => setLoading(false)} />}
-      <PostLoadingTransition triggered={transitionActive} />
 
       {/* Fixed LightRays Background */}
       <div style={{
