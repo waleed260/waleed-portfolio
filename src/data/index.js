@@ -117,3 +117,4 @@ export const collabAreas = [
   { icon: '🔬', label: 'Advanced RAG Research' },
   { icon: '🚀', label: 'Scalable AI Product Development' },
 ]
+ 
