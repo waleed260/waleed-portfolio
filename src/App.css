@@ -1352,10 +1352,15 @@
 
 /* ═══════════════════════════════════════ 3D ICONS & BADGES ═══════════════════════════════════════ */
 
-/* 3D Borders & Glow Effects */
+/* 3D Borders & Glow Effects + Section base styles */
 .section {
   position: relative;
-  padding: 2rem 2rem;
+  padding: 0.5rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
 }
 
 .section::before {
@@ -1377,32 +1382,22 @@
   opacity: 0.3;
 }
 
-@keyframes borderMove {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
-}
-
-/* Enhanced Section Transitions - Lightweight */
-.section {
-  position: relative;
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-  will-change: opacity, transform;
-}
-
 .section.in-view {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* When section scrolls out */
 .section:not(.in-view) {
   opacity: 0;
-  transform: translateY(60px);
+  transform: translateY(30px);
 }
 
-/* Glass Background - Lightweight */
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* Glass Background */
 .section-glass {
   position: relative;
 }
@@ -1446,7 +1441,7 @@
 /* Section inner - stagger children */
 .section-inner-animated > * {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(20px);
 }
 
 .section.in-view .section-inner-animated > *:nth-child(1) {
@@ -1476,18 +1471,12 @@
 @keyframes slideUpFade {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Section parallax on scroll */
-.section {
-  will-change: opacity, transform;
-  backface-visibility: hidden;
 }
 
 /* Different entrance animations for specific sections */
@@ -1586,11 +1575,6 @@
 
 .section-inner-animated {
   width: 100%;
-}
-
-/* Section spacing - tight */
-.section {
-  padding: 1.5rem 0;
 }
 
 /* GlowDivider - bold */
