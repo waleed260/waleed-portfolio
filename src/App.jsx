@@ -795,27 +795,9 @@ function Footer() {
   )
 }
 
-/* ═══════════════════════════════════════ Post Loading Animation ═══════════════════════════════════════ */
-function PostLoadingAnimation({ triggered }) {
-  return (
-    <div className={`post-loading-fade ${triggered ? 'animate' : ''}`}>
-      <div className="post-loading-fade-inner"></div>
-    </div>
-  )
-}
-
 /* ═══════════════════════════════════════ APP ═══════════════════════════════════════ */
 export default function App() {
   const [loading, setLoading] = useState(true)
-  const [postLoadAnim, setPostLoadAnim] = useState(false)
-
-  useEffect(() => {
-    if (!loading) {
-      // Trigger entrance animations after loading completes
-      const timer = setTimeout(() => setPostLoadAnim(true), 100)
-      return () => clearTimeout(timer)
-    }
-  }, [loading])
 
   return (
     <>
@@ -856,7 +838,6 @@ export default function App() {
         pointerEvents: loading ? 'none' : 'auto',
         transition: 'opacity 0.5s ease-in-out'
       }}>
-        <PostLoadingAnimation triggered={postLoadAnim} />
         <Cursor />
         <Nav />
         <Hero />
