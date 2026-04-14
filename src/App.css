@@ -2179,6 +2179,13 @@
 }
 
 /* Project Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
 .project-tag {
   padding: 0.35rem 0.75rem;
   font-size: 0.75rem;
