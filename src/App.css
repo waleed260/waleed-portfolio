@@ -1355,7 +1355,7 @@
 /* 3D Borders & Glow Effects + Section base styles */
 .section {
   position: relative;
-  padding: 0.5rem 2rem;
+  padding: 0 2rem 0.5rem;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease-out, transform 0.7s ease-out;
