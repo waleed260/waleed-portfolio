@@ -1705,6 +1705,23 @@
   font-weight: 700;
 }
 
+.btn-secondary {
+  background: rgba(18, 16, 30, 0.8);
+  border: 2px solid rgba(0, 229, 255, 0.3);
+  color: #00e5ff;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 229, 255, 0.1);
+  border-color: #00e5ff;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.4);
+}
+
 .btn-outline {
   background: transparent;
   border: 2px solid #00e5ff;
