@@ -795,14 +795,47 @@ function Footer() {
   )
 }
 
+/* ═══════════════════════════════════════ Post Loading Animation ═══════════════════════════════════════ */
+function PostLoadingAnimation({ triggered }) {
+  const items = [
+    { delay: 0, className: 'post-anim-line post-anim-line-1' },
+    { delay: 100, className: 'post-anim-line post-anim-line-2' },
+    { delay: 200, className: 'post-anim-line post-anim-line-3' },
+    { delay: 300, className: 'post-anim-flash post-anim-flash-1' },
+    { delay: 400, className: 'post-anim-flash post-anim-flash-2' },
+  ]
+
+  return (
+    <div className={`post-loading-overlay ${triggered ? 'animating' : ''}`}>
+      {items.map((item, i) => (
+        <div
+          key={i}
+          className={item.className}
+          style={{ '--anim-delay': `${item.delay}ms` }}
+        />
+      ))}
+      <div className="post-anim-scanline" style={{ '--scan-delay': '200ms' }} />
+    </div>
+  )
+}
+
 /* ═══════════════════════════════════════ APP ═══════════════════════════════════════ */
 export default function App() {
   const [loading, setLoading] = useState(true)
+  const [postLoadAnim, setPostLoadAnim] = useState(false)
+
+  useEffect(() => {
+    if (!loading) {
+      // Trigger entrance animations after loading completes
+      const timer = setTimeout(() => setPostLoadAnim(true), 100)
+      return () => clearTimeout(timer)
+    }
+  }, [loading])
 
   return (
     <>
       {loading && <LoadingScreen onLoadComplete={() => setLoading(false)} />}
-      
+
       {/* Fixed LightRays Background */}
       <div style={{
         position: 'fixed',
@@ -829,15 +862,16 @@ export default function App() {
           saturation={1.1}
         />
       </div>
-      
+
       {/* Content sits above the background */}
-      <div style={{ 
-        position: 'relative', 
+      <div style={{
+        position: 'relative',
         zIndex: 1,
         opacity: loading ? 0 : 1,
         pointerEvents: loading ? 'none' : 'auto',
         transition: 'opacity 0.5s ease-in-out'
       }}>
+        <PostLoadingAnimation triggered={postLoadAnim} />
         <Cursor />
         <Nav />
         <Hero />
