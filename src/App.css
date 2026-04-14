@@ -621,6 +621,21 @@
     padding: 1.25rem;
   }
 
+  .project-tags {
+    gap: 0.4rem;
+  }
+
+  .project-tag {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .section-inner {
     padding: 0 1rem;
   }
