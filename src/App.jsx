@@ -836,6 +836,8 @@ export default function App() {
         <Nav />
         <Hero />
         <GlowDivider />
+        <About />
+        <GlowDivider />
         {/* Toolkit Section */}
         <Section id="toolkit" className="toolkit-section">
           <div className="section-inner section-inner-animated" style={{ gap: '0.5rem' }}>
@@ -856,8 +858,6 @@ export default function App() {
             />
           </div>
         </Section>
-        <GlowDivider />
-        <About />
         <GlowDivider />
         <DevQuote />
         <GlowDivider />
