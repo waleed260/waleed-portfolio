@@ -193,7 +193,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 6rem 2rem 4rem;
+  padding: 6rem 2rem 2rem;
 }
 
 .hero-grid {
@@ -482,7 +482,7 @@
   }
 
   .hero-section {
-    padding: 5rem 1rem 3rem;
+    padding: 5rem 1rem 1.5rem;
   }
 
   .hero-intro-3d .intro-full-name {
@@ -679,7 +679,7 @@
   }
 
   .hero-section {
-    padding: 4rem 0.75rem 2rem;
+    padding: 4rem 0.75rem 1rem;
   }
 
   .hero-stats {
@@ -1590,7 +1590,7 @@
 
 /* Section spacing - tight */
 .section {
-  padding: 3rem 0;
+  padding: 1.5rem 0;
 }
 
 /* GlowDivider - bold */
@@ -1598,7 +1598,7 @@
   height: 2px;
   background: linear-gradient(90deg, transparent, #00e5ff, #a855f7, #f472b6, transparent);
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 50px rgba(168, 85, 247, 0.4);
-  margin: 1.5rem 2rem;
+  margin: 1rem 2rem;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;

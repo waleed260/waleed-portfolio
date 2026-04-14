@@ -238,3 +238,68 @@ function LaserFlowShowcase() {
 | Duplicate CSS rules | ~15 rules |
 | Unused CSS class definitions | ~10 classes |
 | **Total code reduction** | **~200+ lines** |
+
+---
+
+## 6. Spacing Adjustments (Hero to Toolkit gap reduced)
+
+### Original values (too much spacing):
+
+```css
+/* Hero section - line ~190 */
+.hero-section {
+  padding: 6rem 2rem 4rem; /* 4rem bottom padding */
+}
+
+/* Tablet - line ~484 */
+.hero-section {
+  padding: 5rem 1rem 3rem;
+}
+
+/* Mobile - line ~681 */
+.hero-section {
+  padding: 4rem 0.75rem 2rem;
+}
+
+/* Section spacing - line ~1593 */
+.section {
+  padding: 3rem 0; /* 3rem top + 3rem bottom = 6rem */
+}
+
+/* GlowDivider - line ~1596 */
+.glow-divider {
+  margin: 1.5rem 2rem; /* 1.5rem top + bottom */
+}
+```
+
+**Total gap from Hero to Toolkit: ~10rem (way too much)**
+
+### New values (tighter spacing):
+
+```css
+.hero-section {
+  padding: 6rem 2rem 2rem; /* Reduced from 4rem to 2rem */
+}
+
+/* Tablet */
+.hero-section {
+  padding: 5rem 1rem 1.5rem; /* Reduced from 3rem to 1.5rem */
+}
+
+/* Mobile */
+.hero-section {
+  padding: 4rem 0.75rem 1rem; /* Reduced from 2rem to 1rem */
+}
+
+.section {
+  padding: 1.5rem 0; /* Reduced from 3rem to 1.5rem */
+}
+
+.glow-divider {
+  margin: 1rem 2rem; /* Reduced from 1.5rem to 1rem */
+}
+```
+
+**New total gap: ~5rem (much tighter and cleaner)**
+
+**Reason:** The gap between Hero intro and Toolkit section was too large (~10rem). Reduced spacing by ~50% for a more compact, professional layout.
