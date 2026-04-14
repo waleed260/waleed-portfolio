@@ -18,6 +18,60 @@ function useInView(threshold = 0.12) {
   return [ref, visible]
 }
 
+/* ──────────── Loading Screen ──────────── */
+function LoadingScreen({ onLoadComplete }) {
+  const [progress, setProgress] = useState(0)
+  const [fadeOut, setFadeOut] = useState(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(interval)
+          setFadeOut(true)
+          setTimeout(() => onLoadComplete(), 800)
+          return 100
+        }
+        return prev + Math.random() * 15 + 5
+      })
+    }, 200)
+
+    return () => clearInterval(interval)
+  }, [onLoadComplete])
+
+  return (
+    <div className={`loading-screen ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="loading-content">
+        <div className="loading-logo">
+          <div className="loading-ring"></div>
+          <div className="loading-core"></div>
+        </div>
+        <h1 className="loading-title">
+          <span className="loading-text-word">Loading</span>
+          <span className="loading-dots">
+            <span className="dot">.</span>
+            <span className="dot">.</span>
+            <span className="dot">.</span>
+          </span>
+        </h1>
+        <div className="loading-progress-bar">
+          <div className="loading-progress-fill" style={{ width: `${Math.min(progress, 100)}%` }}></div>
+        </div>
+        <p className="loading-subtitle">Preparing intelligent systems...</p>
+        <div className="loading-particles">
+          {Array.from({ length: 20 }, (_, i) => (
+            <div key={i} className="loading-particle" style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 3}s`
+            }}></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function useMouseParallax(strength = 0.02) {
   const [offset, setOffset] = useState({ x: 0, y: 0 })
   useEffect(() => {
@@ -743,8 +797,12 @@ function Footer() {
 
 /* ═══════════════════════════════════════ APP ═══════════════════════════════════════ */
 export default function App() {
+  const [loading, setLoading] = useState(true)
+
   return (
     <>
+      {loading && <LoadingScreen onLoadComplete={() => setLoading(false)} />}
+      
       {/* Fixed LightRays Background */}
       <div style={{
         position: 'fixed',
@@ -752,7 +810,7 @@ export default function App() {
         left: 0,
         width: '100vw',
         height: '100vh',
-        zIndex: 0,
+        zIndex: loading ? -1 : 0,
         pointerEvents: 'none',
         overflow: 'hidden'
       }}>
@@ -773,7 +831,13 @@ export default function App() {
       </div>
       
       {/* Content sits above the background */}
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div style={{ 
+        position: 'relative', 
+        zIndex: 1,
+        opacity: loading ? 0 : 1,
+        pointerEvents: loading ? 'none' : 'auto',
+        transition: 'opacity 0.5s ease-in-out'
+      }}>
         <Cursor />
         <Nav />
         <Hero />
