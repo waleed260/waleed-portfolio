@@ -251,7 +251,7 @@ function Section({ id, className = '', children }) {
     <section id={id} ref={ref} className={`section section-transition section-glass ${className} ${vis ? 'in-view' : ''}`}>
       <div className="section-bg-blur" />
       <div className="section-inner section-inner-animated">
-        {vis ? children : null}
+        {children}
       </div>
     </section>
   )
@@ -347,11 +347,10 @@ function Hero() {
 
 /* ──────────── ABOUT ──────────── */
 function About() {
-  const [ref, vis] = useInView()
   return (
     <Section id="about">
-      <div className="section-inner" ref={ref}>
-        <div className={`about-grid ${vis ? 'in-view' : ''}`}>
+      <div className="section-inner">
+        <div className="about-grid">
           <div className="about-text">
             <p className="section-label">About Me</p>
             <h2 className="section-heading">Turning complex workflows into<br /><span className="gradient-text">elegant AI-powered experiences</span></h2>
@@ -497,7 +496,6 @@ const DEV_QUOTES = [
 ]
 
 function DevQuote() {
-  const [ref, vis] = useInView()
   const [idx, setIdx] = useState(0)
 
   useEffect(() => {
@@ -507,8 +505,8 @@ function DevQuote() {
 
   return (
     <Section id="quote">
-      <div className="section-inner" ref={ref}>
-        <div className={`dev-quote-wrapper ${vis ? 'in-view' : ''}`}>
+      <div className="section-inner">
+        <div className="dev-quote-wrapper">
           <p className="section-label">Inspiration</p>
           <h2 className="section-heading">Words that <span className="gradient-text">drive innovation</span></h2>
           <div className="quote-frame">
@@ -590,7 +588,6 @@ const projectsData = [
 ]
 
 function Projects() {
-  const [ref, vis] = useInView()
   const [tilt, setTilt] = useState({})
   const handleTilt = (e, idx) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -601,10 +598,10 @@ function Projects() {
   const resetTilt = (idx) => setTilt(prev => ({ ...prev, [idx]: { x: 0, y: 0 } }))
   return (
     <Section id="projects">
-      <div className="section-inner" ref={ref}>
+      <div className="section-inner">
         <p className="section-label">Projects</p>
         <h2 className="section-heading">Intelligent systems in <span className="gradient-text">action</span></h2>
-        <div className={`projects-grid ${vis ? 'in-view' : ''}`}>
+        <div className="projects-grid">
           {projectsData.map((p, i) => {
             const t = tilt[i] || { x: 0, y: 0 }
             return (
@@ -643,11 +640,10 @@ function Projects() {
 
 /* ──────────── COLLABORATION ──────────── */
 function Collaboration() {
-  const [ref, vis] = useInView()
   return (
     <Section id="collaboration">
-      <div className="section-inner" ref={ref}>
-        <div className={`collab-wrapper ${vis ? 'in-view' : ''}`}>
+      <div className="section-inner">
+        <div className="collab-wrapper">
           <div className="collab-panel">
             <div className="collab-glow-bg" />
             <p className="section-label">Collaboration</p>
@@ -712,13 +708,12 @@ const timelineData = [
 ]
 
 function Journey() {
-  const [ref, vis] = useInView()
   return (
     <Section id="journey">
-      <div className="section-inner" ref={ref}>
+      <div className="section-inner">
         <p className="section-label">Learning Journey</p>
         <h2 className="section-heading">The path from <span className="gradient-text">curiosity to capability</span></h2>
-        <div className={`timeline ${vis ? 'in-view' : ''}`}>
+        <div className="timeline">
           {timelineData.map((item, i) => (
             <div className="timeline-item" key={item.title} style={{ transitionDelay: `${i * 0.15}s` }}>
               <div className="timeline-node">
@@ -842,28 +837,28 @@ export default function App() {
         <Nav />
         <Hero />
         <GlowDivider />
-        <About />
         {/* Toolkit Section */}
-        <section className="section section-transition section-glass in-view toolkit-section">
-          <div className="section-bg-blur" />
+        <Section id="toolkit" className="toolkit-section">
           <div className="section-inner section-inner-animated" style={{ gap: '0.5rem' }}>
             <p className="section-label" style={{ textAlign: 'center', display: 'block', marginBottom: '0.5rem' }}>My Toolkit</p>
             <h2 className="section-heading" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Technologies & Tools I <span className="gradient-text">Work With</span></h2>
+            <MagicBento
+              textAutoHide={true}
+              enableStars
+              enableSpotlight
+              enableBorderGlow={true}
+              enableTilt={false}
+              enableMagnetism={false}
+              clickEffect
+              spotlightRadius={400}
+              particleCount={12}
+              glowColor="132, 0, 255"
+              disableAnimations={false}
+            />
           </div>
-        </section>
-        <MagicBento
-          textAutoHide={true}
-          enableStars
-          enableSpotlight
-          enableBorderGlow={true}
-          enableTilt={false}
-          enableMagnetism={false}
-          clickEffect
-          spotlightRadius={400}
-          particleCount={12}
-          glowColor="132, 0, 255"
-          disableAnimations={false}
-        />
+        </Section>
+        <GlowDivider />
+        <About />
         <GlowDivider />
         <DevQuote />
         <GlowDivider />
