@@ -303,3 +303,59 @@ function LaserFlowShowcase() {
 **New total gap: ~5rem (much tighter and cleaner)**
 
 **Reason:** The gap between Hero intro and Toolkit section was too large (~10rem). Reduced spacing by ~50% for a more compact, professional layout.
+
+---
+
+## 7. Duplicate .section CSS Rules Consolidated (MASSIVE GAP FIX)
+
+### Problem: 4 duplicate `.section` definitions causing conflicting styles and massive gaps
+
+```css
+/* Duplicate #1 - line ~1356 */
+.section {
+  position: relative;
+  padding: 2rem 2rem;
+}
+
+/* Duplicate #2 - line ~1386 (with transform causing 60px offset!) */
+.section {
+  position: relative;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Duplicate #3 - line ~1488 (parallax) */
+.section {
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+/* Duplicate #4 - line ~1592 (spacing) */
+.section {
+  padding: 1.5rem 0;
+}
+```
+
+### Consolidated into single clean rule:
+
+```css
+.section {
+  position: relative;
+  padding: 0.5rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+```
+
+### Key changes:
+- **padding**: `2rem` → `0.5rem` (75% reduction)
+- **translateY**: `60px` → `30px` (50% reduction — was pushing content way down)
+- **4 duplicate rules** → **1 clean rule** with all properties combined
+- Removed orphan comment `/* Section spacing - tight */`
+
+**Result:** Massive gap between Hero and Toolkit section eliminated. Content now flows naturally with minimal spacing.
