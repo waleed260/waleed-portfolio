@@ -59,12 +59,17 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   overflow-y: auto;
-  cursor: none;
+  cursor: none !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   transform-style: preserve-3d;
   perspective: 1000px;
+}
+
+/* Ensure cursor is hidden everywhere */
+*, *::before, *::after {
+  cursor: none !important;
 }
 
 /* Minimal slim scrollbar */

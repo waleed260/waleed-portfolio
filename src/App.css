@@ -3089,7 +3089,7 @@
   border-top-color: #00e5ff;
   border-right-color: #10b981;
   animation: loading-spin 2s linear infinite;
-  box-shadow: 0 0 20px rgba(132, 0, 255, 0.3), inset 0 0 20px rgba(132, 0, 255, 0.1);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), inset 0 0 20px rgba(16, 185, 129, 0.1);
 }
 
 .loading-ring::before {
@@ -3107,9 +3107,9 @@
   position: absolute;
   inset: 25px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(132, 0, 255, 0.6) 0%, rgba(16, 185, 129, 0.3) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.6) 0%, rgba(20, 184, 166, 0.3) 50%, transparent 70%);
   animation: loading-pulse 1.5s ease-in-out infinite;
-  box-shadow: 0 0 30px rgba(132, 0, 255, 0.6), 0 0 60px rgba(132, 0, 255, 0.3);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.6), 0 0 60px rgba(16, 185, 129, 0.3);
 }
 
 @keyframes loading-spin {
@@ -3148,10 +3148,10 @@
 
 @keyframes loading-text-glow {
   0%, 100% {
-    filter: drop-shadow(0 0 8px rgba(132, 0, 255, 0.4));
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4));
   }
   50% {
-    filter: drop-shadow(0 0 20px rgba(132, 0, 255, 0.8));
+    filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.8));
   }
 }
 
@@ -3189,7 +3189,7 @@
   width: 300px;
   max-width: 80vw;
   height: 4px;
-  background: rgba(132, 0, 255, 0.1);
+  background: rgba(16, 185, 129, 0.1);
   border-radius: 2px;
   margin: 0 auto 1rem;
   overflow: hidden;
@@ -3200,7 +3200,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(132, 0, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.2), transparent);
   animation: loading-shimmer 2s infinite;
 }
 
@@ -3214,7 +3214,7 @@
   background: linear-gradient(90deg, #00e5ff 0%, #10b981 50%, #f472b6 100%);
   border-radius: 2px;
   transition: width 0.3s ease-out;
-  box-shadow: 0 0 10px rgba(132, 0, 255, 0.6);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
   position: relative;
 }
 
@@ -3227,7 +3227,7 @@
   height: 8px;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 10px rgba(132, 0, 255, 0.8), 0 0 20px rgba(132, 0, 255, 0.4);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.8), 0 0 20px rgba(16, 185, 129, 0.4);
 }
 
 /* Subtitle */
@@ -3252,8 +3252,8 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(132, 0, 255, 0.6);
-  box-shadow: 0 0 6px rgba(132, 0, 255, 0.8);
+  background: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.8);
   animation: loading-float-up linear infinite;
 }
 
