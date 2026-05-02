@@ -825,8 +825,12 @@ function Journey() {
             <div
               className="journey-card"
               key={item.title}
-              style={{ transitionDelay: `${i * 0.1}s` }}
+              style={{
+                transitionDelay: `${i * 0.1}s`,
+                '--card-color': item.color
+              }}
             >
+              <div className="journey-progress-bar" style={{ background: item.color }} />
               <div className="journey-card-header">
                 <span className="journey-year" style={{ color: item.color, borderColor: item.color }}>
                   {item.year}
@@ -845,6 +849,22 @@ function Journey() {
                 ))}
               </div>
               <div className="journey-accent" style={{ background: item.color }} />
+
+              {/* Floating particles */}
+              {[...Array(6)].map((_, pi) => (
+                <div
+                  key={pi}
+                  className="journey-particle"
+                  style={{
+                    background: item.color,
+                    left: `${20 + pi * 15}%`,
+                    top: `${30 + (pi % 3) * 20}%`,
+                    '--tx': `${(Math.random() - 0.5) * 100}px`,
+                    '--ty': `${-50 - Math.random() * 50}px`,
+                    animationDelay: `${pi * 0.1}s`
+                  }}
+                />
+              ))}
             </div>
           ))}
         </div>
