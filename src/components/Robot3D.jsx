@@ -1,10 +1,11 @@
 import { useState, useEffect, useMemo } from 'react'
 
 const EMOTIONS = {
-  calm:     { body: '#00e5ff', label: 'Calm' },
-  happy:    { body: '#a855f7', label: 'Happy' },
-  excited:  { body: '#f472b6', label: 'Excited' },
-  thinking: { body: '#4d7cff', label: 'Thinking' },
+  calm:     { body: '#00e5ff', label: '😌 Calm', emoji: '😌' },
+  happy:    { body: '#a855f7', label: '😊 Happy', emoji: '😊' },
+  excited:  { body: '#f472b6', label: '🤩 Excited', emoji: '🤩' },
+  thinking: { body: '#4d7cff', label: '🤔 Thinking', emoji: '🤔' },
+  coding:   { body: '#10b981', label: '💻 Coding', emoji: '💻' },
 }
 const KEYS = Object.keys(EMOTIONS)
 
@@ -62,8 +63,19 @@ function Eye({ side }) {
 export default function Robot3D() {
   const [emotion, setEmotion] = useState('calm')
   const [dancing, setDancing] = useState(false)
+  const [clicked, setClicked] = useState(false)
+  const [showMessage, setShowMessage] = useState(false)
   const e = EMOTIONS[emotion]
   const c = e.body
+
+  const messages = [
+    "Hi! I'm your AI companion 👋",
+    "Let's build something amazing! 🚀",
+    "Scroll to see me change! 🎨",
+    "Click me for a surprise! ✨",
+    "I love coding! 💻",
+  ]
+  const [messageIndex, setMessageIndex] = useState(0)
 
   useEffect(() => {
     const h = () => {
@@ -82,9 +94,21 @@ export default function Robot3D() {
       setEmotion(KEYS[i])
       setDancing(true)
       setTimeout(() => setDancing(false), 1200)
-    }, 8000)
+    }, 10000)
     return () => clearInterval(t)
   }, [])
+
+  const handleClick = () => {
+    setClicked(true)
+    setDancing(true)
+    setShowMessage(true)
+    setMessageIndex((prev) => (prev + 1) % messages.length)
+    setTimeout(() => setDancing(false), 1200)
+    setTimeout(() => {
+      setClicked(false)
+      setShowMessage(false)
+    }, 3000)
+  }
 
   const sparkles = useMemo(() =>
     Array.from({ length: 10 }, (_, i) => ({
@@ -100,9 +124,50 @@ export default function Robot3D() {
       right: 14,
       bottom: 14,
       zIndex: 9999,
-      pointerEvents: 'none',
       perspective: '600px',
     }}>
+      {/* Speech bubble */}
+      {showMessage && (
+        <div style={{
+          position: 'absolute',
+          right: 100,
+          bottom: 40,
+          background: 'rgba(18, 16, 30, 0.95)',
+          backdropFilter: 'blur(10px)',
+          border: `2px solid ${c}`,
+          borderRadius: 16,
+          padding: '12px 16px',
+          color: '#fff',
+          fontSize: 13,
+          fontWeight: 600,
+          whiteSpace: 'nowrap',
+          boxShadow: `0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px ${c}44`,
+          animation: 'messageBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
+          pointerEvents: 'none',
+        }}>
+          {messages[messageIndex]}
+          <div style={{
+            position: 'absolute',
+            right: -8,
+            bottom: 20,
+            width: 0,
+            height: 0,
+            borderLeft: '8px solid ' + c,
+            borderTop: '6px solid transparent',
+            borderBottom: '6px solid transparent',
+          }} />
+        </div>
+      )}
+
+      <div
+        onClick={handleClick}
+        style={{
+          pointerEvents: 'auto',
+          cursor: 'pointer',
+          transition: 'transform 0.2s ease',
+          transform: clicked ? 'scale(0.95)' : 'scale(1)',
+        }}
+      >
       <div style={{
         width: 90,
         height: 90,
@@ -348,18 +413,19 @@ export default function Robot3D() {
       {/* label */}
       <div style={{
         textAlign: 'center',
-        fontSize: 8,
-        fontWeight: 600,
+        fontSize: 10,
+        fontWeight: 700,
         color: c,
-        background: 'rgba(0,0,0,0.6)',
+        background: 'rgba(0,0,0,0.7)',
         backdropFilter: 'blur(8px)',
-        padding: '3px 10px',
-        borderRadius: 8,
-        border: `1px solid ${c}44`,
-        marginTop: 6,
-        transition: 'color 0.6s, border-color 0.6s',
-        boxShadow: `0 2px 8px ${c}22`,
+        padding: '4px 12px',
+        borderRadius: 10,
+        border: `1.5px solid ${c}66`,
+        marginTop: 8,
+        transition: 'all 0.6s',
+        boxShadow: `0 4px 12px ${c}33, 0 0 20px ${c}22`,
         letterSpacing: '0.5px',
+        cursor: 'pointer',
       }}>
         {e.label}
       </div>

@@ -5,6 +5,7 @@ import Robot3D from './components/Robot3D'
 import './App.css'
 import './scroll3d.css'
 import './creative-styles.css'
+import './robot-animations.css'
 
 /* ──────────── helpers ──────────── */
 function useInView(threshold = 0.12) {
