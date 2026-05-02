@@ -418,15 +418,15 @@ function About() {
         <div className="about-grid">
           <div className="about-text">
             <p className="section-label">About Me</p>
-            <h2 className="section-heading">Turning complex workflows into<br /><span className="gradient-text">elegant AI-powered experiences</span></h2>
+            <h2 className="section-heading">Agentic AI Developer crafting<br /><span className="gradient-text">autonomous intelligent systems</span></h2>
             <p>
-              I'm <strong>Waleed Hassan</strong> — a developer deeply fascinated by the intersection of artificial intelligence, automation, and human-centered design. I'm currently working on <strong>Building Agentic AI systems and visual automation workflows</strong>.
+              I'm <strong>Waleed Hassan</strong> — an <strong>Agentic AI Developer</strong> specializing in building autonomous agents that think, plan, and execute. My expertise lies at the intersection of artificial intelligence, multi-agent orchestration, and intelligent automation.
             </p>
             <p>
-              I specialize in <strong>advanced RAG pipelines</strong>, <strong>multi-agent orchestration</strong>, <strong>visual automation workflows</strong> (n8n, Zapier, Make.com), and <strong>advanced PyTorch</strong> models. I'm currently learning agentic workflows and advanced PyTorch.
+              As an <strong>Agentic AI Developer</strong>, I architect <strong>advanced RAG pipelines</strong>, design <strong>multi-agent orchestration systems</strong>, and build <strong>visual automation workflows</strong> using n8n, Zapier, and Make.com. I work extensively with <strong>LangChain</strong>, <strong>LangGraph</strong>, and <strong>PyTorch</strong> to create production-ready AI systems.
             </p>
             <p>
-              I'm looking to collaborate on open-source Agentic AI frameworks, data-driven Python projects, and low-code workflows. Beyond code, I'm passionate about Ubuntu/Linux ecosystems and pushing the boundaries of what autonomous AI systems can achieve.
+              I'm passionate about pushing the boundaries of what autonomous AI systems can achieve. From agentic frameworks to self-improving workflows, I transform complex AI research into practical business solutions. Currently exploring advanced agent memory systems, tool use optimization, and next-generation agentic architectures.
             </p>
 
             {/* Animated Skill Bars */}
@@ -756,18 +756,18 @@ function Collaboration() {
           <div className="collab-panel">
             <div className="collab-glow-bg" />
             <p className="section-label">Collaboration</p>
-            <h2 className="section-heading">Let's build something <span className="gradient-text">intelligent together</span></h2>
+            <h2 className="section-heading">Let's build <span className="gradient-text">intelligent agentic systems</span> together</h2>
             <p className="collab-text">
-              I'm actively open to collaborating on open-source frameworks, low-code workflow tools, and data-driven Python projects. Whether you're building an agentic system, designing a multi-agent architecture, or creating the next automation platform — let's connect.
+              As an <strong>Agentic AI Developer</strong>, I'm actively seeking collaborations on cutting-edge AI projects. Whether you're building autonomous agent frameworks, designing multi-agent architectures, or creating the next generation of intelligent automation — let's connect and innovate together.
             </p>
             <div className="collab-areas">
               {[
-                { icon: '🌐', label: 'Open-Source AI Frameworks' },
-                { icon: '⚙️', label: 'Low-Code Workflow Design' },
-                { icon: '📈', label: 'Data-Driven Python Projects' },
-                { icon: '🤖', label: 'Multi-Agent System Architecture' },
-                { icon: '🔬', label: 'Advanced RAG Research' },
-                { icon: '🚀', label: 'Scalable AI Product Development' },
+                { icon: '🤖', label: 'Agentic AI Frameworks' },
+                { icon: '🔗', label: 'Multi-Agent Orchestration' },
+                { icon: '⚙️', label: 'Intelligent Automation' },
+                { icon: '📈', label: 'Advanced RAG Systems' },
+                { icon: '🔬', label: 'AI Research & Development' },
+                { icon: '🚀', label: 'Production AI Systems' },
               ].map(area => (
                 <div className="collab-area" key={area.label} data-hover>
                   <span className="collab-area-icon">{area.icon}</span>
@@ -887,7 +887,8 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-brand">
           <h3 className="footer-logo">WH<span className="logo-dot">.</span></h3>
-          <p className="footer-tagline">AI Automation Engineer & Agentic Systems Builder</p>
+          <p className="footer-tagline">Agentic AI Developer & Automation Architect</p>
+          <p className="footer-description">Building autonomous AI agents that think, plan, and execute complex workflows.</p>
         </div>
         <div className="footer-contact">
           <h4 className="footer-heading">Get in Touch</h4>
@@ -927,8 +928,8 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>Designed & built by <strong>Waleed Hassan</strong> — AI Automation Engineer</p>
-        <p className="footer-year">© 2026 — Where code meets intelligence.</p>
+        <p>Designed & built by <strong>Waleed Hassan</strong> — Agentic AI Developer</p>
+        <p className="footer-year">© 2026 — Crafting autonomous intelligent systems.</p>
       </div>
     </footer>
   )
