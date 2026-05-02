@@ -6,6 +6,7 @@ import './App.css'
 import './scroll3d.css'
 import './creative-styles.css'
 import './robot-animations.css'
+import './advanced-effects.css'
 
 /* ──────────── helpers ──────────── */
 function useInView(threshold = 0.12) {
@@ -269,14 +270,14 @@ function Nav() {
   const links = useMemo(() => ['About', 'Projects', 'Journey', 'Collaboration'], [])
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <a href="#hero" className="nav-logo" data-hover>WH<span className="logo-dot">.</span></a>
+      <a href="#hero" className="nav-logo ripple-effect" data-hover>WH<span className="logo-dot">.</span></a>
       <button className="nav-toggle" aria-label="Toggle menu" onClick={() => setMenuOpen(!menuOpen)}>
         <span className={menuOpen ? 'open' : ''}><span /><span /><span /></span>
       </button>
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         {links.map((l) => (
           <li key={l}>
-            <a href={`#${l.toLowerCase()}`} className="nav-link-3d" data-hover onClick={() => setMenuOpen(false)}>
+            <a href={`#${l.toLowerCase()}`} className="nav-link-3d ripple-effect" data-hover onClick={() => setMenuOpen(false)}>
               <span className="nav-link-border" />
               <span className="nav-link-text">{l}</span>
             </a>
@@ -358,12 +359,12 @@ function Hero() {
             </a>
           </div>
           <div className={`hero-ctas ${loaded ? 'fade-up' : ''}`}>
-            <a href="#projects" className="btn btn-primary" data-hover>View Projects</a>
+            <a href="#projects" className="btn btn-primary btn-magnetic ripple-effect" data-hover>View Projects</a>
           </div>
-          <div className={`hero-stats ${loaded ? 'fade-up' : ''}`}>
-            <div className="stat"><span className="stat-num">10+</span><span className="stat-label">Projects</span></div>
-            <div className="stat"><span className="stat-num">15+</span><span className="stat-label">Technologies</span></div>
-            <div className="stat"><span className="stat-num">∞</span><span className="stat-label">Curiosity</span></div>
+          <div className={`hero-stats ${loaded ? 'fade-up' : ''} stagger-container in-view`}>
+            <div className="stat stagger-item perspective-card"><span className="stat-num neon-text">10+</span><span className="stat-label">Projects</span></div>
+            <div className="stat stagger-item perspective-card"><span className="stat-num neon-text">15+</span><span className="stat-label">Technologies</span></div>
+            <div className="stat stagger-item perspective-card"><span className="stat-num neon-text">∞</span><span className="stat-label">Curiosity</span></div>
           </div>
         </div>
         <div className="hero-visual">
@@ -694,13 +695,13 @@ function Projects() {
       <div className="section-inner">
         <p className="section-label">Projects</p>
         <h2 className="section-heading">Intelligent systems in <span className="gradient-text">action</span></h2>
-        <div className="projects-grid">
+        <div className="projects-grid stagger-container in-view">
           {projectsData.map((p, i) => {
             const t = tilt[i] || { x: 0, y: 0 }
             const isFlipped = flipped[i]
             return (
               <div
-                className={`project-card ${isFlipped ? 'flipped' : ''}`}
+                className={`project-card stagger-item gradient-border ${isFlipped ? 'flipped' : ''}`}
                 key={p.title}
                 style={{
                   transform: `perspective(800px) rotateX(${t.y}deg) rotateY(${t.x}deg)`,
@@ -936,10 +937,28 @@ function Footer() {
 /* ═══════════════════════════════════════ APP ═══════════════════════════════════════ */
 export default function App() {
   const [loading, setLoading] = useState(true)
+  const [scrollProgress, setScrollProgress] = useState(0)
+
+  // Scroll progress indicator
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = (window.scrollY / totalHeight) * 100
+      setScrollProgress(progress)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
       {loading && <LoadingScreen onLoadComplete={() => setLoading(false)} />}
+
+      {/* Scroll Progress Bar */}
+      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
+
+      {/* Gradient Mesh Background */}
+      <div className="gradient-mesh" />
 
       {/* Custom Cursor - Outside all other content */}
       <Cursor />
