@@ -50,6 +50,13 @@ html {
   }
 }
 
+/* Optimize scrolling on mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -62,9 +69,24 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Optimize mobile rendering */
+@media (max-width: 768px) {
+  body {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
 /* Hide default cursor but allow interaction */
 body, body * {
   cursor: none;
+}
+
+/* Show default cursor on mobile */
+@media (max-width: 768px) {
+  body, body * {
+    cursor: auto !important;
+  }
 }
 
 /* Allow pointer events for scrolling and clicking */

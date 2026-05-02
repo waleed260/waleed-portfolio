@@ -91,9 +91,20 @@ function Cursor() {
   const ringPos = useRef({ x: 0, y: 0 })
   const hovering = useRef(false)
   const lastHoverState = useRef(null)
+  const [isMobile, setIsMobile] = useState(false)
   let rafId = null
 
   useEffect(() => {
+    // Detect mobile and disable cursor
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) return // Skip cursor on mobile
+
     const move = (e) => {
       pos.current = { x: e.clientX, y: e.clientY }
       const isHover = e.target.matches('a,button,[data-hover]')
@@ -139,7 +150,9 @@ function Cursor() {
       window.removeEventListener('mousemove', move)
       if (rafId) cancelAnimationFrame(rafId)
     }
-  }, [])
+  }, [isMobile])
+
+  if (isMobile) return null
 
   return <><div ref={dot} className="cursor-dot" /><div ref={ring} className="cursor-ring" /></>
 }
@@ -147,7 +160,19 @@ function Cursor() {
 /* ──────────── Particles ──────────── */
 function Particles({ count = 80 }) {
   const canvasRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(false)
+
   useEffect(() => {
+    // Detect mobile and disable particles
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) return // Skip particles on mobile
+
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
@@ -201,13 +226,26 @@ function Particles({ count = 80 }) {
     }
     draw()
     return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize) }
-  }, [count])
+  }, [count, isMobile])
+
+  if (isMobile) return null
   return <canvas ref={canvasRef} className="particles-canvas" />
 }
 
 /* ──────────── Floating 3D Orbs ──────────── */
 function FloatingOrbs() {
   const offset = useMouseParallax(0.015)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  if (isMobile) return null
+
   return (
     <div className="floating-orbs" style={{ transform: `translate(${offset.x}px,${offset.y}px)` }}>
       <div className="orb orb-1" />

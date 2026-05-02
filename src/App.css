@@ -568,14 +568,33 @@
 
 /* ═══════════════════════════════════════ MOBILE OPTIMIZATIONS ═══════════════════════════════════════ */
 @media (max-width: 768px) {
-  /* Reduce blur on mobile for performance */
+  /* Disable all heavy effects on mobile */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Re-enable only essential transitions */
+  .nav-links {
+    transition: right 0.3s ease !important;
+  }
+
+  .btn, a {
+    transition: opacity 0.2s ease !important;
+  }
+
+  /* Remove all blur effects on mobile */
   .section-bg-blur {
-    backdrop-filter: blur(10px) saturate(100%);
-    -webkit-backdrop-filter: blur(10px) saturate(100%);
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(7, 6, 11, 0.5);
   }
 
   .navbar {
     padding: 0.75rem 1rem;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(7, 6, 11, 0.95);
   }
 
   .nav-logo {
@@ -592,15 +611,14 @@
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: rgba(7, 6, 11, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(7, 6, 11, 0.98);
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: 0.5rem;
     padding: 2rem;
-    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-left: 1px solid rgba(0, 229, 255, 0.15);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
   }
@@ -622,31 +640,72 @@
     display: none !important;
   }
 
-  body {
-    cursor: auto;
+  body, body * {
+    cursor: auto !important;
   }
 
-  /* Hide floating orbs on mobile */
-  .floating-orbs {
-    display: none;
+  /* Hide all decorative elements on mobile */
+  .floating-orbs,
+  .particles-canvas,
+  .scene-ring,
+  .orbit-dot,
+  .code-panel,
+  .loading-particles,
+  .hero-3d-scene,
+  .about-floating-cards {
+    display: none !important;
   }
 
-  .particles-canvas {
-    display: none;
+  /* Disable all 3D transforms on mobile */
+  .section,
+  .project-card,
+  .skill-group,
+  .btn,
+  .stat,
+  .timeline-card,
+  .contact-card-3d,
+  .footer-social-icon,
+  .tech-badge-3d,
+  .nav-link-3d,
+  .hero-content,
+  .hero-visual {
+    transform: none !important;
+    perspective: none !important;
+    transform-style: flat !important;
+  }
+
+  /* Remove all box-shadows for performance */
+  .section,
+  .project-card,
+  .skill-group,
+  .btn,
+  .contact-card-3d,
+  .footer-social-icon,
+  .tech-badge-3d {
+    box-shadow: none !important;
   }
 
   /* Simplify section transitions on mobile */
   .section {
-    filter: none;
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    filter: none !important;
+    opacity: 1 !important;
   }
 
   .section.in-view {
-    filter: none;
+    filter: none !important;
   }
 
   .section:not(.in-view) {
-    filter: none;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Remove gradient animations */
+  .gradient-text,
+  .hero-intro-3d .intro-full-name,
+  .nav-logo,
+  .section-label {
+    animation: none !important;
   }
 
   .hero-socials {
@@ -668,6 +727,12 @@
 
   .hero-intro-3d .intro-full-name {
     font-size: clamp(2rem, 9vw, 3rem);
+    filter: none !important;
+    text-shadow: none !important;
+  }
+
+  .hero-intro-3d .intro-full-name::after {
+    display: none !important;
   }
 
   /* Skills grid mobile */
@@ -680,6 +745,9 @@
   /* Collaboration mobile */
   .collab-wrapper {
     padding: 1.5rem;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(7, 6, 11, 0.8);
   }
 
   .collab-areas {
@@ -695,6 +763,7 @@
   .project-card,
   .skill-group {
     padding: 1.25rem;
+    background: rgba(12, 10, 20, 0.95);
   }
 
   .project-tags {
@@ -734,6 +803,9 @@
 
   .contact-panel {
     padding: 1.25rem;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(18, 16, 30, 0.9);
   }
 
   /* Tech stack mobile */
@@ -744,10 +816,32 @@
   /* Quote mobile */
   .quote-frame {
     padding: 1.5rem 1rem;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(18, 16, 30, 0.95);
   }
 
   .quote-text {
     font-size: 1rem;
+  }
+
+  /* Simplify footer on mobile */
+  .footer {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(7, 6, 11, 0.98);
+  }
+
+  /* Remove all pseudo-element effects on mobile */
+  .section::before,
+  .project-card::before,
+  .skill-group::before,
+  .btn::before,
+  .contact-card-3d::before,
+  .footer-social-icon::before,
+  .nav-link-3d::before,
+  .nav-link-3d::after {
+    display: none !important;
   }
 }
 
