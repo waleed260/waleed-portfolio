@@ -90,7 +90,7 @@ html, body {
   background: rgba(20, 184, 166, 0.5);
 }
 
-/* Custom Cursor */
+/* Custom Cursor - Optimized for performance */
 .cursor-dot {
   position: fixed;
   top: 0;
@@ -101,8 +101,9 @@ html, body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
-  will-change: transform, width, height, background;
+  will-change: transform;
   transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+  transform: translate3d(0, 0, 0);
 }
 
 .cursor-ring {
@@ -115,8 +116,9 @@ html, body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
-  will-change: transform, width, height, border-color, background;
+  will-change: transform;
   transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  transform: translate3d(0, 0, 0);
 }
 
 a {

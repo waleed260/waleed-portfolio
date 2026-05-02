@@ -104,15 +104,16 @@ function Cursor() {
     window.addEventListener('mousemove', move, { passive: true })
 
     const animate = () => {
-      // Smooth ring follow
-      ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.15
-      ringPos.current.y += (pos.current.y - ringPos.current.y) * 0.15
+      // Smooth ring follow with easing
+      ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.2
+      ringPos.current.y += (pos.current.y - ringPos.current.y) * 0.2
 
       const isHover = hovering.current
       const stateChanged = lastHoverState.current !== isHover
 
       if (dot.current) {
-        dot.current.style.transform = `translate(${pos.current.x - 4}px, ${pos.current.y - 4}px)`
+        // Use translate3d for hardware acceleration
+        dot.current.style.transform = `translate3d(${pos.current.x - 4}px, ${pos.current.y - 4}px, 0)`
         if (stateChanged) {
           dot.current.style.width = isHover ? '16px' : '8px'
           dot.current.style.height = isHover ? '16px' : '8px'
@@ -120,11 +121,12 @@ function Cursor() {
         }
       }
       if (ring.current) {
-        ring.current.style.transform = `translate(${ringPos.current.x - 18}px, ${ringPos.current.y - 18}px)`
+        // Use translate3d for hardware acceleration
+        ring.current.style.transform = `translate3d(${ringPos.current.x - 18}px, ${ringPos.current.y - 18}px, 0)`
         if (stateChanged) {
           ring.current.style.width = isHover ? '52px' : '36px'
           ring.current.style.height = isHover ? '52px' : '36px'
-          ring.current.style.borderColor = isHover ? 'rgba(244, 114, 182, 0.5)' : 'rgba(168, 85, 247, 0.5)'
+          ring.current.style.borderColor = isHover ? 'rgba(244, 114, 182, 0.5)' : 'rgba(20, 184, 166, 0.5)'
           ring.current.style.background = isHover ? 'rgba(244, 114, 182, 0.06)' : 'transparent'
         }
       }
