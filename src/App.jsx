@@ -814,45 +814,38 @@ const timelineData = [
 ]
 
 function Journey() {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [ref, vis] = useInView()
-
-  useEffect(() => {
-    if (!vis) return
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % timelineData.length)
-    }, 4000)
-    return () => clearInterval(interval)
-  }, [vis])
-
   return (
     <Section id="journey">
-      <div className="section-inner" ref={ref}>
+      <div className="section-inner">
         <p className="section-label">Learning Journey</p>
         <h2 className="section-heading">The path from <span className="gradient-text">curiosity to capability</span></h2>
-        <div className="timeline">
+        <div className="journey-grid">
           {timelineData.map((item, i) => (
             <div
-              className={`timeline-item ${i === activeIndex ? 'timeline-active' : ''}`}
+              className="journey-card"
               key={item.title}
-              style={{ transitionDelay: `${i * 0.15}s` }}
-              onMouseEnter={() => setActiveIndex(i)}
+              style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <div className="timeline-node">
-                <span className="timeline-year" style={{ borderColor: item.color }}>{item.year}</span>
-                <div className="timeline-dot" style={{ background: item.color, boxShadow: `0 0 20px ${item.color}` }} />
-              </div>
-              <div className="timeline-card">
-                <div className="timeline-progress" style={{ background: item.color }} />
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-                <div className="timeline-tags">
-                  {item.tags.map(t => <span key={t} className="timeline-tag" style={{ borderColor: item.color, color: item.color }}>{t}</span>)}
+              <div className="journey-card-header">
+                <span className="journey-year" style={{ color: item.color, borderColor: item.color }}>
+                  {item.year}
+                </span>
+                <div className="journey-number" style={{ background: item.color }}>
+                  {i + 1}
                 </div>
               </div>
+              <h3 className="journey-title">{item.title}</h3>
+              <p className="journey-desc">{item.desc}</p>
+              <div className="journey-tags">
+                {item.tags.map(t => (
+                  <span key={t} className="journey-tag" style={{ borderColor: item.color, color: item.color }}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="journey-accent" style={{ background: item.color }} />
             </div>
           ))}
-          <div className="timeline-line" />
         </div>
       </div>
     </Section>
