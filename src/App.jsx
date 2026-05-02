@@ -3,6 +3,7 @@ import LightRays from './LightRays'
 import MagicBento from './MagicBento'
 import Robot3D from './components/Robot3D'
 import './App.css'
+import './scroll3d.css'
 
 /* ──────────── helpers ──────────── */
 function useInView(threshold = 0.12) {

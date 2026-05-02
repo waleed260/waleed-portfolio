@@ -1,0 +1,157 @@
+/* Enhanced 3D Scrollable Effects */
+
+/* Parallax layers for depth */
+.parallax-layer {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+.parallax-layer-1 {
+  transform: translateZ(50px) scale(0.95);
+}
+
+.parallax-layer-2 {
+  transform: translateZ(100px) scale(0.9);
+}
+
+.parallax-layer-3 {
+  transform: translateZ(150px) scale(0.85);
+}
+
+/* Smooth scroll snap for sections */
+@media (min-width: 1024px) {
+  .scroll-container {
+    scroll-snap-type: y proximity;
+  }
+
+  .section {
+    scroll-snap-align: start;
+  }
+}
+
+/* Enhanced card 3D tilt on scroll */
+.card-3d-scroll {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card-3d-scroll.in-viewport {
+  transform: perspective(1200px) translateZ(0) rotateX(0deg);
+}
+
+.card-3d-scroll:not(.in-viewport) {
+  transform: perspective(1200px) translateZ(-80px) rotateX(8deg);
+}
+
+/* Floating elements with parallax */
+.float-parallax {
+  will-change: transform;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Depth layers for background elements */
+.depth-layer-back {
+  transform: translateZ(-200px) scale(1.2);
+}
+
+.depth-layer-mid {
+  transform: translateZ(-100px) scale(1.1);
+}
+
+.depth-layer-front {
+  transform: translateZ(50px) scale(0.95);
+}
+
+/* Smooth reveal animations with depth */
+@keyframes reveal3D {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) translateZ(-150px) translateY(50px) rotateX(15deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) translateZ(0) translateY(0) rotateX(0deg);
+  }
+}
+
+.reveal-on-scroll {
+  animation: reveal3D 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Enhanced hover depth */
+.hover-lift-3d {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift-3d:hover {
+  transform: perspective(1000px) translateZ(60px) translateY(-15px) scale(1.03);
+}
+
+/* Scroll-triggered scale and depth */
+.scale-on-scroll {
+  transform: perspective(1500px) translateZ(-100px) scale(0.9);
+  opacity: 0.7;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scale-on-scroll.active {
+  transform: perspective(1500px) translateZ(0) scale(1);
+  opacity: 1;
+}
+
+/* Staggered 3D entrance */
+.stagger-3d-enter > * {
+  opacity: 0;
+  transform: perspective(1000px) translateZ(-80px) translateY(30px);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stagger-3d-enter.active > *:nth-child(1) {
+  opacity: 1;
+  transform: perspective(1000px) translateZ(0) translateY(0);
+  transition-delay: 0.1s;
+}
+
+.stagger-3d-enter.active > *:nth-child(2) {
+  opacity: 1;
+  transform: perspective(1000px) translateZ(0) translateY(0);
+  transition-delay: 0.2s;
+}
+
+.stagger-3d-enter.active > *:nth-child(3) {
+  opacity: 1;
+  transform: perspective(1000px) translateZ(0) translateY(0);
+  transition-delay: 0.3s;
+}
+
+.stagger-3d-enter.active > *:nth-child(4) {
+  opacity: 1;
+  transform: perspective(1000px) translateZ(0) translateY(0);
+  transition-delay: 0.4s;
+}
+
+.stagger-3d-enter.active > *:nth-child(n+5) {
+  opacity: 1;
+  transform: perspective(1000px) translateZ(0) translateY(0);
+  transition-delay: 0.5s;
+}
+
+/* Perspective container for entire page */
+.page-3d-container {
+  perspective: 2px;
+  perspective-origin: center top;
+  transform-style: preserve-3d;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-layer,
+  .card-3d-scroll,
+  .float-parallax,
+  .hover-lift-3d,
+  .scale-on-scroll,
+  .stagger-3d-enter > * {
+    transform: none !important;
+    transition: opacity 0.3s ease !important;
+  }
+}

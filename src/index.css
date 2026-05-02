@@ -15,18 +15,19 @@
   --text-muted: #5c5872;
   --cyan: #00e5ff;
   --blue: #4d7cff;
-  --purple: #a855f7;
+  --emerald: #10b981;
+  --teal: #14b8a6;
   --pink: #f472b6;
-  --gradient-main: linear-gradient(135deg, #00e5ff, #a855f7, #f472b6);
-  --gradient-card: linear-gradient(135deg, rgba(0,229,255,0.1), rgba(168,85,247,0.1));
+  --gradient-main: linear-gradient(135deg, #00e5ff, #14b8a6, #10b981);
+  --gradient-card: linear-gradient(135deg, rgba(0,229,255,0.1), rgba(20,184,166,0.1));
   --glow-cyan: 0 0 40px rgba(0, 229, 255, 0.3);
-  --glow-purple: 0 0 40px rgba(168, 85, 247, 0.3);
+  --glow-emerald: 0 0 40px rgba(16, 185, 129, 0.3);
   --radius-lg: 20px;
   --radius-md: 14px;
   --font-display: 'Syne', sans-serif;
   --font-body: 'Outfit', sans-serif;
   --font-mono: 'Space Mono', monospace;
-  
+
   /* Smooth animation tokens */
   --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -40,6 +41,8 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   scroll-padding-top: 80px;
+  perspective: 1px;
+  transform-style: preserve-3d;
 }
 
 /* Smooth scrolling for all browsers */
@@ -60,12 +63,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 /* Minimal slim scrollbar */
 html, body {
   scrollbar-width: thin;
-  scrollbar-color: rgba(168, 85, 247, 0.3) transparent;
+  scrollbar-color: rgba(20, 184, 166, 0.3) transparent;
 }
 
 ::-webkit-scrollbar {
@@ -77,12 +82,12 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(168, 85, 247, 0.3);
+  background: rgba(20, 184, 166, 0.3);
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(168, 85, 247, 0.5);
+  background: rgba(20, 184, 166, 0.5);
 }
 
 /* Custom Cursor */
@@ -106,7 +111,7 @@ html, body {
   left: 0;
   width: 36px;
   height: 36px;
-  border: 2px solid rgba(168, 85, 247, 0.5);
+  border: 2px solid rgba(20, 184, 166, 0.5);
   border-radius: 50%;
   pointer-events: none;
   z-index: 10000;
@@ -122,6 +127,6 @@ a {
 }
 
 ::selection {
-  background: rgba(168, 85, 247, 0.35);
+  background: rgba(20, 184, 166, 0.35);
   color: #fff;
 }
