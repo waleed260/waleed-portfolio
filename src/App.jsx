@@ -334,8 +334,14 @@ function Hero() {
           <div className="hero-intro-3d">
             <span className="intro-full-name">Waleed Hassan</span>
           </div>
+          <p className={`hero-role ${loaded ? 'fade-up' : ''}`}>
+            Agentic AI Developer & Automation Architect
+          </p>
           <p className={`hero-intro-tagline ${loaded ? 'fade-up' : ''}`}>
-            I build intelligent AI systems, multi-agent workflows, and automation solutions — where code meets intelligence, motion, and design.
+            I architect and build <strong>autonomous AI agents</strong> that think, plan, and execute complex workflows. Specializing in <strong>multi-agent orchestration</strong>, <strong>advanced RAG systems</strong>, and <strong>intelligent automation</strong> — transforming how businesses leverage AI to solve real-world problems.
+          </p>
+          <p className={`hero-expertise ${loaded ? 'fade-up' : ''}`}>
+            From designing agentic frameworks with <strong>LangChain</strong> and <strong>LangGraph</strong> to building production-ready AI systems with <strong>PyTorch</strong> — I create intelligent solutions that bridge the gap between cutting-edge AI research and practical business applications.
           </p>
           <div className={`hero-socials ${loaded ? 'fade-up' : ''}`}>
             <a href="https://www.linkedin.com/in/waleed-hassan-20438b3a8/" target="_blank" rel="noopener" className="social-btn" data-hover aria-label="LinkedIn">
