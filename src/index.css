@@ -59,7 +59,6 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   overflow-y: auto;
-  cursor: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -67,9 +66,14 @@ body {
   perspective: 1000px;
 }
 
-/* Allow cursor for scrolling, but hide default cursor visually */
-*, *::before, *::after {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="transparent"/></svg>'), auto;
+/* Hide default cursor but allow interaction */
+body, body * {
+  cursor: none;
+}
+
+/* Allow pointer events for scrolling and clicking */
+body, body * {
+  pointer-events: auto;
 }
 
 /* Minimal slim scrollbar */
@@ -105,10 +109,11 @@ html, body {
   background: var(--cyan);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 10000;
+  z-index: 99999;
   will-change: transform;
   transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
   transform: translate3d(0, 0, 0);
+  mix-blend-mode: screen;
 }
 
 .cursor-ring {
@@ -120,10 +125,11 @@ html, body {
   border: 2px solid rgba(20, 184, 166, 0.5);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 10000;
+  z-index: 99999;
   will-change: transform;
   transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
   transform: translate3d(0, 0, 0);
+  mix-blend-mode: screen;
 }
 
 a {
