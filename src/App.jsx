@@ -4,6 +4,7 @@ import MagicBento from './MagicBento'
 import Robot3D from './components/Robot3D'
 import './App.css'
 import './scroll3d.css'
+import './creative-styles.css'
 
 /* ──────────── helpers ──────────── */
 function useInView(threshold = 0.12) {
@@ -388,6 +389,21 @@ function Hero() {
 
 /* ──────────── ABOUT ──────────── */
 function About() {
+  const [activeSkill, setActiveSkill] = useState(0)
+  const skills = [
+    { name: 'AI & Machine Learning', level: 90, icon: '🤖' },
+    { name: 'Automation Workflows', level: 95, icon: '⚡' },
+    { name: 'Python & PyTorch', level: 85, icon: '🐍' },
+    { name: 'Multi-Agent Systems', level: 88, icon: '🔗' }
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSkill((prev) => (prev + 1) % skills.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [skills.length])
+
   return (
     <Section id="about">
       <div className="section-inner">
@@ -404,6 +420,29 @@ function About() {
             <p>
               I'm looking to collaborate on open-source Agentic AI frameworks, data-driven Python projects, and low-code workflows. Beyond code, I'm passionate about Ubuntu/Linux ecosystems and pushing the boundaries of what autonomous AI systems can achieve.
             </p>
+
+            {/* Animated Skill Bars */}
+            <div className="about-skills-animated">
+              {skills.map((skill, i) => (
+                <div
+                  key={skill.name}
+                  className={`skill-bar-item ${i === activeSkill ? 'active' : ''}`}
+                  onMouseEnter={() => setActiveSkill(i)}
+                >
+                  <div className="skill-bar-header">
+                    <span className="skill-icon">{skill.icon}</span>
+                    <span className="skill-name">{skill.name}</span>
+                    <span className="skill-percentage">{skill.level}%</span>
+                  </div>
+                  <div className="skill-bar-track">
+                    <div
+                      className="skill-bar-fill"
+                      style={{ width: i === activeSkill ? `${skill.level}%` : '0%' }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="about-visual">
             <div className="about-avatar-ring">
@@ -580,6 +619,8 @@ const projectsData = [
     tags: ['Multi-Agent', 'RAG', 'Python', 'LangChain'],
     gradient: 'linear-gradient(135deg, rgba(0,229,255,0.15), rgba(77,124,255,0.15))',
     glow: 'var(--glow-cyan)',
+    icon: '🧠',
+    stats: { agents: '5+', accuracy: '94%' }
   },
   {
     title: 'Intelligent Automation Hub',
@@ -587,6 +628,8 @@ const projectsData = [
     tags: ['n8n', 'FastAPI', 'Docker', 'PostgreSQL'],
     gradient: 'linear-gradient(135deg, rgba(168,85,247,0.15), rgba(244,114,182,0.15))',
     glow: 'var(--glow-purple)',
+    icon: '⚡',
+    stats: { workflows: '20+', uptime: '99.9%' }
   },
   {
     title: 'Voice AI Agent Platform',
@@ -594,6 +637,8 @@ const projectsData = [
     tags: ['Vapi', 'Python', 'AI', 'Voice'],
     gradient: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(0,229,255,0.15))',
     glow: 'var(--glow-cyan)',
+    icon: '🎙️',
+    stats: { intents: '50+', response: '<2s' }
   },
   {
     title: 'Deep Learning Pipeline Toolkit',
@@ -601,6 +646,8 @@ const projectsData = [
     tags: ['PyTorch', 'Python', 'MLOps', 'Docker'],
     gradient: 'linear-gradient(135deg, rgba(77,124,255,0.15), rgba(168,85,247,0.15))',
     glow: 'var(--glow-purple)',
+    icon: '🔬',
+    stats: { models: '15+', speed: '3x faster' }
   },
   {
     title: 'Sales Analytics Dashboard',
@@ -608,6 +655,8 @@ const projectsData = [
     tags: ['Django', 'PostgreSQL', 'Analytics', 'Automation'],
     gradient: 'linear-gradient(135deg, rgba(0,229,255,0.15), rgba(168,85,247,0.15))',
     glow: 'var(--glow-cyan)',
+    icon: '📊',
+    stats: { insights: '100+', accuracy: '92%' }
   },
   {
     title: 'Document Intelligence System',
@@ -615,11 +664,15 @@ const projectsData = [
     tags: ['RAG', 'OCR', 'Python', 'AI'],
     gradient: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(77,124,255,0.15))',
     glow: 'var(--glow-purple)',
+    icon: '📄',
+    stats: { docs: '10k+', accuracy: '96%' }
   },
 ]
 
 function Projects() {
   const [tilt, setTilt] = useState({})
+  const [flipped, setFlipped] = useState({})
+
   const handleTilt = (e, idx) => {
     const rect = e.currentTarget.getBoundingClientRect()
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12
@@ -627,6 +680,8 @@ function Projects() {
     setTilt(prev => ({ ...prev, [idx]: { x, y } }))
   }
   const resetTilt = (idx) => setTilt(prev => ({ ...prev, [idx]: { x: 0, y: 0 } }))
+  const toggleFlip = (idx) => setFlipped(prev => ({ ...prev, [idx]: !prev[idx] }))
+
   return (
     <Section id="projects">
       <div className="section-inner">
@@ -635,9 +690,10 @@ function Projects() {
         <div className="projects-grid">
           {projectsData.map((p, i) => {
             const t = tilt[i] || { x: 0, y: 0 }
+            const isFlipped = flipped[i]
             return (
               <div
-                className="project-card"
+                className={`project-card ${isFlipped ? 'flipped' : ''}`}
                 key={p.title}
                 style={{
                   transform: `perspective(800px) rotateX(${t.y}deg) rotateY(${t.x}deg)`,
@@ -647,18 +703,32 @@ function Projects() {
                 }}
                 onMouseMove={(e) => handleTilt(e, i)}
                 onMouseLeave={() => resetTilt(i)}
+                onClick={() => toggleFlip(i)}
                 data-hover
               >
-                <div className="project-card-header">
-                  <span className="project-icon-3d">
-                    {['🧠', '⚡', '🎙️', '🔬', '📊', '📄'][i]}
-                  </span>
-                  <div className="project-glow-orb" />
+                <div className="project-card-front">
+                  <div className="project-card-header">
+                    <span className="project-icon-3d">{p.icon}</span>
+                    <div className="project-glow-orb" />
+                  </div>
+                  <h3 className="project-title">{p.title}</h3>
+                  <p className="project-desc">{p.desc}</p>
+                  <div className="project-tags">
+                    {p.tags.map(tg => <span key={tg} className="project-tag">{tg}</span>)}
+                  </div>
+                  <div className="project-flip-hint">Click to see stats →</div>
                 </div>
-                <h3 className="project-title">{p.title}</h3>
-                <p className="project-desc">{p.desc}</p>
-                <div className="project-tags">
-                  {p.tags.map(tg => <span key={tg} className="project-tag">{tg}</span>)}
+                <div className="project-card-back">
+                  <div className="project-stats-grid">
+                    <h4 className="project-stats-title">Project Stats</h4>
+                    {Object.entries(p.stats).map(([key, value]) => (
+                      <div key={key} className="project-stat-item">
+                        <span className="stat-label">{key}</span>
+                        <span className="stat-value">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="project-flip-hint">Click to go back ←</div>
                 </div>
               </div>
             )
@@ -711,51 +781,73 @@ const timelineData = [
     title: 'The AI Awakening',
     desc: 'Dove deep into LLMs, prompt engineering, and building AI-powered applications. Started exploring agentic patterns and autonomous AI behaviors.',
     tags: ['LLMs', 'Prompt Engineering', 'AI Apps'],
+    color: '#00e5ff'
   },
   {
     year: '2025',
     title: 'Agentic Systems & Multi-Agent Orchestration',
     desc: 'Architected multi-agent systems with LangChain and custom orchestration layers. Built advanced RAG pipelines with retrieval, re-ranking, and synthesis.',
     tags: ['LangChain', 'Multi-Agent', 'Advanced RAG'],
+    color: '#10b981'
   },
   {
     year: '2025',
     title: 'Visual Automation & Low-Code Mastery',
     desc: 'Mastered n8n, Zapier, and Make.com for rapid workflow automation. Integrated voice AI agents using Vapi for conversational experiences.',
     tags: ['n8n', 'Zapier', 'Make.com', 'Vapi'],
+    color: '#a855f7'
   },
   {
     year: '2025–2026',
     title: 'Advanced PyTorch & Deep Learning',
     desc: 'Exploring neural architecture design, transfer learning, and building PyTorch-based toolkits for rapid deep learning experimentation.',
     tags: ['PyTorch', 'Deep Learning', 'Neural Architectures'],
+    color: '#4d7cff'
   },
   {
     year: 'Now',
     title: 'Autonomous AI Systems & Beyond',
     desc: 'Building fully autonomous AI systems that can plan, execute, and learn. Pushing boundaries in agent memory, tool use, and self-improving workflows.',
     tags: ['Autonomous Agents', 'Tool Use', 'Self-Improving Systems'],
+    color: '#f472b6'
   },
 ]
 
 function Journey() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [ref, vis] = useInView()
+
+  useEffect(() => {
+    if (!vis) return
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % timelineData.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [vis])
+
   return (
     <Section id="journey">
-      <div className="section-inner">
+      <div className="section-inner" ref={ref}>
         <p className="section-label">Learning Journey</p>
         <h2 className="section-heading">The path from <span className="gradient-text">curiosity to capability</span></h2>
         <div className="timeline">
           {timelineData.map((item, i) => (
-            <div className="timeline-item" key={item.title} style={{ transitionDelay: `${i * 0.15}s` }}>
+            <div
+              className={`timeline-item ${i === activeIndex ? 'timeline-active' : ''}`}
+              key={item.title}
+              style={{ transitionDelay: `${i * 0.15}s` }}
+              onMouseEnter={() => setActiveIndex(i)}
+            >
               <div className="timeline-node">
-                <span className="timeline-year">{item.year}</span>
-                <div className="timeline-dot" />
+                <span className="timeline-year" style={{ borderColor: item.color }}>{item.year}</span>
+                <div className="timeline-dot" style={{ background: item.color, boxShadow: `0 0 20px ${item.color}` }} />
               </div>
               <div className="timeline-card">
+                <div className="timeline-progress" style={{ background: item.color }} />
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
                 <div className="timeline-tags">
-                  {item.tags.map(t => <span key={t} className="timeline-tag">{t}</span>)}
+                  {item.tags.map(t => <span key={t} className="timeline-tag" style={{ borderColor: item.color, color: item.color }}>{t}</span>)}
                 </div>
               </div>
             </div>
