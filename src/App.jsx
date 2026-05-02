@@ -791,6 +791,9 @@ export default function App() {
     <>
       {loading && <LoadingScreen onLoadComplete={() => setLoading(false)} />}
 
+      {/* Custom Cursor - Outside all other content */}
+      <Cursor />
+
       {/* Fixed LightRays Background */}
       <div style={{
         position: 'fixed',
@@ -826,7 +829,6 @@ export default function App() {
         pointerEvents: loading ? 'none' : 'auto',
         transition: 'opacity 0.5s ease-in-out'
       }}>
-        <Cursor />
         <Nav />
         <Hero />
         <GlowDivider />
