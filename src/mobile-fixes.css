@@ -1,0 +1,235 @@
+/* ═══════════════════════════════════════ MOBILE RESPONSIVENESS FIXES ═══════════════════════════════════════ */
+
+/* Ensure no horizontal overflow on mobile */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Fix any elements that might cause horizontal scroll */
+.hero-section,
+.section,
+.section-inner,
+.hero-grid,
+.projects-grid,
+.about-grid,
+.journey-grid,
+.techstack-grid-3d,
+.footer {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  /* Ensure proper spacing on mobile */
+  .hero-section {
+    padding: 4rem 1rem 2rem;
+    min-height: 100vh;
+  }
+
+  /* Fix text overflow */
+  .hero-intro-tagline,
+  .hero-expertise,
+  .hero-role {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Improve button sizing on mobile */
+  .btn {
+    min-width: auto;
+    white-space: nowrap;
+  }
+
+  /* Fix stats layout on mobile */
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .stat {
+    flex: 1 1 calc(33.333% - 0.5rem);
+    min-width: 90px;
+    padding: 1rem;
+  }
+
+  /* Fix project cards on mobile */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Fix about section on mobile */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-visual {
+    display: none;
+  }
+
+  /* Fix journey cards on mobile */
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Fix tech stack on mobile */
+  .techstack-grid-3d {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .techstack-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .tech-badge-3d {
+    flex: 0 0 auto;
+  }
+
+  /* Fix footer on mobile */
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-contact,
+  .footer-socials {
+    width: 100%;
+  }
+
+  /* Hide robot on very small screens */
+  @media (max-width: 480px) {
+    .robot-3d-container {
+      display: none;
+    }
+  }
+
+  /* Improve touch targets */
+  a, button, .btn, .social-btn, .nav-link-3d {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Fix navigation on mobile */
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Improve readability on mobile */
+  .section-heading {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .hero-intro-3d .intro-full-name {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  /* Fix collaboration section on mobile */
+  .collab-areas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .collab-area {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 3rem 0.75rem 1.5rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  .section-inner {
+    padding: 0 0.75rem;
+  }
+
+  .hero-stats {
+    gap: 0.5rem;
+  }
+
+  .stat {
+    flex: 1 1 calc(50% - 0.25rem);
+    padding: 0.75rem 0.5rem;
+  }
+
+  .stat:last-child {
+    flex: 1 1 100%;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .hero-socials {
+    gap: 0.5rem;
+  }
+
+  .social-btn {
+    padding: 0.5rem;
+  }
+
+  .collab-areas {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+}

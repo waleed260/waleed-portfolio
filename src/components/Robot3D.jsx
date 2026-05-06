@@ -429,6 +429,7 @@ export default function Robot3D() {
       }}>
         {e.label}
       </div>
+      </div>
     </div>
   )
 }
