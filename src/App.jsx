@@ -267,7 +267,7 @@ function Nav() {
     window.addEventListener('scroll', h, { passive: true })
     return () => window.removeEventListener('scroll', h)
   }, [])
-  const links = useMemo(() => ['About', 'Projects', 'Journey', 'Collaboration'], [])
+  const links = useMemo(() => ['About', 'Journey', 'Collaboration'], [])
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <a href="#hero" className="nav-logo ripple-effect" data-hover>WH<span className="logo-dot">.</span></a>
@@ -359,10 +359,10 @@ function Hero() {
             </a>
           </div>
           <div className={`hero-ctas ${loaded ? 'fade-up' : ''}`}>
-            <a href="#projects" className="btn btn-primary btn-magnetic ripple-effect" data-hover>View Projects</a>
+            <a href="#journey" className="btn btn-primary btn-magnetic ripple-effect" data-hover>View Journey</a>
           </div>
           <div className={`hero-stats ${loaded ? 'fade-up' : ''} stagger-container in-view`}>
-            <div className="stat stagger-item perspective-card"><span className="stat-num neon-text">10+</span><span className="stat-label">Projects</span></div>
+            <div className="stat stagger-item perspective-card"><span className="stat-num neon-text">2+</span><span className="stat-label">Years Experience</span></div>
             <div className="stat stagger-item perspective-card"><span className="stat-num neon-text">15+</span><span className="stat-label">Technologies</span></div>
             <div className="stat stagger-item perspective-card"><span className="stat-num neon-text">∞</span><span className="stat-label">Curiosity</span></div>
           </div>
@@ -613,134 +613,6 @@ function DevQuote() {
               ))}
             </div>
           </div>
-        </div>
-      </div>
-    </Section>
-  )
-}
-
-/* ──────────── PROJECTS ──────────── */
-const projectsData = [
-  {
-    title: 'Agentic AI Research Assistant',
-    desc: 'Multi-agent system that performs literature review, summarization, and knowledge graph construction using advanced RAG and LLM orchestration.',
-    tags: ['Multi-Agent', 'RAG', 'Python', 'LangChain'],
-    gradient: 'linear-gradient(135deg, rgba(0,229,255,0.15), rgba(77,124,255,0.15))',
-    glow: 'var(--glow-cyan)',
-    icon: '🧠',
-    stats: { agents: '5+', accuracy: '94%' }
-  },
-  {
-    title: 'Intelligent Automation Hub',
-    desc: 'Visual workflow platform connecting n8n, Zapier, and custom Python microservices for end-to-end business process automation.',
-    tags: ['n8n', 'FastAPI', 'Docker', 'PostgreSQL'],
-    gradient: 'linear-gradient(135deg, rgba(168,85,247,0.15), rgba(244,114,182,0.15))',
-    glow: 'var(--glow-purple)',
-    icon: '⚡',
-    stats: { workflows: '20+', uptime: '99.9%' }
-  },
-  {
-    title: 'Voice AI Agent Platform',
-    desc: 'Conversational AI system powered by Vapi with custom intent recognition, context management, and seamless handoff to human agents.',
-    tags: ['Vapi', 'Python', 'AI', 'Voice'],
-    gradient: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(0,229,255,0.15))',
-    glow: 'var(--glow-cyan)',
-    icon: '🎙️',
-    stats: { intents: '50+', response: '<2s' }
-  },
-  {
-    title: 'Deep Learning Pipeline Toolkit',
-    desc: 'PyTorch-based toolkit for rapid prototyping of neural architectures with automated hyperparameter tuning and experiment tracking.',
-    tags: ['PyTorch', 'Python', 'MLOps', 'Docker'],
-    gradient: 'linear-gradient(135deg, rgba(77,124,255,0.15), rgba(168,85,247,0.15))',
-    glow: 'var(--glow-purple)',
-    icon: '🔬',
-    stats: { models: '15+', speed: '3x faster' }
-  },
-  {
-    title: 'Sales Analytics Dashboard',
-    desc: 'Real-time Amazon sales analytics with predictive modeling, anomaly detection, and automated reporting via scheduled workflows.',
-    tags: ['Django', 'PostgreSQL', 'Analytics', 'Automation'],
-    gradient: 'linear-gradient(135deg, rgba(0,229,255,0.15), rgba(168,85,247,0.15))',
-    glow: 'var(--glow-cyan)',
-    icon: '📊',
-    stats: { insights: '100+', accuracy: '92%' }
-  },
-  {
-    title: 'Document Intelligence System',
-    desc: 'AI-powered document processing pipeline with OCR, entity extraction, semantic search, and automated classification using advanced RAG.',
-    tags: ['RAG', 'OCR', 'Python', 'AI'],
-    gradient: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(77,124,255,0.15))',
-    glow: 'var(--glow-purple)',
-    icon: '📄',
-    stats: { docs: '10k+', accuracy: '96%' }
-  },
-]
-
-function Projects() {
-  const [tilt, setTilt] = useState({})
-  const [flipped, setFlipped] = useState({})
-
-  const handleTilt = (e, idx) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * -12
-    setTilt(prev => ({ ...prev, [idx]: { x, y } }))
-  }
-  const resetTilt = (idx) => setTilt(prev => ({ ...prev, [idx]: { x: 0, y: 0 } }))
-  const toggleFlip = (idx) => setFlipped(prev => ({ ...prev, [idx]: !prev[idx] }))
-
-  return (
-    <Section id="projects">
-      <div className="section-inner">
-        <p className="section-label">Projects</p>
-        <h2 className="section-heading">Intelligent systems in <span className="gradient-text">action</span></h2>
-        <div className="projects-grid stagger-container in-view">
-          {projectsData.map((p, i) => {
-            const t = tilt[i] || { x: 0, y: 0 }
-            const isFlipped = flipped[i]
-            return (
-              <div
-                className={`project-card stagger-item gradient-border ${isFlipped ? 'flipped' : ''}`}
-                key={p.title}
-                style={{
-                  transform: `perspective(800px) rotateX(${t.y}deg) rotateY(${t.x}deg)`,
-                  background: p.gradient,
-                  boxShadow: t.x !== 0 ? p.glow : 'none',
-                  transitionDelay: `${i * 0.08}s`,
-                }}
-                onMouseMove={(e) => handleTilt(e, i)}
-                onMouseLeave={() => resetTilt(i)}
-                onClick={() => toggleFlip(i)}
-                data-hover
-              >
-                <div className="project-card-front">
-                  <div className="project-card-header">
-                    <span className="project-icon-3d">{p.icon}</span>
-                    <div className="project-glow-orb" />
-                  </div>
-                  <h3 className="project-title">{p.title}</h3>
-                  <p className="project-desc">{p.desc}</p>
-                  <div className="project-tags">
-                    {p.tags.map(tg => <span key={tg} className="project-tag">{tg}</span>)}
-                  </div>
-                  <div className="project-flip-hint">Click to see stats →</div>
-                </div>
-                <div className="project-card-back">
-                  <div className="project-stats-grid">
-                    <h4 className="project-stats-title">Project Stats</h4>
-                    {Object.entries(p.stats).map(([key, value]) => (
-                      <div key={key} className="project-stat-item">
-                        <span className="stat-label">{key}</span>
-                        <span className="stat-value">{value}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="project-flip-hint">Click to go back ←</div>
-                </div>
-              </div>
-            )
-          })}
         </div>
       </div>
     </Section>
@@ -1026,8 +898,6 @@ export default function App() {
         </Section>
         <GlowDivider />
         <DevQuote />
-        <GlowDivider />
-        <Projects />
         <GlowDivider />
         <Journey />
         <GlowDivider />

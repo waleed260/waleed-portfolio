@@ -684,7 +684,6 @@
 
   /* Disable all 3D transforms on mobile */
   .section,
-  .project-card,
   .skill-group,
   .btn,
   .stat,
@@ -702,7 +701,6 @@
 
   /* Remove all box-shadows for performance */
   .section,
-  .project-card,
   .skill-group,
   .btn,
   .contact-card-3d,
@@ -800,25 +798,9 @@
   }
 
   /* Reduce card sizes on mobile */
-  .project-card,
   .skill-group {
     padding: 1.25rem;
     background: rgba(12, 10, 20, 0.95);
-  }
-
-  .project-tags {
-    gap: 0.4rem;
-  }
-
-  .project-tag {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.7rem;
-    white-space: nowrap;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
   .section-inner {
@@ -874,7 +856,6 @@
 
   /* Remove all pseudo-element effects on mobile */
   .section::before,
-  .project-card::before,
   .skill-group::before,
   .btn::before,
   .contact-card-3d::before,
@@ -1820,7 +1801,6 @@
 }
 
 /* 3D Cards with Depth - Bold */
-.project-card,
 .skill-group {
   position: relative;
   transform-style: preserve-3d;
@@ -1830,7 +1810,6 @@
               border-color 0.4s ease;
 }
 
-.project-card::before,
 .skill-group::before {
   content: '';
   position: absolute;
@@ -1843,12 +1822,10 @@
   filter: blur(15px);
 }
 
-.project-card:hover::before,
 .skill-group:hover::before {
   opacity: 0.7;
 }
 
-.project-card,
 .skill-group {
   background: rgba(12, 10, 20, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1862,7 +1839,6 @@
     0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
-.project-card:hover,
 .skill-group:hover {
   transform: perspective(1000px) translateZ(40px) translateY(-10px) scale(1.02);
   border-color: rgba(0, 229, 255, 0.4);
@@ -1976,21 +1952,6 @@
 @keyframes glowPulse {
   0%, 100% { box-shadow: 0 0 20px #00e5ff; }
   50% { box-shadow: 0 0 40px #00e5ff, 0 0 60px #00e5ff; }
-}
-
-/* Projects grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
-
-/* Smooth project card transitions */
-.project-card {
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform, box-shadow;
 }
 
 /* ═══════════════════════════════════════ 3D ICONS & BADGES ═══════════════════════════════════════ */
@@ -2442,73 +2403,6 @@
   background: rgba(0, 229, 255, 0.2);
   box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
   transform: perspective(600px) translateZ(20px) translateY(-4px);
-}
-
-/* Project Icon 3D */
-.project-icon-3d {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(16, 185, 129, 0.2));
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 229, 255, 0.2);
-  transform: perspective(600px) translateZ(15px) rotateY(-10deg);
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.project-card:hover .project-icon-3d {
-  transform: perspective(600px) translateZ(30px) rotateY(10deg) scale(1.1);
-}
-
-.project-glow-orb {
-  position: absolute;
-  top: 10%;
-  right: 10%;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.3), transparent);
-  filter: blur(20px);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.project-card:hover .project-glow-orb {
-  opacity: 1;
-  animation: orbFloat 3s ease-in-out infinite;
-}
-
-@keyframes orbFloat {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-10px, -15px); }
-}
-
-/* Project Tags */
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.project-tag {
-  padding: 0.35rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--cyan);
-  background: rgba(0, 229, 255, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.2);
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-.project-tag:hover {
-  background: rgba(0, 229, 255, 0.2);
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
 }
 
 /* ═══════════════════════════════════════ CONTACT SECTION 3D ═══════════════════════════════════════ */

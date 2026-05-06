@@ -25,57 +25,6 @@ export const skillsData = [
   ]},
 ]
 
-export const projectsData = [
-  {
-    title: 'Agentic AI Research Assistant',
-    desc: 'Multi-agent system that performs literature review, summarization, and knowledge graph construction using advanced RAG and LLM orchestration.',
-    tags: ['Multi-Agent', 'RAG', 'Python', 'LangChain'],
-    gradient: 'linear-gradient(135deg, rgba(0,229,255,0.15), rgba(77,124,255,0.15))',
-    glow: '0 0 40px rgba(0, 229, 255, 0.3)',
-    emoji: '🧠',
-  },
-  {
-    title: 'Intelligent Automation Hub',
-    desc: 'Visual workflow platform connecting n8n, Zapier, and custom Python microservices for end-to-end business process automation.',
-    tags: ['n8n', 'FastAPI', 'Docker', 'PostgreSQL'],
-    gradient: 'linear-gradient(135deg, rgba(168,85,247,0.15), rgba(244,114,182,0.15))',
-    glow: '0 0 40px rgba(168, 85, 247, 0.3)',
-    emoji: '⚡',
-  },
-  {
-    title: 'Voice AI Agent Platform',
-    desc: 'Conversational AI system powered by Vapi with custom intent recognition, context management, and seamless handoff to human agents.',
-    tags: ['Vapi', 'Python', 'AI', 'Voice'],
-    gradient: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(0,229,255,0.15))',
-    glow: '0 0 40px rgba(0, 229, 255, 0.3)',
-    emoji: '🎙️',
-  },
-  {
-    title: 'Deep Learning Pipeline Toolkit',
-    desc: 'PyTorch-based toolkit for rapid prototyping of neural architectures with automated hyperparameter tuning and experiment tracking.',
-    tags: ['PyTorch', 'Python', 'MLOps', 'Docker'],
-    gradient: 'linear-gradient(135deg, rgba(77,124,255,0.15), rgba(168,85,247,0.15))',
-    glow: '0 0 40px rgba(168, 85, 247, 0.3)',
-    emoji: '🔬',
-  },
-  {
-    title: 'Sales Analytics Dashboard',
-    desc: 'Real-time Amazon sales analytics with predictive modeling, anomaly detection, and automated reporting via scheduled workflows.',
-    tags: ['Django', 'PostgreSQL', 'Analytics', 'Automation'],
-    gradient: 'linear-gradient(135deg, rgba(0,229,255,0.15), rgba(168,85,247,0.15))',
-    glow: '0 0 40px rgba(0, 229, 255, 0.3)',
-    emoji: '📊',
-  },
-  {
-    title: 'Document Intelligence System',
-    desc: 'AI-powered document processing pipeline with OCR, entity extraction, semantic search, and automated classification using advanced RAG.',
-    tags: ['RAG', 'OCR', 'Python', 'AI'],
-    gradient: 'linear-gradient(135deg, rgba(244,114,182,0.15), rgba(77,124,255,0.15))',
-    glow: '0 0 40px rgba(168, 85, 247, 0.3)',
-    emoji: '📄',
-  },
-]
-
 export const timelineData = [
   {
     year: '2024',
