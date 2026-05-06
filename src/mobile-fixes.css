@@ -33,6 +33,25 @@ body, html {
 
 /* Mobile-specific improvements */
 @media (max-width: 768px) {
+  /* CRITICAL: Make all content visible on mobile by overriding opacity: 0 */
+  .hero-greeting,
+  .hero-role,
+  .hero-intro-tagline,
+  .hero-expertise,
+  .hero-tagline,
+  .hero-ctas,
+  .hero-stats,
+  .hero-socials,
+  .fade-up,
+  .stagger-item,
+  .section,
+  .section.in-view,
+  .section:not(.in-view) {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
   /* Ensure proper spacing on mobile */
   .hero-section {
     padding: 4rem 1rem 2rem;

@@ -590,13 +590,17 @@
 
 /* ═══════════════════════════════════════ MOBILE OPTIMIZATIONS ═══════════════════════════════════════ */
 @media (max-width: 768px) {
-  /* Disable all heavy effects on mobile */
-  * {
+  /* Disable heavy animations on mobile but keep content visible */
+  .floating-orbs,
+  .particles-canvas,
+  .scene-ring,
+  .orbit-dot,
+  .code-panel,
+  .loading-particles {
     animation: none !important;
-    transition: none !important;
   }
 
-  /* Re-enable only essential transitions */
+  /* Keep essential transitions */
   .nav-links {
     transition: right 0.3s ease !important;
   }
@@ -707,19 +711,33 @@
     box-shadow: none !important;
   }
 
-  /* Simplify section transitions on mobile */
+  /* Simplify section transitions on mobile - KEEP CONTENT VISIBLE */
   .section {
     filter: none !important;
     opacity: 1 !important;
+    transform: none !important;
   }
 
   .section.in-view {
     filter: none !important;
+    opacity: 1 !important;
   }
 
   .section:not(.in-view) {
     filter: none !important;
     opacity: 1 !important;
+  }
+
+  /* Keep fade-up content visible */
+  .fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Keep stagger items visible */
+  .stagger-item {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   /* Remove gradient animations */
