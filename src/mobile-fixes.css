@@ -147,7 +147,7 @@ html, body {
     display: none;
   }
 
-  /* ========== Projects Section - PROFESSIONAL SPACING ========== */
+  /* ========== Projects Section - MOBILE ONLY ========== */
   #projects {
     padding: 3rem 0;
   }
@@ -171,7 +171,7 @@ html, body {
     /* Generous internal padding */
     padding: 1.75rem;
     margin: 0;
-    /* Disable 3D transforms */
+    /* Disable 3D transforms ON MOBILE ONLY */
     transform: none !important;
     perspective: none !important;
     background: rgba(12, 10, 20, 0.95) !important;
@@ -180,13 +180,23 @@ html, body {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
   }
 
-  /* Disable flip functionality */
+  /* MOBILE ONLY: Show only front, hide flip */
+  .project-card .project-card-back {
+    display: none !important;
+  }
+
+  .project-card .project-card-front {
+    display: block !important;
+    transform: none !important;
+  }
+
   .project-card.flipped .project-card-front {
     display: block !important;
+    transform: none !important;
   }
 
   .project-card.flipped .project-card-back {
@@ -195,11 +205,9 @@ html, body {
 
   .project-card-front,
   .project-card-back {
-    transform: none !important;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    padding: 0;
   }
 
   .project-card-header {
@@ -273,22 +281,7 @@ html, body {
     display: none !important;
   }
 
-  /* Hide back card elements */
-  .project-card-back {
-    display: none !important;
-  }
-
-  .project-stats-grid,
-  .project-stats-title,
-  .project-stat-item {
-    display: none !important;
-  }
-
-  /* Remove gradient borders */
-  .gradient-border {
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  }
-
+  /* Remove gradient borders on mobile */
   .gradient-border::before,
   .gradient-border::after {
     display: none !important;
