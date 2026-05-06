@@ -29,6 +29,14 @@ html, body {
     animation: none !important;
   }
 
+  /* ========== Global Container Padding ========== */
+  .section-inner {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   /* ========== Hero Section ========== */
   .hero-section {
     padding: 4rem 1.25rem 2rem;
@@ -109,10 +117,6 @@ html, body {
     padding: 3rem 0;
   }
 
-  .section-inner {
-    padding: 0 1.25rem;
-  }
-
   .section-heading {
     font-size: clamp(1.75rem, 6vw, 2.25rem);
     text-align: center;
@@ -143,13 +147,15 @@ html, body {
     display: none;
   }
 
-  /* ========== Projects Section ========== */
+  /* ========== Projects Section - PROFESSIONAL SPACING ========== */
   #projects {
     padding: 3rem 0;
   }
 
   #projects .section-inner {
-    padding: 0 1.25rem;
+    /* Premium mobile spacing */
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
   }
 
   .projects-grid {
@@ -162,14 +168,15 @@ html, body {
   }
 
   .project-card {
-    padding: 1.5rem;
+    /* Generous internal padding */
+    padding: 1.75rem;
     margin: 0;
-    /* Disable 3D transforms on mobile */
+    /* Disable 3D transforms */
     transform: none !important;
     perspective: none !important;
     background: rgba(12, 10, 20, 0.95) !important;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
+    border-radius: 16px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -177,7 +184,7 @@ html, body {
     position: relative;
   }
 
-  /* Disable flip functionality on mobile */
+  /* Disable flip functionality */
   .project-card.flipped .project-card-front {
     display: block !important;
   }
@@ -198,8 +205,8 @@ html, body {
   .project-card-header {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
-    margin-bottom: 1.15rem;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .project-icon-3d {
@@ -214,12 +221,12 @@ html, body {
   }
 
   .project-title {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 1rem;
-    padding-bottom: 0.25rem;
     color: #fff;
     font-weight: 700;
+    /* Professional text wrapping */
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -229,11 +236,11 @@ html, body {
   }
 
   .project-desc {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     line-height: 1.75;
     color: rgba(240, 238, 246, 0.85);
-    margin-bottom: 1.15rem;
-    padding-bottom: 0.25rem;
+    margin-bottom: 1.25rem;
+    /* Professional text wrapping */
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -244,19 +251,18 @@ html, body {
   .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.6rem;
     margin-bottom: 0;
     width: 100%;
     max-width: 100%;
-    padding-bottom: 0.25rem;
   }
 
   .project-tag {
-    padding: 0.4rem 0.85rem;
+    padding: 0.45rem 0.9rem;
     font-size: 0.7rem;
     background: rgba(0, 229, 255, 0.1);
     border: 1px solid rgba(0, 229, 255, 0.3);
-    border-radius: 16px;
+    border-radius: 18px;
     color: var(--cyan);
     white-space: nowrap;
     flex-shrink: 0;
@@ -267,24 +273,18 @@ html, body {
     display: none !important;
   }
 
-  /* Hide all back card elements on mobile */
+  /* Hide back card elements */
   .project-card-back {
     display: none !important;
   }
 
-  .project-stats-grid {
-    display: none !important;
-  }
-
-  .project-stats-title {
-    display: none !important;
-  }
-
+  .project-stats-grid,
+  .project-stats-title,
   .project-stat-item {
     display: none !important;
   }
 
-  /* Ensure gradient-border doesn't cause overflow */
+  /* Remove gradient borders */
   .gradient-border {
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
@@ -431,7 +431,17 @@ html, body {
   }
 
   .section-inner {
-    padding: 0 1rem;
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  #projects .section-inner {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+
+  .project-card {
+    padding: 1.5rem;
   }
 
   .hero-intro-3d .intro-full-name {
