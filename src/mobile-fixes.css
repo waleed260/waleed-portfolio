@@ -52,203 +52,440 @@ body, html {
     animation: none !important;
   }
 
-  /* Ensure proper spacing on mobile */
+  /* Fix hero section layout */
   .hero-section {
-    padding: 4rem 1rem 2rem;
-    min-height: 100vh;
+    padding: 5rem 1.5rem 3rem !important;
+    min-height: auto !important;
   }
 
-  /* Fix text overflow */
-  .hero-intro-tagline,
-  .hero-expertise,
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 0 !important;
+  }
+
+  .hero-content {
+    text-align: center !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Fix hero text sizing */
+  .hero-greeting {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .hero-intro-3d .intro-full-name {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1rem !important;
+  }
+
   .hero-role {
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    font-size: clamp(1rem, 4vw, 1.2rem) !important;
+    margin-bottom: 1rem !important;
   }
 
-  /* Improve button sizing on mobile */
+  .hero-intro-tagline,
+  .hero-expertise {
+    font-size: clamp(0.9rem, 3.5vw, 1rem) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
+    max-width: 100% !important;
+    padding: 0 0.5rem !important;
+  }
+
+  /* Fix buttons layout */
+  .hero-ctas {
+    justify-content: center !important;
+    gap: 0.75rem !important;
+    margin-bottom: 2rem !important;
+    flex-wrap: wrap !important;
+  }
+
   .btn {
-    min-width: auto;
-    white-space: nowrap;
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap !important;
   }
 
-  /* Fix stats layout on mobile */
+  /* Fix social buttons */
+  .hero-socials {
+    justify-content: center !important;
+    gap: 0.75rem !important;
+    margin-bottom: 2rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  .social-btn {
+    padding: 0.65rem !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  .social-btn span {
+    display: none !important;
+  }
+
+  /* Fix stats layout */
   .hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
-    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
   }
 
   .stat {
-    flex: 1 1 calc(33.333% - 0.5rem);
-    min-width: 90px;
-    padding: 1rem;
+    padding: 1rem 0.75rem !important;
+    min-width: auto !important;
   }
 
-  /* Fix project cards on mobile */
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0;
+  .stat-num {
+    font-size: 1.5rem !important;
   }
 
-  .project-card {
-    width: 100%;
-    max-width: 100%;
+  .stat-label {
+    font-size: 0.75rem !important;
   }
 
-  /* Fix about section on mobile */
+  /* Fix section spacing */
+  .section {
+    padding: 3rem 0 !important;
+  }
+
+  .section-inner {
+    padding: 0 1.5rem !important;
+    max-width: 100% !important;
+  }
+
+  .section-heading {
+    font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+  }
+
+  .section-label {
+    font-size: 0.7rem !important;
+    padding: 0.4rem 1rem !important;
+    margin-bottom: 1rem !important;
+    display: inline-block !important;
+  }
+
+  /* Fix about section */
   .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .about-text {
+    text-align: center !important;
+  }
+
+  .about-text p {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1rem !important;
   }
 
   .about-visual {
-    display: none;
+    display: none !important;
   }
 
-  /* Fix journey cards on mobile */
+  .about-skills-animated {
+    margin-top: 1.5rem !important;
+  }
+
+  .skill-bar-item {
+    padding: 0.75rem !important;
+  }
+
+  /* Fix projects grid */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 !important;
+  }
+
+  .project-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.5rem !important;
+  }
+
+  .project-title {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .project-desc {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .project-tags {
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  .project-tag {
+    padding: 0.35rem 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Fix journey/timeline section */
   .journey-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
   }
 
-  /* Fix tech stack on mobile */
+  .journey-card {
+    padding: 1.5rem !important;
+  }
+
+  .journey-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .journey-desc {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .journey-tags {
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  .journey-tag {
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* Fix tech stack section */
   .techstack-grid-3d {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .techstack-group-3d {
+    padding: 1.5rem !important;
+  }
+
+  .techstack-group-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
   }
 
   .techstack-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
   }
 
   .tech-badge-3d {
-    flex: 0 0 auto;
+    flex: 0 0 auto !important;
   }
 
-  /* Fix footer on mobile */
+  .tech-badge-3d img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Fix MagicBento section */
+  .mb-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding: 0.5rem !important;
+  }
+
+  .mb-card {
+    min-height: 120px !important;
+    padding: 1rem !important;
+  }
+
+  /* Fix collaboration section */
+  .collab-wrapper {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .collab-panel {
+    padding: 0 !important;
+  }
+
+  .collab-text {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .collab-areas {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  .collab-area {
+    font-size: 0.8rem !important;
+    padding: 0.65rem 0.85rem !important;
+    text-align: center !important;
+  }
+
+  .collab-area-icon {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Fix quote section */
+  .quote-frame {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .quote-text {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .quote-author-name {
+    font-size: 0.85rem !important;
+  }
+
+  /* Fix footer */
+  .footer {
+    padding: 3rem 1.5rem 2rem !important;
+  }
+
   .footer-content {
-    flex-direction: column;
-    gap: 2rem;
-    text-align: center;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    text-align: center !important;
   }
 
   .footer-brand,
   .footer-contact,
   .footer-socials {
-    width: 100%;
+    width: 100% !important;
   }
 
-  /* Hide robot on very small screens */
-  @media (max-width: 480px) {
-    .robot-3d-container {
-      display: none;
-    }
+  .footer-logo {
+    font-size: 2rem !important;
+  }
+
+  .footer-tagline {
+    font-size: 0.9rem !important;
+  }
+
+  .footer-description {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .footer-link {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .footer-social-icons {
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    text-align: center !important;
+    padding-top: 2rem !important;
+  }
+
+  .footer-bottom p {
+    font-size: 0.85rem !important;
   }
 
   /* Improve touch targets */
-  a, button, .btn, .social-btn, .nav-link-3d {
-    min-height: 44px;
-    min-width: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  a, button, .btn, .social-btn, .nav-link-3d, .footer-link, .footer-social-icon {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
-  /* Fix navigation on mobile */
+  /* Fix navigation */
   .navbar {
-    padding: 1rem;
+    padding: 1rem 1.5rem !important;
   }
 
-  .nav-links {
-    width: 100%;
-    max-width: 280px;
+  .nav-logo {
+    font-size: 1.5rem !important;
   }
 
-  /* Improve readability on mobile */
-  .section-heading {
-    font-size: clamp(1.75rem, 6vw, 2.5rem);
-    line-height: 1.2;
-  }
-
-  .hero-intro-3d .intro-full-name {
-    font-size: clamp(2rem, 10vw, 3.5rem);
-    line-height: 1.1;
-  }
-
-  /* Fix collaboration section on mobile */
-  .collab-areas {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-
-  .collab-area {
-    font-size: 0.8rem;
-    padding: 0.6rem 0.8rem;
+  .nav-toggle {
+    display: block !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
   }
 }
 
 /* Extra small devices */
 @media (max-width: 480px) {
   .hero-section {
-    padding: 3rem 0.75rem 1.5rem;
+    padding: 4rem 1rem 2rem !important;
   }
 
   .section {
-    padding: 2rem 0;
+    padding: 2.5rem 0 !important;
   }
 
   .section-inner {
-    padding: 0 0.75rem;
+    padding: 0 1rem !important;
+  }
+
+  .hero-intro-3d .intro-full-name {
+    font-size: clamp(1.75rem, 9vw, 2.5rem) !important;
   }
 
   .hero-stats {
-    gap: 0.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
   }
 
   .stat {
-    flex: 1 1 calc(50% - 0.25rem);
-    padding: 0.75rem 0.5rem;
-  }
-
-  .stat:last-child {
-    flex: 1 1 100%;
+    padding: 1rem !important;
   }
 
   .btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.875rem;
-  }
-
-  .hero-socials {
-    gap: 0.5rem;
-  }
-
-  .social-btn {
-    padding: 0.5rem;
+    width: 100% !important;
+    max-width: 280px !important;
   }
 
   .collab-areas {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+
+  .section-heading {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
   }
 }
 
 /* Landscape mobile optimization */
 @media (max-width: 768px) and (orientation: landscape) {
   .hero-section {
-    min-height: auto;
-    padding: 2rem 1rem;
+    min-height: auto !important;
+    padding: 3rem 1.5rem 2rem !important;
   }
 
   .section {
-    padding: 2rem 0;
+    padding: 2rem 0 !important;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
