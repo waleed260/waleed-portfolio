@@ -31,9 +31,21 @@ function Reveal({ children, delay = 0, className = '' }) {
 }
 
 const techStack = [
-  'Python', 'LangChain', 'PyTorch', 'FastAPI', 'Docker',
-  'PostgreSQL', 'React', 'Node.js', 'n8n', 'AWS',
-  'Git', 'Linux', 'Make.com', 'Vapi', 'Zapier',
+  { name: 'Python', icon: 'python' },
+  { name: 'LangChain', icon: 'langchain' },
+  { name: 'PyTorch', icon: 'pytorch' },
+  { name: 'FastAPI', icon: 'fastapi' },
+  { name: 'Docker', icon: 'docker' },
+  { name: 'PostgreSQL', icon: 'postgresql' },
+  { name: 'React', icon: 'react' },
+  { name: 'Node.js', icon: 'nodedotjs' },
+  { name: 'n8n', icon: 'n8n' },
+  { name: 'AWS', icon: 'amazonwebservices' },
+  { name: 'Git', icon: 'git' },
+  { name: 'Linux', icon: 'linux' },
+  { name: 'Make.com', icon: 'make' },
+  { name: 'Vapi', icon: 'vapi' },
+  { name: 'Zapier', icon: 'zapier' },
 ]
 
 function LoadingScreen({ done }) {
@@ -117,7 +129,10 @@ function Hero() {
       <div className="tech-marquee">
         <div className="tech-track">
           {[...techStack, ...techStack].map((t, i) => (
-            <span key={i} className="tech-chip">{t}</span>
+            <span key={i} className="tech-chip">
+              <img src={`https://cdn.simpleicons.org/${t.icon}`} alt="" className="tech-logo" />
+              {t.name}
+            </span>
           ))}
         </div>
       </div>

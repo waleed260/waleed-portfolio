@@ -188,11 +188,17 @@ h2 {
   100% { transform: translateX(-50%); }
 }
 .tech-chip {
-  padding: 6px 18px; white-space: nowrap;
+  padding: 6px 16px; white-space: nowrap;
   border: 1px solid var(--border); border-radius: 6px;
   font-size: 0.82rem; color: var(--muted);
   background: var(--card);
   flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.tech-logo {
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+  display: block;
 }
 
 @media (max-width: 768px) {
