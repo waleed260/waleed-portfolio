@@ -290,10 +290,12 @@ h2 {
   background: var(--card-hover);
   transform: translateY(-2px);
 }
+.contact-icon:hover .contact-logo { opacity: 1; }
 .contact-logo {
   width: 22px; height: 22px;
   display: block;
   color: var(--text);
+  opacity: 0.85;
 }
 @media (max-width: 768px) { .contact-heading { font-size: 1.6rem; } }
 
