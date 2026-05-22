@@ -276,21 +276,24 @@ h2 {
 }
 .contact-details {
   display: flex; justify-content: center;
-  gap: 3rem; flex-wrap: wrap;
+  gap: 2rem; flex-wrap: wrap;
 }
-.contact-item { text-align: center; }
-.contact-label {
+.contact-icon {
+  width: 48px; height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s ease;
+}
+.contact-icon:hover {
+  border-color: var(--text);
+  background: var(--card-hover);
+  transform: translateY(-2px);
+}
+.contact-logo {
+  width: 22px; height: 22px;
   display: block;
-  font-size: 0.75rem; text-transform: uppercase;
-  letter-spacing: 0.12em; color: var(--muted-2);
-  margin-bottom: 0.3rem;
 }
-.contact-value {
-  font-size: 1rem; font-weight: 500;
-  color: var(--text);
-  transition: color 0.2s;
-}
-.contact-value:hover { color: var(--highlight); }
 @media (max-width: 768px) { .contact-heading { font-size: 1.6rem; } }
 
 /* ─── Community (Two Column) ─── */

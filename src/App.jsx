@@ -245,18 +245,15 @@ function Contact() {
             let&apos;s talk.
           </p>
           <div className="contact-details">
-            <div className="contact-item">
-              <span className="contact-label">Email</span>
-              <a href="mailto:vkdeku20@gmail.com" className="contact-value">vkdeku20@gmail.com</a>
-            </div>
-            <div className="contact-item">
-              <span className="contact-label">LinkedIn</span>
-              <a href="https://linkedin.com/in/waleed-hassan-20438b3a8/" target="_blank" rel="noreferrer" className="contact-value">Waleed Hassan</a>
-            </div>
-            <div className="contact-item">
-              <span className="contact-label">GitHub</span>
-              <a href="https://github.com/waleed260" target="_blank" rel="noreferrer" className="contact-value">waleed260</a>
-            </div>
+            <a href="mailto:vkdeku20@gmail.com" className="contact-icon" target="_blank" rel="noreferrer">
+              <img src="https://cdn.simpleicons.org/gmail" alt="Email" className="contact-logo" />
+            </a>
+            <a href="https://linkedin.com/in/waleed-hassan-20438b3a8/" className="contact-icon" target="_blank" rel="noreferrer">
+              <img src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn" className="contact-logo" />
+            </a>
+            <a href="https://github.com/waleed260" className="contact-icon" target="_blank" rel="noreferrer">
+              <img src="https://cdn.simpleicons.org/github" alt="GitHub" className="contact-logo" />
+            </a>
           </div>
         </Reveal>
       </div>
