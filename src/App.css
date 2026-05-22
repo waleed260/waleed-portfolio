@@ -7,6 +7,8 @@
 }
 
 .app {
+  position: relative;
+  z-index: 1;
   width: 100%;
   min-height: 100vh;
 }
@@ -289,9 +291,47 @@
   }
 }
 
+/* Fixed Background */
+.fixed-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Origin Radar */
+.origin-radar {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  transform: scale(0.7);
+  transform-origin: center;
+}
+
+/* Craft Section */
+.craft-section {
+  background: rgba(160, 160, 160, 0.03);
+  border-top: 1px solid rgba(224, 224, 224, 0.1);
+  border-bottom: 1px solid rgba(224, 224, 224, 0.1);
+}
+
+.craft-content {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.craft-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 3rem;
+  font-family: 'Monaco', monospace;
+}
+
 /* Sections */
 .section {
   position: relative;
+  z-index: 1;
   width: 100%;
   padding: 6rem 2rem;
   margin-top: var(--navbar-height);
@@ -426,6 +466,8 @@
 
 /* Footer */
 .footer {
+  position: relative;
+  z-index: 1;
   background: rgba(0, 0, 0, 0.4);
   border-top: 1px solid rgba(224, 224, 224, 0.2);
   padding: 3rem 2rem;

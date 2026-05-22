@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { GridPattern } from './components/ui/grid-pattern'
+import { Radar } from './components/ui/radar-effect'
 import CoreInitialization from './components/CoreInitialization'
 import NodeBasedArchitecture from './components/NodeBasedArchitecture'
 import TimelineVisualization from './components/TimelineVisualization'
@@ -226,6 +228,10 @@ function Origin() {
             Production-ready. Built to scale.
           </p>
 
+          <div className="origin-radar">
+            <Radar />
+          </div>
+
           <div className="about-skills">
             {skills.map((skill, i) => (
               <div
@@ -310,6 +316,15 @@ export default function App() {
         <div className="app">
           <Cursor />
           <Nav />
+
+          <div className="fixed-bg">
+            <GridPattern
+              width={60}
+              height={60}
+              className="opacity-[0.12]"
+              strokeDasharray="2 2"
+            />
+          </div>
 
           <Origin />
           <Craft />
