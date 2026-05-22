@@ -132,7 +132,7 @@ function Nav() {
     }
   }, [])
 
-  const links = useMemo(() => ['Origin', 'Craft', 'Journey', 'Connect'], [])
+  const links = useMemo(() => ['Home', 'Origin', 'Craft', 'Journey', 'Connect'], [])
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -182,6 +182,25 @@ function Section({ id, className = '', children }) {
     >
       <div className="section-inner">
         {children}
+      </div>
+    </section>
+  )
+}
+
+/* ──────────── Hero ──────────── */
+function Hero() {
+  return (
+    <section id="hero" className="section hero-section">
+      <div className="hero-content">
+        <h1 className="hero-name">Waleed Hassan</h1>
+        <p className="hero-title">AI Agent Architect</p>
+        <p className="hero-tagline">
+          I build autonomous AI systems that don&apos;t just respond — they plan, orchestrate, and execute.
+        </p>
+        <a href="#origin" className="hero-cta" data-hover>
+          <span className="hero-cta-border" />
+          <span className="hero-cta-text">Explore My Work</span>
+        </a>
       </div>
     </section>
   )
@@ -326,6 +345,7 @@ export default function App() {
             />
           </div>
 
+          <Hero />
           <Origin />
           <Craft />
           <Journey />

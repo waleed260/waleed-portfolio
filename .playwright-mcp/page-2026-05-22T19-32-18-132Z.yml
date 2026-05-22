@@ -1,0 +1,195 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e4]:
+      - main [ref=e5]:
+        - generic [ref=e13]:
+          - generic [ref=e15]:
+            - button "Open sidebar" [ref=e19] [cursor=pointer]:
+              - img
+            - generic [ref=e21]:
+              - button "Components" [ref=e22] [cursor=pointer]
+              - generic [ref=e23]: /
+              - generic [ref=e24]:
+                - button "magicui" [ref=e25] [cursor=pointer]
+                - generic [ref=e26]: /
+                - generic [ref=e27]: Grid Pattern
+            - generic [ref=e28]:
+              - generic:
+                - button "Search":
+                  - img
+                  - generic: Search
+                  - generic:
+                    - img
+                    - generic: K
+              - generic [ref=e29]:
+                - button "Copy prompt" [ref=e30] [cursor=pointer]:
+                  - img [ref=e31]
+                  - generic [ref=e35]: Copy prompt
+                - button "Copy code" [ref=e36] [cursor=pointer]:
+                  - generic [ref=e37]:
+                    - generic:
+                      - img
+                    - img [ref=e39]
+                  - generic [ref=e43]: Copy code
+                - button "View code" [ref=e44] [cursor=pointer]:
+                  - img [ref=e45]
+                  - generic [ref=e48]: View code
+          - generic [ref=e49]:
+            - generic [ref=e50]:
+              - generic [ref=e52]:
+                - button [ref=e53] [cursor=pointer]:
+                  - img
+                - button [ref=e54] [cursor=pointer]:
+                  - generic [ref=e55]:
+                    - generic:
+                      - img
+                    - generic [ref=e56]:
+                      - img
+                - button [ref=e57] [cursor=pointer]:
+                  - img
+              - generic [ref=e59]:
+                - button [ref=e60] [cursor=pointer]:
+                  - img
+                - button [ref=e61] [cursor=pointer]:
+                  - img
+                - button [ref=e63] [cursor=pointer]:
+                  - img
+              - iframe [ref=e67]:
+                - generic [ref=f32e3]:
+                  - combobox [ref=f32e7] [cursor=pointer]:
+                    - generic: Grid Pattern Demo
+                    - img [ref=f32e8]
+                  - generic [ref=f32e11]:
+                    - paragraph [ref=f32e12]: Grid Pattern
+                    - img:
+                      - img
+            - generic [ref=e70]:
+              - generic [ref=e72]:
+                - link "Components" [ref=e73] [cursor=pointer]:
+                  - /url: /community/components
+                - generic [ref=e74]: •
+                - link "magicui" [ref=e75] [cursor=pointer]:
+                  - /url: /community/magicui
+                - generic [ref=e76]: •
+                - generic [ref=e77]: Grid Pattern
+              - heading "Grid Pattern" [level=3] [ref=e78]
+              - paragraph [ref=e79]: A background grid pattern made with SVGs, fully customizable using Tailwind CSS.
+              - heading "Created by" [level=3] [ref=e80]
+              - generic [ref=e81]:
+                - link "Magic UI" [ref=e82] [cursor=pointer]:
+                  - /url: /community/magicui
+                  - img "Magic UI" [ref=e84]
+                - generic [ref=e85]:
+                  - link "Magic UI" [ref=e86] [cursor=pointer]:
+                    - /url: /community/magicui
+                  - paragraph [ref=e87]: "@magicui"
+              - heading "Installation" [level=3] [ref=e88]
+              - button "Click to copy code or select text" [ref=e90] [cursor=pointer]:
+                - code [ref=e93]:
+                  - generic [ref=e94]: npx shadcn@latest add https://21st.dev/r/dillionverma/grid-pattern
+              - generic [ref=e95]:
+                - heading "How to use" [level=3] [ref=e96]
+                - generic [ref=e97]:
+                  - button "Copy prompt" [ref=e98] [cursor=pointer]:
+                    - img [ref=e99]
+                    - text: Copy prompt
+                  - button "Copy code" [ref=e103] [cursor=pointer]:
+                    - generic [ref=e104]:
+                      - generic:
+                        - img
+                      - img [ref=e106]
+                    - text: Copy code
+                  - button "View code" [ref=e110] [cursor=pointer]:
+                    - img [ref=e111]
+                    - text: View code
+                - button "Click to copy code or select text" [ref=e115] [cursor=pointer]:
+                  - code [ref=e118]:
+                    - generic [ref=e119]: "\"use client\";"
+                    - generic [ref=e120]: "import { cn } from \"@/lib/utils\";"
+                    - generic [ref=e121]: "import { GridPattern } from \"@/components/ui/grid-pattern\";"
+                    - generic [ref=e122]: "function GridPatternDemo() {"
+                    - generic [ref=e123]: return (
+                    - generic [ref=e124]: <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+                    - generic [ref=e125]: <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
+                    - generic [ref=e126]: Grid Pattern
+                    - generic [ref=e127]: </p>
+                    - generic [ref=e128]: <GridPattern
+                    - generic [ref=e129]: "squares={["
+                    - generic [ref=e130]: "[4, 4],"
+                    - generic [ref=e131]: "[5, 1],"
+                    - generic [ref=e132]: "[8, 2],"
+                    - generic [ref=e133]: "[5, 3],"
+                    - generic [ref=e134]: "[5, 5],"
+                    - generic [ref=e135]: "[10, 10],"
+                    - generic [ref=e136]: "[12, 15],"
+                    - generic [ref=e137]: "[15, 10],"
+                    - generic [ref=e138]: "[10, 15],"
+                    - generic [ref=e139]: "[15, 10],"
+                    - generic [ref=e140]: "[10, 15],"
+                    - generic [ref=e141]: "[15, 10],"
+                    - generic [ref=e142]: "]}"
+                    - generic [ref=e143]: "className={cn("
+                    - generic [ref=e144]: "\"[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]\","
+                    - generic [ref=e145]: "\"inset-x-0 inset-y-[-30%] h-[200%] skew-y-12\","
+                    - generic [ref=e146]: ")}"
+                    - generic [ref=e147]: />
+                    - generic [ref=e148]: </div>
+                    - generic [ref=e149]: );
+                    - generic [ref=e150]: "}"
+                    - generic [ref=e151]: "function GridPatternLinearGradient() {"
+                    - generic [ref=e152]: return (
+                    - generic [ref=e153]: <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg border bg-background p-20 md:shadow-xl">
+                    - generic [ref=e154]: <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
+                    - generic [ref=e155]: Grid Pattern
+                    - generic [ref=e156]: </p>
+                    - generic [ref=e157]: <GridPattern
+                    - generic [ref=e158]: "width={20}"
+                    - generic [ref=e159]: "height={20}"
+                    - generic [ref=e160]: "x={-1}"
+                    - generic [ref=e161]: "y={-1}"
+                    - generic [ref=e162]: "className={cn("
+                    - generic [ref=e163]: "\"[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] \","
+                    - generic [ref=e164]: ")}"
+                    - generic [ref=e165]: />
+                    - generic [ref=e166]: </div>
+                    - generic [ref=e167]: );
+                    - generic [ref=e168]: "}"
+                    - generic [ref=e169]: "function GridPatternDashed() {"
+                    - generic [ref=e170]: return (
+                    - generic [ref=e171]: <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg border bg-background p-20 md:shadow-xl">
+                    - generic [ref=e172]: <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
+                    - generic [ref=e173]: Grid Pattern
+                    - generic [ref=e174]: </p>
+                    - generic [ref=e175]: <GridPattern
+                    - generic [ref=e176]: "width={30}"
+                    - generic [ref=e177]: "height={30}"
+                    - generic [ref=e178]: "x={-1}"
+                    - generic [ref=e179]: "y={-1}"
+                    - generic [ref=e180]: "strokeDasharray={\"4 2\"}"
+                    - generic [ref=e181]: "className={cn("
+                    - generic [ref=e182]: "\"[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]\","
+                    - generic [ref=e183]: ")}"
+                    - generic [ref=e184]: />
+                    - generic [ref=e185]: </div>
+                    - generic [ref=e186]: );
+                    - generic [ref=e187]: "}"
+                    - generic [ref=e188]: "export { GridPatternDemo, GridPatternLinearGradient, GridPatternDashed };"
+              - generic [ref=e189]:
+                - heading "Tags" [level=3] [ref=e190]
+                - generic [ref=e191]:
+                  - link "Landing Page" [ref=e192] [cursor=pointer]:
+                    - /url: /community/components/s/landing-page
+                  - link "Backgrounds" [ref=e193] [cursor=pointer]:
+                    - /url: /community/components/s/background
+                  - link "Hero" [ref=e194] [cursor=pointer]:
+                    - /url: /community/components/s/hero
+                  - link "Pattern" [ref=e195] [cursor=pointer]:
+                    - /url: /community/components/s/pattern
+              - generic [ref=e197]:
+                - generic [ref=e198]: Created 12/4/2024
+                - generic [ref=e199]: Updated 12/4/2024
+    - region "Notifications alt+T"
+  - alert [ref=e201]
+  - generic:
+    - iframe
+    - iframe

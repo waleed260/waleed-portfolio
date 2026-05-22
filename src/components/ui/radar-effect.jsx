@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 
-function Circle({ className, children, idx, ...rest }) {
+function Circle({ className, idx, ...rest }) {
   return (
     <motion.div
       {...rest}

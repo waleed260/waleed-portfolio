@@ -1,0 +1,867 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - main [ref=e4]:
+      - main [ref=e5]:
+        - generic [ref=e8]:
+          - generic [ref=e13]:
+            - generic [ref=e14]:
+              - generic [ref=e15]:
+                - generic [ref=e18]:
+                  - button "21st logo 21st" [ref=e20] [cursor=pointer]:
+                    - generic [ref=e21]:
+                      - generic [ref=e23]:
+                        - img "21st logo"
+                      - generic [ref=e25]: 21st
+                      - img
+                  - button "Close sidebar" [ref=e27] [cursor=pointer]:
+                    - img
+                - generic [ref=e30]:
+                  - img
+                  - textbox "Search" [ref=e31] [cursor=pointer]
+                  - generic:
+                    - img
+                    - generic: K
+              - generic [ref=e32]:
+                - generic [ref=e35]:
+                  - link "Home" [ref=e37] [cursor=pointer]:
+                    - /url: /home
+                    - img [ref=e38]
+                    - generic [ref=e41]: Home
+                  - generic [ref=e42]:
+                    - heading "Explore" [level=3] [ref=e44]
+                    - generic [ref=e45]:
+                      - button "Components" [ref=e46] [cursor=pointer]:
+                        - img [ref=e47]
+                        - generic [ref=e49]: Components
+                        - img [ref=e51]
+                      - button "Agent Templates" [ref=e53] [cursor=pointer]:
+                        - img [ref=e54]
+                        - generic [ref=e56]: Agent Templates
+                        - img [ref=e58]
+                      - link "MCP" [ref=e60] [cursor=pointer]:
+                        - /url: /mcp
+                        - img [ref=e61]
+                        - generic [ref=e67]: MCP
+                  - generic [ref=e68]:
+                    - heading "Build" [level=3] [ref=e70]
+                    - generic [ref=e71]:
+                      - button "Private registry" [ref=e72] [cursor=pointer]:
+                        - img [ref=e73]
+                        - generic [ref=e75]: Private registry
+                        - img [ref=e77]
+                      - link "Magic Chat" [ref=e79] [cursor=pointer]:
+                        - /url: /magic
+                        - img [ref=e80]
+                        - generic [ref=e84]: Magic Chat
+                        - img [ref=e85]
+                - generic [ref=e91]:
+                  - generic [ref=e96]:
+                    - generic [ref=e97]:
+                      - generic [ref=e98]: 21st Agents SDK
+                      - paragraph [ref=e99]: The fastest way to build and deploy AI agents.
+                    - link [ref=e100] [cursor=pointer]:
+                      - /url: https://21st.dev/agents
+                    - generic [ref=e101]:
+                      - link [ref=e102] [cursor=pointer]:
+                        - /url: https://21st.dev/agents
+                        - text: Read more
+                      - button [ref=e103] [cursor=pointer]: Dismiss
+                  - generic [ref=e106]:
+                    - generic [ref=e107]:
+                      - generic [ref=e108]: We're in YC
+                      - paragraph [ref=e109]: 21st is backed by Y Combinator. Excited for what's ahead!
+                    - link [ref=e110] [cursor=pointer]:
+                      - /url: https://www.ycombinator.com/companies/1code-21stdev
+                    - generic [ref=e111]:
+                      - link "Read more" [ref=e112] [cursor=pointer]:
+                        - /url: https://www.ycombinator.com/companies/1code-21stdev
+                      - button "Dismiss" [ref=e113] [cursor=pointer]
+              - generic [ref=e115]:
+                - generic [ref=e116]:
+                  - button "Toggle theme" [ref=e117] [cursor=pointer]:
+                    - img
+                  - button "Settings" [ref=e118] [cursor=pointer]:
+                    - img
+                - button "Log in" [ref=e119] [cursor=pointer]:
+                  - generic [ref=e120]: Log in
+            - button "Toggle Sidebar" [ref=e121] [cursor=pointer]
+          - generic [ref=e122]:
+            - heading "Backgrounds Components for React & Next.js" [level=1] [ref=e123]
+            - paragraph [ref=e124]: Elevate your site’s design with 40 unique background components, crafted for React and styled with Tailwind CSS.
+            - generic [ref=e126]:
+              - generic [ref=e128]:
+                - generic [ref=e130]:
+                  - button "Components" [ref=e131] [cursor=pointer]
+                  - generic [ref=e132]: /
+                  - generic [ref=e133]: background
+                - generic [ref=e134]:
+                  - generic:
+                    - button "Search":
+                      - img
+                      - generic: Search
+                      - generic:
+                        - img
+                        - generic: K
+                  - combobox [ref=e135] [cursor=pointer]:
+                    - generic: Recommended
+                    - img [ref=e136]
+              - generic [ref=e140]:
+                - listitem [ref=e142]:
+                  - generic [ref=e143]:
+                    - link "Shape Landing Hero" [ref=e144] [cursor=pointer]:
+                      - /url: /community/components/kokonutd/shape-landing-hero/default
+                      - img "Shape Landing Hero" [ref=e145]
+                    - generic [ref=e146]:
+                      - link "Kokonut UI" [ref=e147] [cursor=pointer]:
+                        - /url: /community/kokonutd
+                        - img "Kokonut UI" [ref=e149]
+                      - paragraph [ref=e150]: Shape Landing Hero
+                      - button "593" [ref=e151] [cursor=pointer]:
+                        - img [ref=e152]
+                        - generic [ref=e155]: "593"
+                - listitem [ref=e157]:
+                  - generic [ref=e158]:
+                    - link "Gooey Filter" [ref=e159] [cursor=pointer]:
+                      - /url: /community/components/danielpetho/gooey-filter/background
+                      - img "Gooey Filter" [ref=e160]
+                    - generic [ref=e161]:
+                      - link "Daniel Petho" [ref=e162] [cursor=pointer]:
+                        - /url: /community/danielpetho
+                        - img "Daniel Petho" [ref=e164]
+                      - paragraph [ref=e165]: Gooey Filter
+                      - button "108" [ref=e166] [cursor=pointer]:
+                        - img [ref=e167]
+                        - generic [ref=e170]: "108"
+                - listitem [ref=e172]:
+                  - generic [ref=e173]:
+                    - link "Background Paths" [ref=e174] [cursor=pointer]:
+                      - /url: /community/components/kokonutd/background-paths/default
+                      - img "Background Paths" [ref=e175]
+                    - generic [ref=e176]:
+                      - link "Kokonut UI" [ref=e177] [cursor=pointer]:
+                        - /url: /community/kokonutd
+                        - img "Kokonut UI" [ref=e179]
+                      - paragraph [ref=e180]: Background Paths
+                      - button "619" [ref=e181] [cursor=pointer]:
+                        - img [ref=e182]
+                        - generic [ref=e185]: "619"
+                - listitem [ref=e187]:
+                  - generic [ref=e188]:
+                    - link "Glow" [ref=e189] [cursor=pointer]:
+                      - /url: /community/components/mikolajdobrucki/glow/default
+                      - img "Glow" [ref=e190]
+                    - generic [ref=e191]:
+                      - link "Mikolaj Dobrucki" [ref=e192] [cursor=pointer]:
+                        - /url: /community/mikolajdobrucki
+                        - img "Mikolaj Dobrucki" [ref=e194]
+                      - paragraph [ref=e195]: Glow
+                      - button "25" [ref=e196] [cursor=pointer]:
+                        - img [ref=e197]
+                        - generic [ref=e200]: "25"
+                - listitem [ref=e202]:
+                  - generic [ref=e203]:
+                    - link "Aurora Background" [ref=e204] [cursor=pointer]:
+                      - /url: /community/components/aceternity/aurora-background/default
+                      - img "Aurora Background" [ref=e205]
+                    - generic [ref=e206]:
+                      - link "Aceternity UI" [ref=e207] [cursor=pointer]:
+                        - /url: /community/aceternity
+                        - img "Aceternity UI" [ref=e209]
+                      - paragraph [ref=e210]: Aurora Background
+                      - button "781" [ref=e211] [cursor=pointer]:
+                        - img [ref=e212]
+                        - generic [ref=e215]: "781"
+                - listitem [ref=e217]:
+                  - generic [ref=e218]:
+                    - link "Background Gradient Animation" [ref=e219] [cursor=pointer]:
+                      - /url: /community/components/aceternity/background-gradient-animation/default
+                      - img "Background Gradient Animation" [ref=e220]
+                    - generic [ref=e221]:
+                      - link "Aceternity UI" [ref=e222] [cursor=pointer]:
+                        - /url: /community/aceternity
+                        - img "Aceternity UI" [ref=e224]
+                      - paragraph [ref=e225]: Background Gradient Animation
+                      - button "317" [ref=e226] [cursor=pointer]:
+                        - img [ref=e227]
+                        - generic [ref=e230]: "317"
+                - listitem [ref=e232]:
+                  - generic [ref=e233]:
+                    - link "Hero Highlight" [ref=e234] [cursor=pointer]:
+                      - /url: /community/components/aceternity/hero-highlight/default
+                      - img "Hero Highlight" [ref=e235]
+                    - generic [ref=e236]:
+                      - link "Aceternity UI" [ref=e237] [cursor=pointer]:
+                        - /url: /community/aceternity
+                        - img "Aceternity UI" [ref=e239]
+                      - paragraph [ref=e240]: Hero Highlight
+                      - button "149" [ref=e241] [cursor=pointer]:
+                        - img [ref=e242]
+                        - generic [ref=e245]: "149"
+                - listitem [ref=e247]:
+                  - generic [ref=e248]:
+                    - link "Sparkles" [ref=e249] [cursor=pointer]:
+                      - /url: /community/components/aceternity/sparkles/default
+                      - img "Sparkles" [ref=e250]
+                    - generic [ref=e251]:
+                      - link "Aceternity UI" [ref=e252] [cursor=pointer]:
+                        - /url: /community/aceternity
+                        - img "Aceternity UI" [ref=e254]
+                      - paragraph [ref=e255]: Sparkles
+                      - button "664" [ref=e256] [cursor=pointer]:
+                        - img [ref=e257]
+                        - generic [ref=e260]: "664"
+                - listitem [ref=e262]:
+                  - generic [ref=e263]:
+                    - link "Grid Pattern" [ref=e264] [cursor=pointer]:
+                      - /url: /community/components/magicui/grid-pattern/default
+                      - img "Grid Pattern" [ref=e265]
+                    - generic [ref=e266]:
+                      - link "Magic UI" [ref=e267] [cursor=pointer]:
+                        - /url: /community/magicui
+                        - img "Magic UI" [ref=e269]
+                      - paragraph [ref=e270]: Grid Pattern
+                      - button "57" [ref=e271] [cursor=pointer]:
+                        - img [ref=e272]
+                        - generic [ref=e275]: "57"
+                - listitem [ref=e277]:
+                  - generic [ref=e278]:
+                    - link "Background Boxes" [ref=e279] [cursor=pointer]:
+                      - /url: /community/components/aceternity/background-boxes/default
+                      - img "Background Boxes" [ref=e280]
+                    - generic [ref=e281]:
+                      - link "Aceternity UI" [ref=e282] [cursor=pointer]:
+                        - /url: /community/aceternity
+                        - img "Aceternity UI" [ref=e284]
+                      - paragraph [ref=e285]: Background Boxes
+                      - button "179" [ref=e286] [cursor=pointer]:
+                        - img [ref=e287]
+                        - generic [ref=e290]: "179"
+                - listitem [ref=e292]:
+                  - generic [ref=e293]:
+                    - link "Beams Background" [ref=e294] [cursor=pointer]:
+                      - /url: /community/components/kokonutd/beams-background/default
+                      - img "Beams Background" [ref=e295]
+                    - generic [ref=e296]:
+                      - link "Kokonut UI" [ref=e297] [cursor=pointer]:
+                        - /url: /community/kokonutd
+                        - img "Kokonut UI" [ref=e299]
+                      - paragraph [ref=e300]: Beams Background
+                      - button "246" [ref=e301] [cursor=pointer]:
+                        - img [ref=e302]
+                        - generic [ref=e305]: "246"
+                - listitem [ref=e307]:
+                  - generic [ref=e308]:
+                    - link "Entropy" [ref=e309] [cursor=pointer]:
+                      - /url: /community/components/Kain0127/entropy/default
+                      - img "Entropy" [ref=e310]
+                    - generic [ref=e311]:
+                      - link "KainXu" [ref=e312] [cursor=pointer]:
+                        - /url: /community/Kain0127
+                        - img "KainXu" [ref=e314]
+                      - paragraph [ref=e315]: Entropy
+                      - button "82" [ref=e316] [cursor=pointer]:
+                        - img [ref=e317]
+                        - generic [ref=e320]: "82"
+                - listitem [ref=e322]:
+                  - generic [ref=e323]:
+                    - link "Wave Background" [ref=e324] [cursor=pointer]:
+                      - /url: /community/components/Kain0127/wave-background/default
+                      - img "Wave Background" [ref=e325]
+                    - generic [ref=e326]:
+                      - link "KainXu" [ref=e327] [cursor=pointer]:
+                        - /url: /community/Kain0127
+                        - img "KainXu" [ref=e329]
+                      - paragraph [ref=e330]: Wave Background
+                      - button "53" [ref=e331] [cursor=pointer]:
+                        - img [ref=e332]
+                        - generic [ref=e335]: "53"
+                - listitem [ref=e337]:
+                  - generic [ref=e338]:
+                    - link "SpiralAnimation" [ref=e339] [cursor=pointer]:
+                      - /url: /community/components/Kain0127/spiral-animation/default
+                      - img "SpiralAnimation" [ref=e340]
+                    - generic [ref=e341]:
+                      - link "KainXu" [ref=e342] [cursor=pointer]:
+                        - /url: /community/Kain0127
+                        - img "KainXu" [ref=e344]
+                      - paragraph [ref=e345]: SpiralAnimation
+                      - button "173" [ref=e346] [cursor=pointer]:
+                        - img [ref=e347]
+                        - generic [ref=e350]: "173"
+                - listitem [ref=e352]:
+                  - generic [ref=e353]:
+                    - link "BG Patterns" [ref=e354] [cursor=pointer]:
+                      - /url: /community/components/efferd/bg-pattern/default
+                      - img "BG Patterns" [ref=e355]
+                    - generic [ref=e356]:
+                      - link "Efferd" [ref=e357] [cursor=pointer]:
+                        - /url: /community/efferd
+                        - img "Efferd" [ref=e359]
+                      - paragraph [ref=e360]: BG Patterns
+                      - button "63" [ref=e361] [cursor=pointer]:
+                        - img [ref=e362]
+                        - generic [ref=e365]: "63"
+                - listitem [ref=e367]:
+                  - generic [ref=e368]:
+                    - link "Etheral Shadow" [ref=e369] [cursor=pointer]:
+                      - /url: /community/components/jatin-yadav05/etheral-shadow/default
+                      - img "Etheral Shadow" [ref=e370]
+                    - generic [ref=e371]:
+                      - link "Jatin Yadav" [ref=e372] [cursor=pointer]:
+                        - /url: /community/jatin-yadav05
+                        - img "Jatin Yadav" [ref=e374]
+                      - paragraph [ref=e375]: Etheral Shadow
+                      - button "213" [ref=e376] [cursor=pointer]:
+                        - img [ref=e377]
+                        - generic [ref=e380]: "213"
+                - listitem [ref=e382]:
+                  - generic [ref=e383]:
+                    - link "FlickeringGridHero" [ref=e384] [cursor=pointer]:
+                      - /url: /community/components/Kain0127/flickering-grid-hero/default
+                      - img "FlickeringGridHero" [ref=e385]
+                    - generic [ref=e386]:
+                      - link "KainXu" [ref=e387] [cursor=pointer]:
+                        - /url: /community/Kain0127
+                        - img "KainXu" [ref=e389]
+                      - paragraph [ref=e390]: FlickeringGridHero
+                      - button "37" [ref=e391] [cursor=pointer]:
+                        - img [ref=e392]
+                        - generic [ref=e395]: "37"
+                - listitem [ref=e397]:
+                  - generic [ref=e398]:
+                    - link "Spooky Smoke Animation" [ref=e399] [cursor=pointer]:
+                      - /url: /community/components/easemize/spooky-smoke-animation/default
+                      - img "Spooky Smoke Animation" [ref=e400]
+                    - generic [ref=e401]:
+                      - link "Hossain Jahed" [ref=e402] [cursor=pointer]:
+                        - /url: /community/easemize
+                        - img "Hossain Jahed" [ref=e404]
+                      - paragraph [ref=e405]: Spooky Smoke Animation
+                      - button "20" [ref=e406] [cursor=pointer]:
+                        - img [ref=e407]
+                        - generic [ref=e410]: "20"
+                - listitem [ref=e412]:
+                  - generic [ref=e413]:
+                    - link "ParticleTextEffect" [ref=e414] [cursor=pointer]:
+                      - /url: /community/components/Kain0127/particle-text-effect/default
+                      - img "ParticleTextEffect" [ref=e415]
+                    - generic [ref=e416]:
+                      - link "KainXu" [ref=e417] [cursor=pointer]:
+                        - /url: /community/Kain0127
+                        - img "KainXu" [ref=e419]
+                      - paragraph [ref=e420]: ParticleTextEffect
+                      - button "143" [ref=e421] [cursor=pointer]:
+                        - img [ref=e422]
+                        - generic [ref=e425]: "143"
+                - listitem [ref=e427]:
+                  - generic [ref=e428]:
+                    - link "Gradient Background" [ref=e429] [cursor=pointer]:
+                      - /url: /community/components/efferd/gradient-background/default
+                      - img "Gradient Background" [ref=e430]
+                    - generic [ref=e431]:
+                      - link "Efferd" [ref=e432] [cursor=pointer]:
+                        - /url: /community/efferd
+                        - img "Efferd" [ref=e434]
+                      - paragraph [ref=e435]: Gradient Background
+                      - button "6" [ref=e436] [cursor=pointer]:
+                        - img [ref=e437]
+                        - generic [ref=e440]: "6"
+                - listitem [ref=e442]:
+                  - generic [ref=e443]:
+                    - link "Falling Pattern" [ref=e444] [cursor=pointer]:
+                      - /url: /community/components/efferd/falling-pattern/default
+                      - img "Falling Pattern" [ref=e445]
+                    - generic [ref=e446]:
+                      - link "Efferd" [ref=e447] [cursor=pointer]:
+                        - /url: /community/efferd
+                        - img "Efferd" [ref=e449]
+                      - paragraph [ref=e450]: Falling Pattern
+                      - button "8" [ref=e451] [cursor=pointer]:
+                        - img [ref=e452]
+                        - generic [ref=e455]: "8"
+                - listitem [ref=e457]:
+                  - generic [ref=e458]:
+                    - link "Falling Pattern" [ref=e459] [cursor=pointer]:
+                      - /url: /community/components/efferd/falling-pattern/custom-colors
+                      - img "Falling Pattern" [ref=e460]
+                    - generic [ref=e461]:
+                      - link "Efferd" [ref=e462] [cursor=pointer]:
+                        - /url: /community/efferd
+                        - img "Efferd" [ref=e464]
+                      - paragraph [ref=e465]: Falling Pattern
+                      - button "92" [ref=e466] [cursor=pointer]:
+                        - img [ref=e467]
+                        - generic [ref=e470]: "92"
+                - listitem [ref=e472]:
+                  - generic [ref=e473]:
+                    - link "Gradient Dots" [ref=e474] [cursor=pointer]:
+                      - /url: /community/components/efferd/gradient-dots/default
+                      - img "Gradient Dots" [ref=e475]
+                    - generic [ref=e476]:
+                      - link "Efferd" [ref=e477] [cursor=pointer]:
+                        - /url: /community/efferd
+                        - img "Efferd" [ref=e479]
+                      - paragraph [ref=e480]: Gradient Dots
+                      - button "23" [ref=e481] [cursor=pointer]:
+                        - img [ref=e482]
+                        - generic [ref=e485]: "23"
+                - listitem [ref=e487]:
+                  - generic [ref=e488]:
+                    - link "Blueprint Shader Grid" [ref=e489] [cursor=pointer]:
+                      - /url: /community/components/uimix/asd/default
+                      - img "Blueprint Shader Grid" [ref=e490]
+                    - generic [ref=e491]:
+                      - link "uimix" [ref=e492] [cursor=pointer]:
+                        - /url: /community/uimix
+                        - img "uimix" [ref=e494]
+                      - paragraph [ref=e495]: Blueprint Shader Grid
+                      - button "78" [ref=e496] [cursor=pointer]:
+                        - img [ref=e497]
+                        - generic [ref=e500]: "78"
+                - listitem [ref=e502]:
+                  - generic [ref=e503]:
+                    - link "Dotted Surface" [ref=e504] [cursor=pointer]:
+                      - /url: /community/components/efferd/dotted-surface/default
+                      - img "Dotted Surface" [ref=e505]
+                    - generic [ref=e506]:
+                      - link "Efferd" [ref=e507] [cursor=pointer]:
+                        - /url: /community/efferd
+                        - img "Efferd" [ref=e509]
+                      - paragraph [ref=e510]: Dotted Surface
+                      - button "2.1k" [ref=e511] [cursor=pointer]:
+                        - img [ref=e512]
+                        - generic [ref=e515]: 2.1k
+                - listitem [ref=e517]:
+                  - generic [ref=e518]:
+                    - link "Background Components" [ref=e519] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/default
+                      - img "Background Components" [ref=e520]
+                    - generic [ref=e521]:
+                      - link "meghtrix" [ref=e522] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e524]
+                      - paragraph [ref=e525]: Background Components
+                      - button "155" [ref=e526] [cursor=pointer]:
+                        - img [ref=e527]
+                        - generic [ref=e530]: "155"
+                - listitem [ref=e532]:
+                  - generic [ref=e533]:
+                    - link "Background Components" [ref=e534] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/soft-dark-yellow-glow
+                      - img "Background Components" [ref=e535]
+                    - generic [ref=e536]:
+                      - link "meghtrix" [ref=e537] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e539]
+                      - paragraph [ref=e540]: Background Components
+                      - button "10" [ref=e541] [cursor=pointer]:
+                        - img [ref=e542]
+                        - generic [ref=e545]: "10"
+                - listitem [ref=e547]:
+                  - generic [ref=e548]:
+                    - link "Background Components" [ref=e549] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/orange-soft-yellow
+                      - img "Background Components" [ref=e550]
+                    - generic [ref=e551]:
+                      - link "meghtrix" [ref=e552] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e554]
+                      - paragraph [ref=e555]: Background Components
+                      - button "15" [ref=e556] [cursor=pointer]:
+                        - img [ref=e557]
+                        - generic [ref=e560]: "15"
+                - listitem [ref=e562]:
+                  - generic [ref=e563]:
+                    - link "Background Components" [ref=e564] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/soft-green-glow
+                      - img "Background Components" [ref=e565]
+                    - generic [ref=e566]:
+                      - link "meghtrix" [ref=e567] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e569]
+                      - paragraph [ref=e570]: Background Components
+                      - button "6" [ref=e571] [cursor=pointer]:
+                        - img [ref=e572]
+                        - generic [ref=e575]: "6"
+                - listitem [ref=e577]:
+                  - generic [ref=e578]:
+                    - link "Background Components" [ref=e579] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/purple-center-glow
+                      - img "Background Components" [ref=e580]
+                    - generic [ref=e581]:
+                      - link "meghtrix" [ref=e582] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e584]
+                      - paragraph [ref=e585]: Background Components
+                      - button "8" [ref=e586] [cursor=pointer]:
+                        - img [ref=e587]
+                        - generic [ref=e590]: "8"
+                - listitem [ref=e592]:
+                  - generic [ref=e593]:
+                    - link "Background Components" [ref=e594] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/green-cetner-glow
+                      - img "Background Components" [ref=e595]
+                    - generic [ref=e596]:
+                      - link "meghtrix" [ref=e597] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e599]
+                      - paragraph [ref=e600]: Background Components
+                      - button "6" [ref=e601] [cursor=pointer]:
+                        - img [ref=e602]
+                        - generic [ref=e605]: "6"
+                - listitem [ref=e607]:
+                  - generic [ref=e608]:
+                    - link "Background Components" [ref=e609] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/indigo-center-glow
+                      - img "Background Components" [ref=e610]
+                    - generic [ref=e611]:
+                      - link "meghtrix" [ref=e612] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e614]
+                      - paragraph [ref=e615]: Background Components
+                      - button "12" [ref=e616] [cursor=pointer]:
+                        - img [ref=e617]
+                        - generic [ref=e620]: "12"
+                - listitem [ref=e622]:
+                  - generic [ref=e623]:
+                    - link "Background Components" [ref=e624] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/lime-center-glow
+                      - img "Background Components" [ref=e625]
+                    - generic [ref=e626]:
+                      - link "meghtrix" [ref=e627] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e629]
+                      - paragraph [ref=e630]: Background Components
+                      - button "2" [ref=e631] [cursor=pointer]:
+                        - img [ref=e632]
+                        - generic [ref=e635]: "2"
+                - listitem [ref=e637]:
+                  - generic [ref=e638]:
+                    - link "Background Components" [ref=e639] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/sunrise-glow
+                      - img "Background Components" [ref=e640]
+                    - generic [ref=e641]:
+                      - link "meghtrix" [ref=e642] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e644]
+                      - paragraph [ref=e645]: Background Components
+                      - button "2" [ref=e646] [cursor=pointer]:
+                        - img [ref=e647]
+                        - generic [ref=e650]: "2"
+                - listitem [ref=e652]:
+                  - generic [ref=e653]:
+                    - link "Background Components" [ref=e654] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/lavender-center-glow
+                      - img "Background Components" [ref=e655]
+                    - generic [ref=e656]:
+                      - link "meghtrix" [ref=e657] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e659]
+                      - paragraph [ref=e660]: Background Components
+                      - button "5" [ref=e661] [cursor=pointer]:
+                        - img [ref=e662]
+                        - generic [ref=e665]: "5"
+                - listitem [ref=e667]:
+                  - generic [ref=e668]:
+                    - link "Background Components" [ref=e669] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/soft-pink-glow
+                      - img "Background Components" [ref=e670]
+                    - generic [ref=e671]:
+                      - link "meghtrix" [ref=e672] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e674]
+                      - paragraph [ref=e675]: Background Components
+                      - button "7" [ref=e676] [cursor=pointer]:
+                        - img [ref=e677]
+                        - generic [ref=e680]: "7"
+                - listitem [ref=e682]:
+                  - generic [ref=e683]:
+                    - link "Background Components" [ref=e684] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/light-sky-blue
+                      - img "Background Components" [ref=e685]
+                    - generic [ref=e686]:
+                      - link "meghtrix" [ref=e687] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e689]
+                      - paragraph [ref=e690]: Background Components
+                      - button "27" [ref=e691] [cursor=pointer]:
+                        - img [ref=e692]
+                        - generic [ref=e695]: "27"
+                - listitem [ref=e697]:
+                  - generic [ref=e698]:
+                    - link "Background Components" [ref=e699] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/sunny-glow
+                      - img "Background Components" [ref=e700]
+                    - generic [ref=e701]:
+                      - link "meghtrix" [ref=e702] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e704]
+                      - paragraph [ref=e705]: Background Components
+                      - button "10" [ref=e706] [cursor=pointer]:
+                        - img [ref=e707]
+                        - generic [ref=e710]: "10"
+                - listitem [ref=e712]:
+                  - generic [ref=e713]:
+                    - link "Background Components" [ref=e714] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/purple-glow-right
+                      - img "Background Components" [ref=e715]
+                    - generic [ref=e716]:
+                      - link "meghtrix" [ref=e717] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e719]
+                      - paragraph [ref=e720]: Background Components
+                      - button "5" [ref=e721] [cursor=pointer]:
+                        - img [ref=e722]
+                        - generic [ref=e725]: "5"
+                - listitem [ref=e727]:
+                  - generic [ref=e728]:
+                    - link "Background Components" [ref=e729] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/teal-glow-right
+                      - img "Background Components" [ref=e730]
+                    - generic [ref=e731]:
+                      - link "meghtrix" [ref=e732] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e734]
+                      - paragraph [ref=e735]: Background Components
+                      - button "8" [ref=e736] [cursor=pointer]:
+                        - img [ref=e737]
+                        - generic [ref=e740]: "8"
+                - listitem [ref=e742]:
+                  - generic [ref=e743]:
+                    - link "Background Components" [ref=e744] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/warm-orange-glow
+                      - img "Background Components" [ref=e745]
+                    - generic [ref=e746]:
+                      - link "meghtrix" [ref=e747] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e749]
+                      - paragraph [ref=e750]: Background Components
+                      - button "9" [ref=e751] [cursor=pointer]:
+                        - img [ref=e752]
+                        - generic [ref=e755]: "9"
+                - listitem [ref=e757]:
+                  - generic [ref=e758]:
+                    - link "Background Components" [ref=e759] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/cool-blue-glow-right
+                      - img "Background Components" [ref=e760]
+                    - generic [ref=e761]:
+                      - link "meghtrix" [ref=e762] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e764]
+                      - paragraph [ref=e765]: Background Components
+                      - button "18" [ref=e766] [cursor=pointer]:
+                        - img [ref=e767]
+                        - generic [ref=e770]: "18"
+                - listitem [ref=e772]:
+                  - generic [ref=e773]:
+                    - link "Background Components" [ref=e774] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/purple-glow-left
+                      - img "Background Components" [ref=e775]
+                    - generic [ref=e776]:
+                      - link "meghtrix" [ref=e777] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e779]
+                      - paragraph [ref=e780]: Background Components
+                      - button "7" [ref=e781] [cursor=pointer]:
+                        - img [ref=e782]
+                        - generic [ref=e785]: "7"
+                - listitem [ref=e787]:
+                  - generic [ref=e788]:
+                    - link "Background Components" [ref=e789] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/paper-texture
+                      - img "Background Components" [ref=e790]
+                    - generic [ref=e791]:
+                      - link "meghtrix" [ref=e792] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e794]
+                      - paragraph [ref=e795]: Background Components
+                      - button "13" [ref=e796] [cursor=pointer]:
+                        - img [ref=e797]
+                        - generic [ref=e800]: "13"
+                - listitem [ref=e802]:
+                  - generic [ref=e803]:
+                    - link "Background Components" [ref=e804] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/diagonal-stripes
+                      - img "Background Components" [ref=e805]
+                    - generic [ref=e806]:
+                      - link "meghtrix" [ref=e807] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e809]
+                      - paragraph [ref=e810]: Background Components
+                      - button "6" [ref=e811] [cursor=pointer]:
+                        - img [ref=e812]
+                        - generic [ref=e815]: "6"
+                - listitem [ref=e817]:
+                  - generic [ref=e818]:
+                    - link "Background Components" [ref=e819] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/diagonal-grid-light
+                      - img "Background Components" [ref=e820]
+                    - generic [ref=e821]:
+                      - link "meghtrix" [ref=e822] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e824]
+                      - paragraph [ref=e825]: Background Components
+                      - button "8" [ref=e826] [cursor=pointer]:
+                        - img [ref=e827]
+                        - generic [ref=e830]: "8"
+                - listitem [ref=e832]:
+                  - generic [ref=e833]:
+                    - link "Background Components" [ref=e834] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/diagonal-grid-electric
+                      - img "Background Components" [ref=e835]
+                    - generic [ref=e836]:
+                      - link "meghtrix" [ref=e837] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e839]
+                      - paragraph [ref=e840]: Background Components
+                      - button "1" [ref=e841] [cursor=pointer]:
+                        - img [ref=e842]
+                        - generic [ref=e845]: "1"
+                - listitem [ref=e847]:
+                  - generic [ref=e848]:
+                    - link "Background Components" [ref=e849] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/zigzag-lighthing
+                      - img "Background Components" [ref=e850]
+                    - generic [ref=e851]:
+                      - link "meghtrix" [ref=e852] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e854]
+                      - paragraph [ref=e855]: Background Components
+                      - button [ref=e856] [cursor=pointer]:
+                        - img [ref=e857]
+                - listitem [ref=e861]:
+                  - generic [ref=e862]:
+                    - link "Background Components" [ref=e863] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/circuit-board
+                      - img "Background Components" [ref=e864]
+                    - generic [ref=e865]:
+                      - link "meghtrix" [ref=e866] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e868]
+                      - paragraph [ref=e869]: Background Components
+                      - button "1" [ref=e870] [cursor=pointer]:
+                        - img [ref=e871]
+                        - generic [ref=e874]: "1"
+                - listitem [ref=e876]:
+                  - generic [ref=e877]:
+                    - link "Background Components" [ref=e878] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/contcentric-squares
+                      - img "Background Components" [ref=e879]
+                    - generic [ref=e880]:
+                      - link "meghtrix" [ref=e881] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e883]
+                      - paragraph [ref=e884]: Background Components
+                      - button "5" [ref=e885] [cursor=pointer]:
+                        - img [ref=e886]
+                        - generic [ref=e889]: "5"
+                - listitem [ref=e891]:
+                  - generic [ref=e892]:
+                    - link "Background Components" [ref=e893] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/woven-fabric
+                      - img "Background Components" [ref=e894]
+                    - generic [ref=e895]:
+                      - link "meghtrix" [ref=e896] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e898]
+                      - paragraph [ref=e899]: Background Components
+                      - button "3" [ref=e900] [cursor=pointer]:
+                        - img [ref=e901]
+                        - generic [ref=e904]: "3"
+                - listitem [ref=e906]:
+                  - generic [ref=e907]:
+                    - link "Background Components" [ref=e908] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/crosshatch-art
+                      - img "Background Components" [ref=e909]
+                    - generic [ref=e910]:
+                      - link "meghtrix" [ref=e911] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e913]
+                      - paragraph [ref=e914]: Background Components
+                      - button "9" [ref=e915] [cursor=pointer]:
+                        - img [ref=e916]
+                        - generic [ref=e919]: "9"
+                - listitem [ref=e921]:
+                  - generic [ref=e922]:
+                    - link "Background Components" [ref=e923] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/white-grid-with-dots
+                      - img "Background Components" [ref=e924]
+                    - generic [ref=e925]:
+                      - link "meghtrix" [ref=e926] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e928]
+                      - paragraph [ref=e929]: Background Components
+                      - button "6" [ref=e930] [cursor=pointer]:
+                        - img [ref=e931]
+                        - generic [ref=e934]: "6"
+                - listitem [ref=e936]:
+                  - generic [ref=e937]:
+                    - link "Background Components" [ref=e938] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/noise-texture
+                      - img "Background Components" [ref=e939]
+                    - generic [ref=e940]:
+                      - link "meghtrix" [ref=e941] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e943]
+                      - paragraph [ref=e944]: Background Components
+                      - button "37" [ref=e945] [cursor=pointer]:
+                        - img [ref=e946]
+                        - generic [ref=e949]: "37"
+                - listitem [ref=e951]:
+                  - generic [ref=e952]:
+                    - link "Background Components" [ref=e953] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/basic-grid
+                      - img "Background Components" [ref=e954]
+                    - generic [ref=e955]:
+                      - link "meghtrix" [ref=e956] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e958]
+                      - paragraph [ref=e959]: Background Components
+                      - button "22" [ref=e960] [cursor=pointer]:
+                        - img [ref=e961]
+                        - generic [ref=e964]: "22"
+                - listitem [ref=e966]:
+                  - generic [ref=e967]:
+                    - link "Background Components" [ref=e968] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/dashed-grid-light
+                      - img "Background Components" [ref=e969]
+                    - generic [ref=e970]:
+                      - link "meghtrix" [ref=e971] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e973]
+                      - paragraph [ref=e974]: Background Components
+                      - button "20" [ref=e975] [cursor=pointer]:
+                        - img [ref=e976]
+                        - generic [ref=e979]: "20"
+                - listitem [ref=e981]:
+                  - generic [ref=e982]:
+                    - link "Background Components" [ref=e983] [cursor=pointer]:
+                      - /url: /community/components/meghtrix/background-components/white-sphere-grid
+                      - img "Background Components" [ref=e984]
+                    - generic [ref=e985]:
+                      - link "meghtrix" [ref=e986] [cursor=pointer]:
+                        - /url: /community/meghtrix
+                        - img "meghtrix" [ref=e988]
+                      - paragraph [ref=e989]: Background Components
+                      - button "17" [ref=e990] [cursor=pointer]:
+                        - img [ref=e991]
+                        - generic [ref=e994]: "17"
+                - listitem [ref=e996]:
+                  - generic [ref=e997]:
+                    - link "Radar Effect" [ref=e998] [cursor=pointer]:
+                      - /url: /community/components/aceternity/radar-effect/default
+                      - img "Radar Effect" [ref=e999]
+                    - generic [ref=e1000]:
+                      - link "Aceternity UI" [ref=e1001] [cursor=pointer]:
+                        - /url: /community/aceternity
+                        - img "Aceternity UI" [ref=e1003]
+                      - paragraph [ref=e1004]: Radar Effect
+                      - button "672" [ref=e1005] [cursor=pointer]:
+                        - img [ref=e1006]
+                        - generic [ref=e1009]: "672"
+                - generic [ref=e1012]: Similar components
+    - region "Notifications alt+T"
+  - alert [ref=e1014]
+  - generic:
+    - iframe
+    - iframe
