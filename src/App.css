@@ -49,7 +49,7 @@
 .loading-ring {
   position: absolute;
   inset: 0;
-  border: 3px solid rgba(0, 229, 255, 0.3);
+  border: 3px solid rgba(224, 224, 224, 0.3);
   border-radius: 50%;
   animation: spin 3s linear infinite;
 }
@@ -57,9 +57,9 @@
 .loading-core {
   position: absolute;
   inset: 20px;
-  border: 2px solid rgba(168, 85, 247, 0.5);
+  border: 2px solid rgba(160, 160, 160, 0.5);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.2), transparent);
+  background: radial-gradient(circle, rgba(224, 224, 224, 0.2), transparent);
   animation: spin 2s linear infinite reverse;
 }
 
@@ -71,7 +71,7 @@
 .loading-title {
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #00e5ff, #a855f7);
+  background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -97,15 +97,15 @@
 .loading-progress-bar {
   width: 300px;
   height: 3px;
-  background: rgba(0, 229, 255, 0.1);
+  background: rgba(224, 224, 224, 0.1);
   border-radius: 2px;
   overflow: hidden;
 }
 
 .loading-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #a855f7, #00e5ff, #f472b6);
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+  background: linear-gradient(90deg, #a0a0a0, #e0e0e0, #d0d0d0);
+  box-shadow: 0 0 10px rgba(224, 224, 224, 0.6);
   transition: width 0.2s ease-out;
 }
 
@@ -125,7 +125,7 @@
   height: var(--navbar-height);
   background: rgba(10, 14, 39, 0.7);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+  border-bottom: 1px solid rgba(224, 224, 224, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -136,7 +136,7 @@
 
 .navbar.scrolled {
   background: rgba(10, 14, 39, 0.95);
-  border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+  border-bottom: 1px solid rgba(224, 224, 224, 0.2);
 }
 
 .nav-logo {
@@ -249,7 +249,7 @@
   }
 
   .nav-links li {
-    border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+    border-bottom: 1px solid rgba(224, 224, 224, 0.1);
   }
 
   .nav-link-3d {
@@ -277,7 +277,7 @@
 .cursor-ring {
   width: 36px;
   height: 36px;
-  border: 2px solid rgba(20, 184, 166, 0.5);
+  border: 2px solid rgba(200, 200, 200, 0.5);
   border-radius: 50%;
   transition: all 0.1s ease-out;
 }
@@ -315,9 +315,9 @@
 
 /* About Section */
 .about-section {
-  background: rgba(168, 85, 247, 0.05);
-  border-top: 1px solid rgba(0, 229, 255, 0.1);
-  border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+  background: rgba(160, 160, 160, 0.05);
+  border-top: 1px solid rgba(224, 224, 224, 0.1);
+  border-bottom: 1px solid rgba(224, 224, 224, 0.1);
 }
 
 .about-grid {
@@ -330,7 +330,7 @@
 .about-text h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #00e5ff, #a855f7);
+  background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -356,7 +356,7 @@
   gap: 1rem;
   padding: 1rem;
   background: rgba(10, 14, 39, 0.5);
-  border: 1px solid rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(224, 224, 224, 0.1);
   border-radius: 6px;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -364,8 +364,8 @@
 
 .skill-item:hover,
 .skill-item.active {
-  background: rgba(0, 229, 255, 0.1);
-  border-color: rgba(0, 229, 255, 0.3);
+  background: rgba(224, 224, 224, 0.1);
+  border-color: rgba(224, 224, 224, 0.3);
   transform: translateX(8px);
 }
 
@@ -389,14 +389,14 @@
   min-height: 500px;
   border-radius: 12px;
   overflow: hidden;
-  background: rgba(0, 229, 255, 0.05);
-  border: 1px solid rgba(0, 229, 255, 0.1);
+  background: rgba(224, 224, 224, 0.05);
+  border: 1px solid rgba(224, 224, 224, 0.1);
 }
 
 /* Journey Section */
 .journey-section {
   background: linear-gradient(180deg, rgba(10, 14, 39, 0.5) 0%, rgba(26, 31, 58, 0.5) 100%);
-  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
 }
 
 .journey-header {
@@ -407,7 +407,7 @@
 .journey-header h2 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #00e5ff, #f472b6);
+  background: linear-gradient(135deg, #e0e0e0, #d0d0d0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -427,7 +427,7 @@
 /* Footer */
 .footer {
   background: rgba(0, 0, 0, 0.4);
-  border-top: 1px solid rgba(0, 229, 255, 0.2);
+  border-top: 1px solid rgba(224, 224, 224, 0.2);
   padding: 3rem 2rem;
   text-align: center;
   color: rgba(255, 255, 255, 0.6);

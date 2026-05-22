@@ -30,15 +30,15 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #00e5ff, transparent);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+  background: linear-gradient(180deg, transparent, #e0e0e0, transparent);
+  box-shadow: 0 0 20px rgba(224, 224, 224, 0.4);
 }
 
 .pipeline-glow {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.3), rgba(0, 229, 255, 0.3), rgba(244, 114, 182, 0.3));
+  background: linear-gradient(180deg, rgba(160, 160, 160, 0.3), rgba(224, 224, 224, 0.3), rgba(200, 200, 200, 0.3));
   filter: blur(8px);
   animation: pulseGlow 4s ease-in-out infinite;
 }
@@ -100,8 +100,8 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.2), transparent);
-  border: 2px solid rgba(0, 229, 255, 0.4);
+  background: radial-gradient(circle, rgba(224, 224, 224, 0.2), transparent);
+  border: 2px solid rgba(224, 224, 224, 0.4);
   border-radius: 50%;
   position: relative;
   z-index: 11;
@@ -110,11 +110,11 @@
 
 @keyframes markerPulse {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+    box-shadow: 0 0 15px rgba(224, 224, 224, 0.3);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+    box-shadow: 0 0 30px rgba(224, 224, 224, 0.6);
     transform: scale(1.1);
   }
 }
@@ -124,7 +124,7 @@
   bottom: -28px;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #a855f7;
+  color: #a0a0a0;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-family: 'Monaco', monospace;
@@ -133,8 +133,8 @@
 /* Event content */
 .event-content {
   padding: 1.5rem;
-  background: rgba(168, 85, 247, 0.08);
-  border: 1px solid rgba(168, 85, 247, 0.2);
+  background: rgba(160, 160, 160, 0.08);
+  border: 1px solid rgba(160, 160, 160, 0.2);
   border-radius: 8px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -151,16 +151,16 @@
 }
 
 .event-content:hover {
-  background: rgba(168, 85, 247, 0.15);
-  border-color: rgba(0, 229, 255, 0.4);
+  background: rgba(160, 160, 160, 0.15);
+  border-color: rgba(224, 224, 224, 0.4);
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 229, 255, 0.15);
+  box-shadow: 0 12px 24px rgba(224, 224, 224, 0.15);
 }
 
 .event-title {
   font-size: 1.3rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #00e5ff, #a855f7);
+  background: linear-gradient(135deg, #e0e0e0, #a0a0a0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -179,7 +179,7 @@
   position: absolute;
   width: 24px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.6), transparent);
+  background: linear-gradient(90deg, transparent, rgba(224, 224, 224, 0.6), transparent);
   top: 50%;
   animation: connectPulse 3s ease-in-out infinite;
 }
@@ -206,14 +206,14 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: rgba(0, 229, 255, 0.1);
+  background: rgba(224, 224, 224, 0.1);
   z-index: 100;
 }
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #a855f7, #00e5ff, #f472b6);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+  background: linear-gradient(90deg, #a0a0a0, #e0e0e0, #d0d0d0);
+  box-shadow: 0 0 20px rgba(224, 224, 224, 0.6);
   transition: width 0.1s linear;
 }
 

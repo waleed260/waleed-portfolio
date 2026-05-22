@@ -1,11 +1,11 @@
 /* Global Performance & Cybernetic Theme - Optimized for 60fps */
 
 :root {
-  /* Color System - Cybernetic Minimalism */
-  --cyan: #00e5ff;
-  --purple: #a855f7;
-  --pink: #f472b6;
-  --emerald: #10b981;
+  /* Color System - Monochrome */
+  --cyan: #e0e0e0;
+  --purple: #a0a0a0;
+  --pink: #d0d0d0;
+  --emerald: #c0c0c0;
   --slate-900: #0f172a;
   --slate-800: #1e293b;
   --slate-700: #334155;
@@ -45,8 +45,8 @@
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
-  --shadow-glow-cyan: 0 0 20px rgba(0, 229, 255, 0.2);
-  --shadow-glow-purple: 0 0 20px rgba(168, 85, 247, 0.2);
+  --shadow-glow-cyan: 0 0 20px rgba(255, 255, 255, 0.2);
+  --shadow-glow-purple: 0 0 20px rgba(200, 200, 200, 0.2);
 
   /* Z-index Scale */
   --z-dropdown: 10;
@@ -157,7 +157,7 @@ input, textarea, select {
   padding: var(--sp-2) var(--sp-3);
   font-family: inherit;
   font-size: 16px; /* Prevents iOS zoom */
-  border: 1px solid rgba(0, 229, 255, 0.2);
+  border: 1px solid rgba(224, 224, 224, 0.2);
   border-radius: 6px;
   background: rgba(10, 14, 39, 0.8);
   color: #fff;
@@ -167,7 +167,7 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--cyan);
-  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(224, 224, 224, 0.1);
 }
 
 /* Accessibility: Reduced Motion */

@@ -125,9 +125,7 @@ const NeuralCoreSystem = ({ mousePosition }) => {
       const y = radius * Math.sin(theta) * Math.sin(phi);
       const z = radius * Math.cos(phi);
 
-      // Assign colors based on position
-      const hue = (i / nodeCount) * 0.3 + 0.5; // Cyan to purple range
-      const color = new THREE.Color().setHSL(hue, 0.8, 0.6);
+      const color = new THREE.Color().setHSL(0, 0, 0.6);
 
       nodes.push({
         id: i,
@@ -153,8 +151,7 @@ const NeuralCoreSystem = ({ mousePosition }) => {
         const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
         if (dist < maxDistance) {
-          const hue = (i / nodes.length) * 0.3 + 0.5;
-          const color = new THREE.Color().setHSL(hue, 0.7, 0.5);
+          const color = new THREE.Color().setHSL(0, 0, 0.5);
           conns.push({
             id: `${i}-${j}`,
             start: nodes[i].position,
@@ -187,7 +184,7 @@ const NeuralCoreSystem = ({ mousePosition }) => {
       <mesh scale={[3.5, 3.5, 3.5]}>
         <sphereGeometry args={[1, 32, 32]} />
         <meshBasicMaterial
-          color="#00e5ff"
+          color="#e0e0e0"
           transparent
           opacity={0.05}
           wireframe
@@ -198,8 +195,8 @@ const NeuralCoreSystem = ({ mousePosition }) => {
       <mesh scale={[1.5, 1.5, 1.5]}>
         <sphereGeometry args={[1, 32, 32]} />
         <meshStandardMaterial
-          color="#00e5ff"
-          emissive="#00e5ff"
+          color="#e0e0e0"
+          emissive="#e0e0e0"
           emissiveIntensity={0.5}
           roughness={0.1}
           metalness={0.9}

@@ -116,16 +116,16 @@ export default function ToolkitArchitecture() {
 
   // Skills data
   const skills = useMemo(() => [
-    { name: 'Python', level: 95, color: new THREE.Color('#3776AB'), position: [0, 0, 0] },
-    { name: 'PyTorch', level: 88, color: new THREE.Color('#EE4C2C'), position: [2.5, 1.5, 0] },
-    { name: 'FastAPI', level: 90, color: new THREE.Color('#009688'), position: [-2.5, 1.5, 0] },
-    { name: 'Django', level: 82, color: new THREE.Color('#092E20'), position: [0, 3, 0] },
-    { name: 'n8n', level: 92, color: new THREE.Color('#FC4883'), position: [4, 0, 0] },
-    { name: 'Zapier', level: 88, color: new THREE.Color('#FF5500'), position: [5, 2, 0] },
-    { name: 'Make.com', level: 85, color: new THREE.Color('#FF6B6B'), position: [4, -2, 0] },
-    { name: 'LangChain', level: 90, color: new THREE.Color('#1C3C3C'), position: [-4, 0, 0] },
-    { name: 'Docker', level: 85, color: new THREE.Color('#2496ED'), position: [-2.5, -1.5, 0] },
-    { name: 'AWS', level: 78, color: new THREE.Color('#FF9900'), position: [-4, -2.5, 0] },
+    { name: 'Python', level: 95, color: new THREE.Color('#e0e0e0'), position: [0, 0, 0] },
+    { name: 'PyTorch', level: 88, color: new THREE.Color('#b0b0b0'), position: [2.5, 1.5, 0] },
+    { name: 'FastAPI', level: 90, color: new THREE.Color('#a0a0a0'), position: [-2.5, 1.5, 0] },
+    { name: 'Django', level: 82, color: new THREE.Color('#c0c0c0'), position: [0, 3, 0] },
+    { name: 'n8n', level: 92, color: new THREE.Color('#d0d0d0'), position: [4, 0, 0] },
+    { name: 'Zapier', level: 88, color: new THREE.Color('#b0b0b0'), position: [5, 2, 0] },
+    { name: 'Make.com', level: 85, color: new THREE.Color('#a0a0a0'), position: [4, -2, 0] },
+    { name: 'LangChain', level: 90, color: new THREE.Color('#c0c0c0'), position: [-4, 0, 0] },
+    { name: 'Docker', level: 85, color: new THREE.Color('#b0b0b0'), position: [-2.5, -1.5, 0] },
+    { name: 'AWS', level: 78, color: new THREE.Color('#a0a0a0'), position: [-4, -2.5, 0] },
   ], []);
 
   // Create connections based on skill relationships
@@ -172,7 +172,7 @@ export default function ToolkitArchitecture() {
           <mesh scale={[15, 15, 1]}>
             <planeGeometry args={[1, 1]} />
             <meshBasicMaterial
-              color="#00e5ff"
+              color="#e0e0e0"
               transparent
               opacity={0.03}
               side={THREE.DoubleSide}
@@ -205,8 +205,8 @@ export default function ToolkitArchitecture() {
             <mesh position={[0, 0, 0]} scale={[1.5, 1.5, 1.5]}>
               <octahedronGeometry args={[0.8, 0]} />
               <meshStandardMaterial
-                color="#00e5ff"
-                emissive="#00e5ff"
+                color="#e0e0e0"
+                emissive="#e0e0e0"
                 emissiveIntensity={0.8}
                 roughness={0.1}
                 metalness={0.9}
@@ -217,7 +217,7 @@ export default function ToolkitArchitecture() {
           {/* Ambient lighting */}
           <ambientLight intensity={0.4} />
           <pointLight position={[5, 5, 5]} intensity={0.8} color="#a855f7" />
-          <pointLight position={[-5, -5, -5]} intensity={0.5} color="#00e5ff" />
+          <pointLight position={[-5, -5, -5]} intensity={0.5} color="#e0e0e0" />
         </group>
 
         <OrbitControls makeDefault enableZoom={true} enablePan={false} minDistance={5} maxDistance={20} />

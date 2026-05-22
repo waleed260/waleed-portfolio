@@ -1,11 +1,11 @@
 import { useState, useEffect, useMemo } from 'react'
 
 const EMOTIONS = {
-  calm:     { body: '#00e5ff', label: '😌 Calm', emoji: '😌' },
-  happy:    { body: '#a855f7', label: '😊 Happy', emoji: '😊' },
-  excited:  { body: '#f472b6', label: '🤩 Excited', emoji: '🤩' },
-  thinking: { body: '#4d7cff', label: '🤔 Thinking', emoji: '🤔' },
-  coding:   { body: '#10b981', label: '💻 Coding', emoji: '💻' },
+  calm:     { body: '#e0e0e0', label: '😌 Calm', emoji: '😌' },
+  happy:    { body: '#a0a0a0', label: '😊 Happy', emoji: '😊' },
+  excited:  { body: '#d0d0d0', label: '🤩 Excited', emoji: '🤩' },
+  thinking: { body: '#b0b0b0', label: '🤔 Thinking', emoji: '🤔' },
+  coding:   { body: '#c0c0c0', label: '💻 Coding', emoji: '💻' },
 }
 const KEYS = Object.keys(EMOTIONS)
 

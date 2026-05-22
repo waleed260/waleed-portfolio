@@ -113,7 +113,7 @@ export default function LearningJourney() {
       year: '2024',
       title: 'AI AWAKENING',
       desc: 'LLMs, Prompt Engineering, AI Apps',
-      color: new THREE.Color('#00e5ff'),
+      color: new THREE.Color('#e0e0e0'),
       position: [0, 4, 0],
       isLeft: false
     },
@@ -121,7 +121,7 @@ export default function LearningJourney() {
       year: '2025',
       title: 'AGENTIC SYSTEMS',
       desc: 'LangChain, Multi-Agent, Advanced RAG',
-      color: new THREE.Color('#10b981'),
+      color: new THREE.Color('#c0c0c0'),
       position: [0, 2, 0],
       isLeft: true
     },
@@ -129,7 +129,7 @@ export default function LearningJourney() {
       year: '2025',
       title: 'VISUAL AUTOMATION',
       desc: 'n8n, Zapier, Make.com, Vapi',
-      color: new THREE.Color('#a855f7'),
+      color: new THREE.Color('#a0a0a0'),
       position: [0, 0, 0],
       isLeft: false
     },
@@ -137,7 +137,7 @@ export default function LearningJourney() {
       year: '2025-26',
       title: 'ADVANCED PYTORCH',
       desc: 'Neural Architectures, Deep Learning',
-      color: new THREE.Color('#4d7cff'),
+      color: new THREE.Color('#b0b0b0'),
       position: [0, -2, 0],
       isLeft: true
     },
@@ -145,7 +145,7 @@ export default function LearningJourney() {
       year: 'NOW',
       title: 'AUTONOMOUS AGENTS',
       desc: 'Tool Use, Self-Improving Systems',
-      color: new THREE.Color('#f472b6'),
+      color: new THREE.Color('#d0d0d0'),
       position: [0, -4, 0],
       isLeft: false
     }
@@ -187,7 +187,7 @@ export default function LearningJourney() {
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -2]}>
             <planeGeometry args={[20, 20, 10, 10]} />
             <meshBasicMaterial
-              color="#00e5ff"
+              color="#e0e0e0"
               wireframe
               transparent
               opacity={0.1}
@@ -196,7 +196,7 @@ export default function LearningJourney() {
 
           {/* Pipeline track */}
           <group ref={trackRef}>
-            <PipelineTrack points={trackPoints} color="#00e5ff" />
+            <PipelineTrack points={trackPoints} color="#e0e0e0" />
           </group>
 
           {/* Timeline nodes */}
@@ -217,7 +217,7 @@ export default function LearningJourney() {
               <octahedronGeometry args={[0.6, 0]} />
               <meshStandardMaterial
                 color="#fff"
-                emissive="#00e5ff"
+                emissive="#e0e0e0"
                 emissiveIntensity={0.5}
                 roughness={0.2}
               />
@@ -226,8 +226,8 @@ export default function LearningJourney() {
 
           {/* Ambient lighting */}
           <ambientLight intensity={0.4} />
-          <pointLight position={[5, 5, 5]} intensity={0.6} color="#a855f7" />
-          <pointLight position={[-5, -5, -5]} intensity={0.4} color="#00e5ff" />
+          <pointLight position={[5, 5, 5]} intensity={0.6} color="#a0a0a0" />
+          <pointLight position={[-5, -5, -5]} intensity={0.4} color="#e0e0e0" />
         </group>
 
         <OrbitControls makeDefault enableZoom={true} enablePan={false} minDistance={8} maxDistance={20} />

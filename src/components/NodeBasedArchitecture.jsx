@@ -9,12 +9,12 @@ export default function NodeBasedArchitecture() {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const nodes = [
-    { id: 'core', label: 'AI Core', icon: '🤖', color: '#00e5ff', x: 0.5, y: 0.5, size: 60 },
-    { id: 'python', label: 'Python', icon: '🐍', color: '#a855f7', x: 0.2, y: 0.25, size: 45 },
-    { id: 'pytorch', label: 'PyTorch', icon: '🔥', color: '#f472b6', x: 0.8, y: 0.25, size: 45 },
-    { id: 'langchain', label: 'LangChain', icon: '🔗', color: '#10b981', x: 0.15, y: 0.75, size: 45 },
-    { id: 'n8n', label: 'n8n', icon: '⚙️', color: '#f59e0b', x: 0.5, y: 0.85, size: 45 },
-    { id: 'langgraph', label: 'LangGraph', icon: '📊', color: '#06b6d4', x: 0.85, y: 0.75, size: 45 },
+    { id: 'core', label: 'AI Core', icon: '🤖', color: '#e0e0e0', x: 0.5, y: 0.5, size: 60 },
+    { id: 'python', label: 'Python', icon: '🐍', color: '#a0a0a0', x: 0.2, y: 0.25, size: 45 },
+    { id: 'pytorch', label: 'PyTorch', icon: '🔥', color: '#d0d0d0', x: 0.8, y: 0.25, size: 45 },
+    { id: 'langchain', label: 'LangChain', icon: '🔗', color: '#c0c0c0', x: 0.15, y: 0.75, size: 45 },
+    { id: 'n8n', label: 'n8n', icon: '⚙️', color: '#b0b0b0', x: 0.5, y: 0.85, size: 45 },
+    { id: 'langgraph', label: 'LangGraph', icon: '📊', color: '#a0a0a0', x: 0.85, y: 0.75, size: 45 },
   ]
 
   // Initialize nodes

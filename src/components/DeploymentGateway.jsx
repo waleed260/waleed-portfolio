@@ -50,8 +50,8 @@ export default function DeploymentGateway() {
 
     setIsDeployed(true)
     gsap.to('.deploy-button', {
-      background: 'rgba(16, 185, 129, 0.2)',
-      borderColor: 'rgba(16, 185, 129, 0.6)',
+      background: 'rgba(200, 200, 200, 0.2)',
+      borderColor: 'rgba(200, 200, 200, 0.6)',
       duration: 0.5,
     })
 

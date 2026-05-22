@@ -20,9 +20,9 @@
 .skill-bar-item:hover,
 .skill-bar-item.active {
   background: rgba(18, 16, 30, 0.9);
-  border-color: rgba(0, 229, 255, 0.3);
+  border-color: rgba(224, 224, 224, 0.3);
   transform: translateX(8px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 229, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(224, 224, 224, 0.15);
 }
 
 .skill-bar-header {
@@ -64,11 +64,11 @@
 
 .skill-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #00e5ff, #10b981);
+  background: linear-gradient(90deg, #e0e0e0, #c0c0c0);
   border-radius: 4px;
   transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 20px rgba(224, 224, 224, 0.5);
 }
 
 .skill-bar-fill::after {
@@ -79,15 +79,15 @@
   transform: translateY(-50%);
   width: 12px;
   height: 12px;
-  background: #00e5ff;
+  background: #e0e0e0;
   border-radius: 50%;
-  box-shadow: 0 0 15px #00e5ff;
+  box-shadow: 0 0 15px #e0e0e0;
   animation: skillPulse 2s ease-in-out infinite;
 }
 
 @keyframes skillPulse {
-  0%, 100% { box-shadow: 0 0 15px #00e5ff; transform: translateY(-50%) scale(1); }
-  50% { box-shadow: 0 0 25px #00e5ff, 0 0 40px #00e5ff; transform: translateY(-50%) scale(1.2); }
+  0%, 100% { box-shadow: 0 0 15px #e0e0e0; transform: translateY(-50%) scale(1); }
+  50% { box-shadow: 0 0 25px #e0e0e0, 0 0 40px #e0e0e0; transform: translateY(-50%) scale(1.2); }
 }
 
 /* Flip Card Effect for Projects */
@@ -165,15 +165,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: rgba(0, 229, 255, 0.05);
-  border: 1px solid rgba(0, 229, 255, 0.2);
+  background: rgba(224, 224, 224, 0.05);
+  border: 1px solid rgba(224, 224, 224, 0.2);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .project-stat-item:hover {
-  background: rgba(0, 229, 255, 0.1);
-  border-color: rgba(0, 229, 255, 0.4);
+  background: rgba(224, 224, 224, 0.1);
+  border-color: rgba(224, 224, 224, 0.4);
   transform: translateX(5px);
 }
 
@@ -202,8 +202,8 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, #00e5ff, #10b981, #f472b6);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+  background: linear-gradient(180deg, #e0e0e0, #c0c0c0, #d0d0d0);
+  box-shadow: 0 0 20px rgba(224, 224, 224, 0.5);
   border-radius: 2px;
 }
 
@@ -215,9 +215,9 @@
   transform: translateX(-50%);
   width: 12px;
   height: 12px;
-  background: #00e5ff;
+  background: #e0e0e0;
   border-radius: 50%;
-  box-shadow: 0 0 20px #00e5ff;
+  box-shadow: 0 0 20px #e0e0e0;
   animation: timelinePulseTop 2s ease-in-out infinite;
 }
 
@@ -229,20 +229,20 @@
   transform: translateX(-50%);
   width: 12px;
   height: 12px;
-  background: #f472b6;
+  background: #d0d0d0;
   border-radius: 50%;
-  box-shadow: 0 0 20px #f472b6;
+  box-shadow: 0 0 20px #d0d0d0;
   animation: timelinePulseBottom 2s ease-in-out infinite;
 }
 
 @keyframes timelinePulseTop {
-  0%, 100% { box-shadow: 0 0 20px #00e5ff; transform: translateX(-50%) scale(1); }
-  50% { box-shadow: 0 0 40px #00e5ff; transform: translateX(-50%) scale(1.3); }
+  0%, 100% { box-shadow: 0 0 20px #e0e0e0; transform: translateX(-50%) scale(1); }
+  50% { box-shadow: 0 0 40px #e0e0e0; transform: translateX(-50%) scale(1.3); }
 }
 
 @keyframes timelinePulseBottom {
-  0%, 100% { box-shadow: 0 0 20px #f472b6; transform: translateX(-50%) scale(1); }
-  50% { box-shadow: 0 0 40px #f472b6; transform: translateX(-50%) scale(1.3); }
+  0%, 100% { box-shadow: 0 0 20px #d0d0d0; transform: translateX(-50%) scale(1); }
+  50% { box-shadow: 0 0 40px #d0d0d0; transform: translateX(-50%) scale(1.3); }
 }
 
 .timeline-item {
@@ -253,8 +253,8 @@
 
 .timeline-item.timeline-active .timeline-card {
   transform: perspective(1000px) translateZ(20px) translateX(12px) scale(1.02);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 229, 255, 0.3);
-  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 40px rgba(224, 224, 224, 0.3);
+  border-color: rgba(224, 224, 224, 0.5);
 }
 
 .timeline-item.timeline-active .timeline-progress {
@@ -313,8 +313,8 @@
 
 .timeline-card:hover {
   transform: perspective(1000px) translateZ(20px) translateX(8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 229, 255, 0.2);
-  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(224, 224, 224, 0.2);
+  border-color: rgba(224, 224, 224, 0.3);
 }
 
 .timeline-year {
@@ -323,8 +323,8 @@
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--cyan);
-  background: rgba(0, 229, 255, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  background: rgba(224, 224, 224, 0.1);
+  border: 1px solid rgba(224, 224, 224, 0.3);
   border-radius: 20px;
   margin-bottom: 0.5rem;
 }
@@ -346,7 +346,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #00e5ff 20%, #10b981 50%, #f472b6 80%, transparent);
+  background: linear-gradient(90deg, transparent, #e0e0e0 20%, #c0c0c0 50%, #d0d0d0 80%, transparent);
   opacity: 0.3;
   z-index: 0;
   pointer-events: none;
@@ -375,7 +375,7 @@
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(135deg, var(--card-color, #00e5ff), transparent);
+  background: linear-gradient(135deg, var(--card-color, #e0e0e0), transparent);
   border-radius: inherit;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -394,7 +394,7 @@
   left: 0;
   right: 0;
   height: 100%;
-  background: radial-gradient(circle at top right, var(--card-color, #00e5ff)15 0%, transparent 60%);
+  background: radial-gradient(circle at top right, var(--card-color, #e0e0e0)15 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -407,7 +407,7 @@
 .journey-card:hover {
   transform: translateY(-12px) scale(1.02);
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 40px var(--card-color, #00e5ff)33;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 40px var(--card-color, #e0e0e0)33;
   background: rgba(18, 16, 30, 0.9);
 }
 
@@ -424,7 +424,7 @@
   padding: 0.5rem 1.2rem;
   font-size: 0.875rem;
   font-weight: 700;
-  background: rgba(0, 229, 255, 0.1);
+  background: rgba(224, 224, 224, 0.1);
   border: 2px solid;
   border-radius: 50px;
   letter-spacing: 0.05em;
@@ -456,7 +456,7 @@
   font-weight: 900;
   color: #fff;
   border-radius: 50%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 30px var(--card-color, #00e5ff)44;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 30px var(--card-color, #e0e0e0)44;
   position: relative;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -466,7 +466,7 @@
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--card-color, #00e5ff), transparent, var(--card-color, #00e5ff));
+  background: conic-gradient(from 0deg, var(--card-color, #e0e0e0), transparent, var(--card-color, #e0e0e0));
   opacity: 0;
   transition: opacity 0.4s ease;
   animation: rotate 3s linear infinite;
@@ -479,7 +479,7 @@
 
 .journey-card:hover .journey-number {
   transform: scale(1.15) rotate(360deg);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 50px var(--card-color, #00e5ff)66;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 50px var(--card-color, #e0e0e0)66;
 }
 
 @keyframes rotate {
@@ -497,8 +497,8 @@
 }
 
 .journey-card:hover .journey-title {
-  color: var(--card-color, #00e5ff);
-  text-shadow: 0 0 20px var(--card-color, #00e5ff)44;
+  color: var(--card-color, #e0e0e0);
+  text-shadow: 0 0 20px var(--card-color, #e0e0e0)44;
 }
 
 .journey-desc {
@@ -523,7 +523,7 @@
   padding: 0.4rem 0.9rem;
   font-size: 0.75rem;
   font-weight: 600;
-  background: rgba(0, 229, 255, 0.05);
+  background: rgba(224, 224, 224, 0.05);
   border: 1px solid;
   border-radius: 20px;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -535,7 +535,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--card-color, #00e5ff);
+  background: var(--card-color, #e0e0e0);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -545,9 +545,9 @@
 }
 
 .journey-tag:hover {
-  background: rgba(0, 229, 255, 0.15);
+  background: rgba(224, 224, 224, 0.15);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px var(--card-color, #00e5ff)33;
+  box-shadow: 0 4px 12px var(--card-color, #e0e0e0)33;
 }
 
 .journey-accent {
@@ -570,7 +570,7 @@
   position: absolute;
   width: 4px;
   height: 4px;
-  background: var(--card-color, #00e5ff);
+  background: var(--card-color, #e0e0e0);
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
@@ -602,7 +602,7 @@
   left: 0;
   width: 0;
   height: 3px;
-  background: var(--card-color, #00e5ff);
+  background: var(--card-color, #e0e0e0);
   transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0 0 10px currentColor;
 }

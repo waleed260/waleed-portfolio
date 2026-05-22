@@ -80,7 +80,7 @@ export default function CoreInitialization() {
       distance: Math.random() * 80 + 40,
       speed: Math.random() * 0.02 + 0.01,
       size: Math.random() * 2 + 1,
-      color: ['#00e5ff', '#a855f7', '#f472b6'][Math.floor(Math.random() * 3)],
+      color: ['#e0e0e0', '#a0a0a0', '#d0d0d0'][Math.floor(Math.random() * 3)],
     }))
 
     let animationFrameId

@@ -1,11 +1,11 @@
 :root {
-  --mb-hue: 27;
-  --mb-sat: 69%;
+  --mb-hue: 0;
+  --mb-sat: 0%;
   --mb-white: hsl(0, 0%, 100%);
-  --mb-purple: rgba(132, 0, 255, 1);
-  --mb-purple-glow: rgba(132, 0, 255, 0.2);
-  --mb-purple-border: rgba(132, 0, 255, 0.8);
-  --mb-border-color: #392e4e;
+  --mb-purple: rgba(200, 200, 200, 1);
+  --mb-purple-glow: rgba(200, 200, 200, 0.2);
+  --mb-purple-border: rgba(200, 200, 200, 0.8);
+  --mb-border-color: #2a2a2a;
   --mb-bg-dark: #060010;
   color-scheme: light dark;
 }
@@ -66,7 +66,7 @@
 .mb-card__label {
   font-size: 16px;
   font-weight: 500;
-  background: linear-gradient(135deg, #00e5ff, #10b981);
+  background: linear-gradient(135deg, #e0e0e0, #c0c0c0);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -158,8 +158,8 @@
   padding: 6px;
   background: radial-gradient(
     var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.8)) 0%,
-    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.4)) 30%,
+    rgba(200, 200, 200, calc(var(--glow-intensity) * 0.8)) 0%,
+    rgba(200, 200, 200, calc(var(--glow-intensity) * 0.4)) 30%,
     transparent 60%
   );
   border-radius: inherit;
@@ -183,7 +183,7 @@
 
 .mb-card--border-glow:hover {
   box-shadow:
-    0 4px 20px rgba(46, 24, 78, 0.4),
+    0 4px 20px rgba(100, 100, 100, 0.4),
     0 0 30px var(--mb-purple-glow);
 }
 
@@ -199,14 +199,14 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: rgba(132, 0, 255, 0.2);
+  background: rgba(200, 200, 200, 0.2);
   border-radius: 50%;
   z-index: -1;
 }
 
 .mb-particle-container:hover {
   box-shadow:
-    0 4px 20px rgba(46, 24, 78, 0.2),
+    0 4px 20px rgba(100, 100, 100, 0.2),
     0 0 30px var(--mb-purple-glow);
 }
 
