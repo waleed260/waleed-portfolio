@@ -293,6 +293,7 @@ h2 {
 .contact-logo {
   width: 22px; height: 22px;
   display: block;
+  color: var(--text);
 }
 @media (max-width: 768px) { .contact-heading { font-size: 1.6rem; } }
 
