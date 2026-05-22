@@ -293,7 +293,7 @@ export default function NeuralNetworkCore() {
         />
 
         {/* Fog for depth */}
-        <fog attach="fog" args={['#07060b', 10, 30]} />
+        <fog attach="fog" args={['#070707', 10, 30]} />
       </Canvas>
 
       {/* Overlay text */}

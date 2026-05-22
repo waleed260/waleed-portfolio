@@ -5,9 +5,9 @@
 }
 
 :root {
-  --bg-primary: #07060b;
-  --bg-secondary: #0d0c14;
-  --bg-card: rgba(18, 16, 30, 0.6);
+  --bg-primary: #070707;
+  --bg-secondary: #0d0d0d;
+  --bg-card: rgba(18, 18, 18, 0.6);
   --bg-glass: rgba(255, 255, 255, 0.03);
   --border-glass: rgba(255, 255, 255, 0.08);
   --text-primary: #f0eef6;

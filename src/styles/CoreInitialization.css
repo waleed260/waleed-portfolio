@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1428 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -159,7 +159,7 @@
 
 /* System Logs Terminal */
 .system-logs {
-  background: rgba(10, 14, 39, 0.8);
+  background: rgba(10, 10, 10, 0.8);
   border: 1px solid rgba(224, 224, 224, 0.2);
   border-radius: 8px;
   padding: 1.5rem;

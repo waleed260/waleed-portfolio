@@ -231,7 +231,7 @@ export default function LearningJourney() {
         </group>
 
         <OrbitControls makeDefault enableZoom={true} enablePan={false} minDistance={8} maxDistance={20} />
-        <fog attach="fog" args={['#07060b', 10, 25]} />
+        <fog attach="fog" args={['#070707', 10, 25]} />
       </Canvas>
 
       <div className="learning-journey-overlay">

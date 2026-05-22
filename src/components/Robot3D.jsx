@@ -41,7 +41,7 @@ function Eye({ side }) {
           width: 12,
           height: 12,
           borderRadius: '50%',
-          background: '#0d0d1a',
+          background: '#0d0d0d',
           boxShadow: 'inset 0 1px 3px rgba(255,255,255,0.1)',
         }}>
           <div style={{
@@ -132,7 +132,7 @@ export default function Robot3D() {
           position: 'absolute',
           right: 100,
           bottom: 40,
-          background: 'rgba(18, 16, 30, 0.95)',
+          background: 'rgba(18, 18, 18, 0.95)',
           backdropFilter: 'blur(10px)',
           border: `2px solid ${c}`,
           borderRadius: 16,
@@ -248,7 +248,7 @@ export default function Robot3D() {
           height: emotion === 'excited' ? 12 : 6,
           borderBottomLeftRadius: emotion === 'excited' ? 10 : 3,
           borderBottomRightRadius: emotion === 'excited' ? 10 : 3,
-          background: '#1a1a2e',
+          background: '#1a1a1a',
           boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.3)',
           overflow: 'hidden',
           zIndex: 3,
