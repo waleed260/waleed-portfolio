@@ -1,11 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { GridPattern } from './components/ui/grid-pattern'
-import { Radar } from './components/ui/radar-effect'
-import CoreInitialization from './components/CoreInitialization'
-import NodeBasedArchitecture from './components/NodeBasedArchitecture'
-import TimelineVisualization from './components/TimelineVisualization'
-import DeploymentGateway from './components/DeploymentGateway'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 /* ──────────── Loading Screen ──────────── */
@@ -25,7 +18,6 @@ function LoadingScreen({ onLoadComplete }) {
         return prev + Math.random() * 15 + 5
       })
     }, 200)
-
     return () => clearInterval(interval)
   }, [onLoadComplete])
 
@@ -33,82 +25,16 @@ function LoadingScreen({ onLoadComplete }) {
     <div className={`loading-screen ${fadeOut ? 'fade-out' : ''}`}>
       <div className="loading-content">
         <div className="loading-logo">
-          <div className="loading-ring"></div>
-          <div className="loading-core"></div>
+          <div className="loading-ring" />
+          <div className="loading-core" />
         </div>
-        <h1 className="loading-title">
-          <span className="loading-text-word">Initializing</span>
-          <span className="loading-dots">
-            <span className="dot">.</span>
-            <span className="dot">.</span>
-            <span className="dot">.</span>
-          </span>
-        </h1>
+        <p className="loading-subtitle">Initializing...</p>
         <div className="loading-progress-bar">
-          <div className="loading-progress-fill" style={{ width: `${Math.min(progress, 100)}%` }}></div>
+          <div className="loading-progress-fill" style={{ width: `${Math.min(progress, 100)}%` }} />
         </div>
-        <p className="loading-subtitle">Preparing intelligent systems...</p>
       </div>
     </div>
   )
-}
-
-/* ──────────── Custom Cursor ──────────── */
-function Cursor() {
-  const dot = useRef(null)
-  const ring = useRef(null)
-  const pos = useRef({ x: 0, y: 0 })
-  const ringPos = useRef({ x: 0, y: 0 })
-  const hovering = useRef(false)
-  const rafId = useRef(null)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
-
-  useEffect(() => {
-    if (isMobile) return
-
-    const move = (e) => {
-      pos.current = { x: e.clientX, y: e.clientY }
-      hovering.current = e.target.matches('a,button,[data-hover]')
-    }
-
-    window.addEventListener('mousemove', move, { passive: true })
-
-    const animate = () => {
-      ringPos.current.x += (pos.current.x - ringPos.current.x) * 0.2
-      ringPos.current.y += (pos.current.y - ringPos.current.y) * 0.2
-
-      if (dot.current) {
-        dot.current.style.transform = `translate3d(${pos.current.x - 4}px, ${pos.current.y - 4}px, 0)`
-        dot.current.style.background = hovering.current ? '#d0d0d0' : '#e0e0e0'
-      }
-      if (ring.current) {
-        ring.current.style.transform = `translate3d(${ringPos.current.x - 18}px, ${ringPos.current.y - 18}px, 0)`
-        ring.current.style.borderColor = hovering.current ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.5)'
-      }
-
-      rafId.current = requestAnimationFrame(animate)
-    }
-    rafId.current = requestAnimationFrame(animate)
-
-    return () => {
-      window.removeEventListener('mousemove', move)
-      if (rafId.current) cancelAnimationFrame(rafId.current)
-    }
-  }, [isMobile])
-
-  if (isMobile) return null
-
-  return <>
-    <div ref={dot} className="cursor-dot" />
-    <div ref={ring} className="cursor-ring" />
-  </>
 }
 
 /* ──────────── Navigation ──────────── */
@@ -117,46 +43,27 @@ function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    let timeoutId = null
-    const handleScroll = () => {
-      if (timeoutId) clearTimeout(timeoutId)
-      timeoutId = setTimeout(() => {
-        setScrolled(window.scrollY > 60)
-      }, 16)
-    }
-
+    const handleScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      if (timeoutId) clearTimeout(timeoutId)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const links = useMemo(() => ['Home', 'Origin', 'Craft', 'Journey', 'Connect'], [])
+  const links = ['Home', 'Stack', 'Experience', 'Process', 'Contact']
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <a href="#hero" className="nav-logo" data-hover>WH<span className="logo-dot">.</span></a>
+      <a href="#hero" className="nav-logo">WH<span className="logo-dot">.</span></a>
       <button
-        className="nav-toggle"
-        aria-label="Toggle menu"
+        className={`nav-toggle ${menuOpen ? 'open' : ''}`}
+        aria-label="Menu"
         onClick={() => setMenuOpen(!menuOpen)}
-        aria-expanded={menuOpen}
       >
-        <span className={menuOpen ? 'open' : ''}><span /><span /><span /></span>
+        <span /><span /><span />
       </button>
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        {links.map((l) => (
+        {links.map(l => (
           <li key={l}>
-            <a
-              href={`#${l.toLowerCase()}`}
-              className="nav-link-3d"
-              data-hover
-              onClick={() => setMenuOpen(false)}
-            >
-              <span className="nav-link-border" />
-              <span className="nav-link-text">{l}</span>
-            </a>
+            <a href={`#${l.toLowerCase()}`} onClick={() => setMenuOpen(false)}>{l}</a>
           </li>
         ))}
       </ul>
@@ -164,158 +71,185 @@ function Nav() {
   )
 }
 
-/* ──────────── Section Wrapper ──────────── */
-function Section({ id, className = '', children }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
-
-  return (
-    <section
-      id={id}
-      ref={ref}
-      className={`section section-transition ${className}`}
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateY(0)' : 'translateY(40px)',
-        transition: 'opacity 0.8s ease, transform 0.8s ease',
-      }}
-    >
-      <div className="section-inner">
-        {children}
-      </div>
-    </section>
-  )
-}
-
 /* ──────────── Hero ──────────── */
 function Hero() {
   return (
-    <section id="hero" className="section hero-section">
-      <div className="hero-content">
-        <h1 className="hero-name">Waleed Hassan</h1>
-        <p className="hero-title">AI Agent Architect</p>
-        <p className="hero-tagline">
-          I build autonomous AI systems that don&apos;t just respond — they plan, orchestrate, and execute.
-        </p>
-        <a href="#origin" className="hero-cta" data-hover>
-          <span className="hero-cta-border" />
-          <span className="hero-cta-text">Explore My Work</span>
-        </a>
+    <section id="hero" className="hero">
+      <div className="hero-inner">
+        <div className="hero-visual">
+          <div className="hero-avatar">WH</div>
+        </div>
+        <div className="hero-text">
+          <h1>AI Agent Architect &amp; Systems Builder</h1>
+          <p>
+            I design and build autonomous AI systems that don&apos;t just respond — they plan,
+            orchestrate, and execute complex workflows. From multi-agent orchestration to
+            advanced RAG pipelines, every system I build starts with a question:
+            <em> &ldquo;What would a truly capable digital teammate look like?&rdquo;</em>
+          </p>
+          <div className="hero-actions">
+            <a href="/resume.pdf" className="btn" target="_blank" rel="noopener noreferrer">My Resume</a>
+            <a href="#contact" className="btn btn-outline">Let&apos;s Talk</a>
+          </div>
+        </div>
       </div>
     </section>
   )
 }
 
-/* ──────────── Origin Story Section ──────────── */
-function Origin() {
-  const skills = useMemo(() => [
-    { name: 'Autonomous AI Agents', level: 95 },
-    { name: 'Multi-Agent Orchestration', level: 92 },
-    { name: 'Advanced RAG Systems', level: 88 },
-    { name: 'Visual Automation Workflows', level: 95 },
-  ], [])
-  const [activeSkill, setActiveSkill] = useState(0)
+/* ──────────── Tech Stack ──────────── */
+const techItems = [
+  { label: 'Python', icon: 'Py' },
+  { label: 'LangChain', icon: 'LC' },
+  { label: 'PyTorch', icon: 'PT' },
+  { label: 'FastAPI', icon: 'FA' },
+  { label: 'Docker', icon: 'Dk' },
+  { label: 'PostgreSQL', icon: 'PQ' },
+  { label: 'React', icon: 'Rc' },
+  { label: 'Node.js', icon: 'Nj' },
+  { label: 'n8n', icon: 'n8' },
+  { label: 'AWS', icon: 'AW' },
+  { label: 'Git', icon: 'Gi' },
+  { label: 'Linux', icon: 'Lx' },
+]
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveSkill((prev) => (prev + 1) % skills.length)
-    }, 4000)
-    return () => clearInterval(interval)
-  }, [skills.length])
+function TechStack() {
+  return (
+    <section id="stack" className="section">
+      <div className="section-inner">
+        <div className="section-label">Technologies</div>
+        <h2 className="section-title">Stack</h2>
+        <p className="section-desc">The tools I use to build production-grade AI systems.</p>
+        <div className="tech-grid">
+          {techItems.map(t => (
+            <div key={t.label} className="tech-card">
+              <span className="tech-icon">{t.icon}</span>
+              <span className="tech-label">{t.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ──────────── Experience ──────────── */
+const experienceData = [
+  {
+    company: 'Freelance AI Engineering',
+    role: 'Autonomous AI Agent Architect',
+    period: '2024 — Present',
+    desc: 'Building custom autonomous AI agents and multi-agent orchestration systems for clients. Designing advanced RAG pipelines with retrieval, re-ranking, and synthesis. Developing visual automation workflows using n8n, Zapier, and Make.com.',
+  },
+  {
+    company: 'Independent R&D',
+    role: 'AI Systems Researcher',
+    period: '2023 — 2024',
+    desc: 'Deep-dived into LLMs, prompt engineering, and agentic patterns. Explored neural architecture design with PyTorch. Built experimental agent memory systems and self-improving workflows.',
+  },
+  {
+    company: 'Open-Source Contributions',
+    role: 'AI/ML Contributor',
+    period: '2022 — 2023',
+    desc: 'Contributed to open-source AI frameworks and tooling. Built toolkits for rapid deep learning experimentation. Published research on agent orchestration patterns.',
+  },
+]
+
+function Experience() {
+  const [openIdx, setOpenIdx] = useState(null)
 
   return (
-    <Section id="origin" className="about-section">
-      <div className="about-grid">
-        <div className="about-text">
-          <h2 className="section-heading">The Origin</h2>
-          <p>
-            I still remember the moment it clicked. Large language models could
-            <strong> reason</strong> — but they couldn&apos;t <strong>act</strong>.
-            That gap between thought and execution is where I live.
-          </p>
-          <p>
-            I build <strong>autonomous AI agents</strong> that don&apos;t just
-            respond — they plan, orchestrate, and execute complex workflows.
-            From multi-agent systems that coordinate like swarms, to RAG
-            pipelines that know when to retrieve and when to trust their own
-            knowledge, every system I design starts with a question:
-            <em> &ldquo;What would a truly capable digital teammate look like?&rdquo;</em>
-          </p>
-          <p>
-            The answer lives at the intersection of <strong>LangChain</strong>,
-            <strong> vector reasoning</strong>, and <strong>visual automation</strong>.
-            Production-ready. Built to scale.
-          </p>
-
-          <div className="origin-radar">
-            <Radar />
-          </div>
-
-          <div className="about-skills">
-            {skills.map((skill, i) => (
-              <div
-                key={skill.name}
-                className={`skill-item ${i === activeSkill ? 'active' : ''}`}
-                onMouseEnter={() => setActiveSkill(i)}
-              >
-                <span className="skill-level">{skill.level}%</span>
-                <span className="skill-name">{skill.name}</span>
+    <section id="experience" className="section">
+      <div className="section-inner">
+        <div className="section-label">Career</div>
+        <h2 className="section-title">Experience</h2>
+        <p className="section-desc">The path from first prompt to production-grade AI orchestration.</p>
+        <div className="exp-list">
+          {experienceData.map((e, i) => (
+            <div
+              key={i}
+              className={`exp-card ${openIdx === i ? 'expanded' : ''}`}
+              onClick={() => setOpenIdx(openIdx === i ? null : i)}
+            >
+              <div className="exp-header">
+                <div className="exp-avatar">{e.company.split(' ').map(w => w[0]).join('').slice(0, 2)}</div>
+                <div className="exp-meta">
+                  <h3>{e.role}</h3>
+                  <p>{e.company} &middot; {e.period}</p>
+                </div>
+                <span className="exp-chevron">{openIdx === i ? '−' : '+'}</span>
               </div>
-            ))}
-          </div>
+              {openIdx === i && (
+                <div className="exp-body">
+                  <p>{e.desc}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
+      </div>
+    </section>
+  )
+}
 
-        <div className="about-visual">
-          <NodeBasedArchitecture />
+/* ──────────── Process ──────────── */
+const steps = [
+  { num: '01', title: 'Analyze', desc: 'Understand the problem domain, data landscape, and desired outcomes. Define success criteria and system boundaries.' },
+  { num: '02', title: 'Architect', desc: 'Design the agent topology — which models, tools, and memory systems to use. Map out orchestration flow and fallback logic.' },
+  { num: '03', title: 'Build', desc: 'Develop the core agent logic, RAG pipelines, and tool integrations. Implement orchestration layers and monitoring.' },
+  { num: '04', title: 'Deploy', desc: 'Containerize, deploy, and connect to production data sources. Set up CI/CD for continuous improvement.' },
+  { num: '05', title: 'Evolve', desc: 'Monitor performance, gather feedback, and iteratively improve. Agents should learn and adapt over time.' },
+]
+
+function Process() {
+  return (
+    <section id="process" className="section">
+      <div className="section-inner">
+        <div className="section-label">Methodology</div>
+        <h2 className="section-title">My Design Process</h2>
+        <p className="section-desc">How I take an idea from concept to production-ready AI system.</p>
+        <div className="process-grid">
+          {steps.map(s => (
+            <div key={s.num} className="process-card">
+              <span className="process-num">{s.num}</span>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
-    </Section>
+    </section>
   )
 }
 
-/* ──────────── Craft Section ──────────── */
-function Craft() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
+/* ──────────── Contact / CTA ──────────── */
+function Contact() {
   return (
-    <Section id="craft" className="craft-section">
-      <div ref={ref} className="craft-content">
-        <h2 className="section-heading">The Architecture</h2>
-        <p className="craft-subtitle">
-          Every system is a story. Here&apos;s how the pieces fit together.
-        </p>
-        <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          animate={isInView ? { scale: 1, opacity: 1 } : {}}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <CoreInitialization />
-        </motion.div>
+    <section id="contact" className="section contact-section">
+      <div className="section-inner">
+        <div className="contact-card">
+          <p className="contact-avail">Available for work</p>
+          <h2>Let&apos;s build your next AI system.</h2>
+          <a href="mailto:vkdeku20@gmail.com" className="btn btn-contact">Contact Me</a>
+        </div>
       </div>
-    </Section>
+    </section>
   )
 }
 
-/* ──────────── Journey Section ──────────── */
-function Journey() {
+/* ──────────── Footer ──────────── */
+function Footer() {
   return (
-    <Section id="journey" className="journey-section">
-      <div className="journey-header">
-        <h2>The Journey</h2>
-        <p>From first prompt to production-grade AI orchestration</p>
+    <footer className="footer">
+      <div className="footer-inner">
+        <p>&copy; 2024–2026 Waleed Hassan. All rights reserved.</p>
+        <div className="footer-socials">
+          <a href="https://linkedin.com/in/waleed-hassan-20438b3a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:vkdeku20@gmail.com">Email</a>
+        </div>
       </div>
-      <TimelineVisualization />
-    </Section>
-  )
-}
-
-/* ────────────── Connect Section ──────────── */
-function Connect() {
-  return (
-    <Section id="connect" className="collaboration-section">
-      <DeploymentGateway />
-    </Section>
+    </footer>
   )
 }
 
@@ -333,34 +267,13 @@ export default function App() {
       {!showApp && <LoadingScreen onLoadComplete={() => setShowApp(true)} />}
       {showApp && (
         <div className="app">
-          <Cursor />
           <Nav />
-
-          <div className="fixed-bg">
-            <GridPattern
-              width={60}
-              height={60}
-              className="opacity-[0.12]"
-              strokeDasharray="2 2"
-            />
-          </div>
-
           <Hero />
-          <Origin />
-          <Craft />
-          <Journey />
-          <Connect />
-
-          <footer className="footer">
-            <div className="footer-content">
-              <p>&copy; 2024–2026 Waleed Hassan. Building the future of AI.</p>
-              <div className="footer-links">
-                <a href="https://linkedin.com/in/waleed-hassan-20438b3a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="mailto:vkdeku20@gmail.com">Email</a>
-              </div>
-            </div>
-          </footer>
+          <TechStack />
+          <Experience />
+          <Process />
+          <Contact />
+          <Footer />
         </div>
       )}
     </>
