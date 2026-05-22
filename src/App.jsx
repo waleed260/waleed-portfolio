@@ -31,40 +31,19 @@ function Reveal({ children, delay = 0, className = '' }) {
 }
 
 const techStack = [
-  { name: 'Python', icon: 'python/python-original' },
-  { name: 'LangChain', icon: 'langchain' },
-  { name: 'PyTorch', icon: 'pytorch/pytorch-original' },
-  { name: 'FastAPI', icon: 'fastapi/fastapi-original' },
-  { name: 'Docker', icon: 'docker/docker-original' },
-  { name: 'PostgreSQL', icon: 'postgresql/postgresql-original' },
-  { name: 'React', icon: 'react/react-original' },
-  { name: 'Node.js', icon: 'nodejs/nodejs-original' },
-  { name: 'n8n', icon: 'n8n' },
-  { name: 'AWS', icon: 'amazonwebservices' },
-  { name: 'Git', icon: 'git/git-original' },
-  { name: 'Linux', icon: 'linux/linux-original' },
-  { name: 'Make.com', icon: 'make' },
-  { name: 'Vapi', icon: 'vapi' },
-  { name: 'Zapier', icon: 'zapier' },
+  'Python', 'LangChain', 'PyTorch', 'FastAPI', 'Docker',
+  'PostgreSQL', 'React', 'Node.js', 'n8n', 'AWS',
+  'Git', 'Linux', 'Make.com', 'Vapi', 'Zapier',
 ]
 
-function TechIcon({ name, icon }) {
-  const isKnown = ['python', 'pytorch', 'fastapi', 'docker', 'postgresql', 'react', 'nodejs', 'git', 'linux'].some(k => icon.startsWith(k))
-  if (isKnown) {
-    const url = `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${icon}.svg`
-    return <img src={url} alt="" className="tech-logo" loading="lazy" />
+function TechIcon({ name }) {
+  const initials = {
+    Python: 'Py', LangChain: 'LC', PyTorch: 'PT', FastAPI: 'FA',
+    Docker: 'Dk', PostgreSQL: 'PQ', React: 'Rc', 'Node.js': 'Nj',
+    n8n: 'n8', AWS: 'AW', Git: 'Gi', Linux: 'Lx',
+    'Make.com': 'Mk', Vapi: 'Vp', Zapier: 'Zp',
   }
-  if (icon === 'amazonwebservices') {
-    return (
-      <svg className="tech-logo" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.5 14.5c-2.5 0-4-.5-5.5-1.2l.8-1.6c1.2.6 2.5 1 4.7 1 1.4 0 2.5-.3 2.5-1.2 0-.7-.6-1-2-1.4l-.8-.2c-2.3-.6-3.8-1.6-3.8-3.7 0-2 1.6-3.7 4.3-3.7 1.8 0 3.2.4 4.3 1l-.7 1.6c-1-.5-2-.8-3.6-.8-1.5 0-2.3.6-2.3 1.3 0 .7.6 1 2 1.4l.8.2c2.3.6 3.8 1.5 3.8 3.6 0 2.2-1.8 3.7-4.5 3.7z" />
-      </svg>
-    )
-  }
-  if (icon === 'n8n') {
-    return <span className="tech-initial">n8</span>
-  }
-  return <span className="tech-initial">{name.slice(0, 2)}</span>
+  return <span className="tech-initial">{initials[name] || name.slice(0, 2)}</span>
 }
 
 function LoadingScreen({ done }) {
@@ -149,8 +128,8 @@ function Hero() {
         <div className="tech-track">
           {[...techStack, ...techStack].map((t, i) => (
             <span key={i} className="tech-chip">
-              <TechIcon name={t.name} icon={t.icon} />
-              {t.name}
+              <TechIcon name={t} />
+              {t}
             </span>
           ))}
         </div>
