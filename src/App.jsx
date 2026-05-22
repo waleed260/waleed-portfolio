@@ -37,13 +37,43 @@ const techStack = [
 ]
 
 function TechIcon({ name }) {
-  const initials = {
-    Python: 'Py', LangChain: 'LC', PyTorch: 'PT', FastAPI: 'FA',
-    Docker: 'Dk', PostgreSQL: 'PQ', React: 'Rc', 'Node.js': 'Nj',
-    n8n: 'n8', AWS: 'AW', Git: 'Gi', Linux: 'Lx',
-    'Make.com': 'Mk', Vapi: 'Vp', Zapier: 'Zp',
+  const devicon = {
+    Python: 'python/python-original',
+    PyTorch: 'pytorch/pytorch-original',
+    FastAPI: 'fastapi/fastapi-original',
+    Docker: 'docker/docker-original',
+    PostgreSQL: 'postgresql/postgresql-original',
+    React: 'react/react-original',
+    'Node.js': 'nodejs/nodejs-original',
+    Git: 'git/git-original',
+    Linux: 'linux/linux-original',
   }
-  return <span className="tech-initial">{initials[name] || name.slice(0, 2)}</span>
+  const simpleicons = {
+    LangChain: 'langchain',
+    n8n: 'n8n',
+    AWS: 'amazonwebservices',
+    'Make.com': 'make',
+    Zapier: 'zapier',
+  }
+  const fallbackColors = {
+    Vapi: '#7c3aed',
+  }
+
+  const dev = devicon[name]
+  if (dev) {
+    return <img className="tech-logo" src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${dev}.svg`} alt="" />
+  }
+  const sim = simpleicons[name]
+  if (sim) {
+    return <img className="tech-logo" src={`https://cdn.simpleicons.org/${sim}`} alt="" />
+  }
+  const color = fallbackColors[name] || 'rgba(255,255,255,0.15)'
+  const abbr = { Vapi: 'Vp' }[name] || name.slice(0, 2)
+  return (
+    <span className="tech-initial" style={{ background: color }}>
+      {abbr}
+    </span>
+  )
 }
 
 function LoadingScreen({ done }) {
