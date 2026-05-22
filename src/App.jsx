@@ -62,7 +62,7 @@ function Hero() {
     <section id="hero" className="hero">
       <div className="hero-inner">
         <div className="hero-left">
-          <div className="hero-avatar">WH</div>
+          <img src="/profile.png" alt="Waleed Hassan" className="hero-avatar" />
         </div>
         <div className="hero-right">
           <p className="hero-greeting">Hi, I&apos;m</p>
