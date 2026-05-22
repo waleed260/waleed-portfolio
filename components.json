@@ -1,5 +1,16 @@
 {
-  "registries": {
-    "@react-bits": "https://reactbits.dev/r/{name}.json"
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": false,
+  "tsx": false,
+  "tailwind": {
+    "config": "tailwind.config.js",
+    "css": "src/index.css",
+    "baseColor": "neutral",
+    "cssVariables": false
+  },
+  "aliases": {
+    "utils": "@/lib/utils",
+    "components": "@/components"
   }
 }

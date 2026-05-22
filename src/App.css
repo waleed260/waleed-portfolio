@@ -20,7 +20,7 @@
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1428 100%);
+  background: linear-gradient(135deg, #070707 0%, #111 50%, #0a0a0a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,7 +123,7 @@
   left: 0;
   right: 0;
   height: var(--navbar-height);
-  background: rgba(10, 14, 39, 0.7);
+  background: rgba(7, 7, 7, 0.7);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(224, 224, 224, 0.1);
   display: flex;
@@ -135,7 +135,7 @@
 }
 
 .navbar.scrolled {
-  background: rgba(10, 14, 39, 0.95);
+  background: rgba(7, 7, 7, 0.95);
   border-bottom: 1px solid rgba(224, 224, 224, 0.2);
 }
 
@@ -238,7 +238,7 @@
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: rgba(10, 14, 39, 0.95);
+    background: rgba(7, 7, 7, 0.95);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;

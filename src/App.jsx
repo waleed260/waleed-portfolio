@@ -1,34 +1,10 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
-import { PrismaHero } from './components/ui/prisma-hero'
+import { motion, useInView } from 'framer-motion'
 import CoreInitialization from './components/CoreInitialization'
 import NodeBasedArchitecture from './components/NodeBasedArchitecture'
 import TimelineVisualization from './components/TimelineVisualization'
 import DeploymentGateway from './components/DeploymentGateway'
 import './App.css'
-
-/* ──────────── Utilities ──────────── */
-function useInView(threshold = 0.2) {
-  const ref = useRef(null)
-  const [visible, setVisible] = useState(false)
-  
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setVisible(true)
-          obs.disconnect()
-        }
-      },
-      { threshold }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [threshold])
-  
-  return [ref, visible]
-}
 
 /* ──────────── Loading Screen ──────────── */
 function LoadingScreen({ onLoadComplete }) {
@@ -99,7 +75,7 @@ function Cursor() {
       pos.current = { x: e.clientX, y: e.clientY }
       hovering.current = e.target.matches('a,button,[data-hover]')
     }
-    
+
     window.addEventListener('mousemove', move, { passive: true })
 
     const animate = () => {
@@ -108,13 +84,13 @@ function Cursor() {
 
       if (dot.current) {
         dot.current.style.transform = `translate3d(${pos.current.x - 4}px, ${pos.current.y - 4}px, 0)`
-        dot.current.style.background = hovering.current ? 'var(--pink)' : 'var(--cyan)'
+        dot.current.style.background = hovering.current ? '#d0d0d0' : '#e0e0e0'
       }
       if (ring.current) {
         ring.current.style.transform = `translate3d(${ringPos.current.x - 18}px, ${ringPos.current.y - 18}px, 0)`
-        ring.current.style.borderColor = hovering.current ? 'rgba(244, 114, 182, 0.5)' : 'rgba(20, 184, 166, 0.5)'
+        ring.current.style.borderColor = hovering.current ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.5)'
       }
-      
+
       rafId.current = requestAnimationFrame(animate)
     }
     rafId.current = requestAnimationFrame(animate)
@@ -137,7 +113,7 @@ function Cursor() {
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  
+
   useEffect(() => {
     let timeoutId = null
     const handleScroll = () => {
@@ -146,7 +122,7 @@ function Nav() {
         setScrolled(window.scrollY > 60)
       }, 16)
     }
-    
+
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -154,14 +130,14 @@ function Nav() {
     }
   }, [])
 
-  const links = useMemo(() => ['About', 'Journey', 'Collaboration'], [])
+  const links = useMemo(() => ['Origin', 'Craft', 'Journey', 'Connect'], [])
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <a href="#hero" className="nav-logo" data-hover>WH<span className="logo-dot">.</span></a>
-      <button 
-        className="nav-toggle" 
-        aria-label="Toggle menu" 
+      <button
+        className="nav-toggle"
+        aria-label="Toggle menu"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-expanded={menuOpen}
       >
@@ -170,10 +146,10 @@ function Nav() {
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
         {links.map((l) => (
           <li key={l}>
-            <a 
-              href={`#${l.toLowerCase()}`} 
-              className="nav-link-3d" 
-              data-hover 
+            <a
+              href={`#${l.toLowerCase()}`}
+              className="nav-link-3d"
+              data-hover
               onClick={() => setMenuOpen(false)}
             >
               <span className="nav-link-border" />
@@ -188,13 +164,19 @@ function Nav() {
 
 /* ──────────── Section Wrapper ──────────── */
 function Section({ id, className = '', children }) {
-  const [ref, vis] = useInView(0.2)
-  
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' })
+
   return (
-    <section 
-      id={id} 
-      ref={ref} 
-      className={`section section-transition ${className} ${vis ? 'in-view' : ''}`}
+    <section
+      id={id}
+      ref={ref}
+      className={`section section-transition ${className}`}
+      style={{
+        opacity: isInView ? 1 : 0,
+        transform: isInView ? 'translateY(0)' : 'translateY(40px)',
+        transition: 'opacity 0.8s ease, transform 0.8s ease',
+      }}
     >
       <div className="section-inner">
         {children}
@@ -203,15 +185,15 @@ function Section({ id, className = '', children }) {
   )
 }
 
-/* ──────────── About Section (New) ──────────── */
-function About() {
-  const [activeSkill, setActiveSkill] = useState(0)
+/* ──────────── Origin Story Section ──────────── */
+function Origin() {
   const skills = useMemo(() => [
-    { name: 'Autonomous AI Agents', level: 95, icon: '🤖' },
-    { name: 'Multi-Agent Orchestration', level: 92, icon: '🔗' },
-    { name: 'Advanced RAG Systems', level: 88, icon: '🧠' },
-    { name: 'Visual Automation Workflows', level: 95, icon: '⚙️' }
+    { name: 'Autonomous AI Agents', level: 95 },
+    { name: 'Multi-Agent Orchestration', level: 92 },
+    { name: 'Advanced RAG Systems', level: 88 },
+    { name: 'Visual Automation Workflows', level: 95 },
   ], [])
+  const [activeSkill, setActiveSkill] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -221,17 +203,29 @@ function About() {
   }, [skills.length])
 
   return (
-    <Section id="about" className="about-section">
+    <Section id="origin" className="about-section">
       <div className="about-grid">
         <div className="about-text">
-          <h2 className="section-heading">Autonomous AI Systems Architect</h2>
+          <h2 className="section-heading">The Origin</h2>
           <p>
-            I design and build <strong>autonomous AI agents</strong> that think, plan, and execute complex workflows. Specializing in <strong>multi-agent orchestration</strong>, <strong>advanced RAG pipelines</strong>, and <strong>intelligent automation</strong>.
+            I still remember the moment it clicked. Large language models could
+            <strong> reason</strong> — but they couldn&apos;t <strong>act</strong>.
+            That gap between thought and execution is where I live.
           </p>
           <p>
-            From <strong>LangChain</strong> frameworks to <strong>n8n visual workflows</strong>, I transform cutting-edge AI research into production-ready systems.
+            I build <strong>autonomous AI agents</strong> that don&apos;t just
+            respond — they plan, orchestrate, and execute complex workflows.
+            From multi-agent systems that coordinate like swarms, to RAG
+            pipelines that know when to retrieve and when to trust their own
+            knowledge, every system I design starts with a question:
+            <em> &ldquo;What would a truly capable digital teammate look like?&rdquo;</em>
           </p>
-          
+          <p>
+            The answer lives at the intersection of <strong>LangChain</strong>,
+            <strong> vector reasoning</strong>, and <strong>visual automation</strong>.
+            Production-ready. Built to scale.
+          </p>
+
           <div className="about-skills">
             {skills.map((skill, i) => (
               <div
@@ -239,17 +233,40 @@ function About() {
                 className={`skill-item ${i === activeSkill ? 'active' : ''}`}
                 onMouseEnter={() => setActiveSkill(i)}
               >
-                <span className="skill-icon">{skill.icon}</span>
-                <span className="skill-name">{skill.name}</span>
                 <span className="skill-level">{skill.level}%</span>
+                <span className="skill-name">{skill.name}</span>
               </div>
             ))}
           </div>
         </div>
-        
+
         <div className="about-visual">
           <NodeBasedArchitecture />
         </div>
+      </div>
+    </Section>
+  )
+}
+
+/* ──────────── Craft Section ──────────── */
+function Craft() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  return (
+    <Section id="craft" className="craft-section">
+      <div ref={ref} className="craft-content">
+        <h2 className="section-heading">The Architecture</h2>
+        <p className="craft-subtitle">
+          Every system is a story. Here&apos;s how the pieces fit together.
+        </p>
+        <motion.div
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1 } : {}}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <CoreInitialization />
+        </motion.div>
       </div>
     </Section>
   )
@@ -260,18 +277,18 @@ function Journey() {
   return (
     <Section id="journey" className="journey-section">
       <div className="journey-header">
-        <h2>Learning Journey</h2>
-        <p>From LLMs to Production AI Systems</p>
+        <h2>The Journey</h2>
+        <p>From first prompt to production-grade AI orchestration</p>
       </div>
       <TimelineVisualization />
     </Section>
   )
 }
 
-/* ──────────── Collaboration Section ──────────── */
-function Collaboration() {
+/* ────────────── Connect Section ──────────── */
+function Connect() {
   return (
-    <Section id="collaboration" className="collaboration-section">
+    <Section id="connect" className="collaboration-section">
       <DeploymentGateway />
     </Section>
   )
@@ -282,7 +299,6 @@ export default function App() {
   const [showApp, setShowApp] = useState(false)
 
   useEffect(() => {
-    // Simulate resource loading
     const timer = setTimeout(() => setShowApp(true), 3000)
     return () => clearTimeout(timer)
   }, [])
@@ -294,23 +310,12 @@ export default function App() {
         <div className="app">
           <Cursor />
           <Nav />
-          
-          {/* PrismaHero - Feature Hero */}
-          <PrismaHero />
 
-          {/* Hero Section with Core Initialization */}
-          <CoreInitialization />
-          
-          {/* About Section with Node Architecture */}
-          <About />
-          
-          {/* Journey Timeline */}
+          <Origin />
+          <Craft />
           <Journey />
-          
-          {/* Collaboration/Contact Gateway */}
-          <Collaboration />
-          
-          {/* Footer */}
+          <Connect />
+
           <footer className="footer">
             <div className="footer-content">
               <p>&copy; 2024–2026 Waleed Hassan. Building the future of AI.</p>
