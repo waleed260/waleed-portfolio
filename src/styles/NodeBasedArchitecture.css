@@ -1,0 +1,67 @@
+/* NodeBasedArchitecture.css */
+
+.node-based-architecture {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1), transparent);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.network-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.node-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.node-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transform: scale(0.8) translateY(-10px);
+  transform-origin: center;
+  pointer-events: auto;
+}
+
+.node-label.visible {
+  animation: nodeAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: var(--delay, 0);
+}
+
+@keyframes nodeAppear {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.label-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.node-label:nth-child(1) { top: 45%; left: 48%; }
+.node-label:nth-child(2) { top: 20%; left: 18%; }
+.node-label:nth-child(3) { top: 20%; left: 78%; }
+.node-label:nth-child(4) { top: 70%; left: 12%; }
+.node-label:nth-child(5) { top: 82%; left: 48%; }
+.node-label:nth-child(6) { top: 70%; left: 82%; }
