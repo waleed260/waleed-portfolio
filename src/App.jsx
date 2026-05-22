@@ -65,11 +65,19 @@ function Hero() {
           <div className="hero-avatar">WH</div>
         </div>
         <div className="hero-right">
-          <h1>Agentic AI Developer &amp; Digital Creator</h1>
-          <p>
+          <p className="hero-greeting">Hi, I&apos;m</p>
+          <h1 className="hero-name">Waleed Hassan</h1>
+          <p className="hero-roles">
+            <span>Agentic AI Developer</span>
+            <span className="hero-sep">|</span>
+            <span>Digital FTE Creator</span>
+            <span className="hero-sep">|</span>
+            <span>AI Automation Expert</span>
+          </p>
+          <p className="hero-bio">
             I design and build autonomous AI systems that don&apos;t just respond — they plan,
             orchestrate, and execute. From multi-agent swarms to intelligent automation workflows,
-            every system I build transforms complexity into capability.
+            every system I build transforms complexity into capability at scale.
           </p>
           <div className="hero-btns">
             <a href="#contact" className="btn">Let&apos;s Talk</a>

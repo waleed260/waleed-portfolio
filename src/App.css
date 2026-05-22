@@ -119,14 +119,25 @@ h2 {
   color: var(--text);
 }
 .hero-right { flex: 1; }
-.hero-right h1 { font-size: 3rem; font-weight: 500; line-height: 1.1; margin-bottom: 1.25rem; }
-.hero-right p {
-  font-size: 1rem; color: var(--muted); line-height: 1.7;
+.hero-greeting {
+  font-size: 1.05rem; color: var(--highlight); margin-bottom: 0.25rem;
+  font-weight: 500; letter-spacing: 0.02em;
+}
+.hero-name {
+  font-size: 3.5rem; font-weight: 600; line-height: 1.05;
+  letter-spacing: -0.02em; margin-bottom: 0.75rem;
+}
+.hero-roles {
+  display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem;
+  font-size: 1rem; color: var(--muted);
+  margin-bottom: 1.5rem; font-weight: 450;
+}
+.hero-sep { color: var(--border); }
+.hero-bio {
+  font-size: 1rem; color: var(--muted-2); line-height: 1.7;
   max-width: 580px; margin-bottom: 2rem;
 }
 .hero-btns { display: flex; gap: 1rem; }
-
-/* ─── Buttons ─── */
 .btn {
   display: inline-flex; align-items: center;
   padding: 12px 32px; border-radius: 24px;
@@ -166,9 +177,10 @@ h2 {
 @media (max-width: 768px) {
   .hero { min-height: auto; padding: 120px 1rem 60px; }
   .hero-inner { flex-direction: column; gap: 32px; text-align: center; }
-  .hero-right p { margin: 0 auto 2rem; }
+  .hero-bio { margin: 0 auto 2rem; }
   .hero-btns { justify-content: center; }
-  .hero-right h1 { font-size: 2rem; }
+  .hero-name { font-size: 2.2rem; }
+  .hero-roles { justify-content: center; font-size: 0.9rem; }
 }
 
 /* ─── Experience (Two Column) ─── */
