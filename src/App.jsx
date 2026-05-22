@@ -1,5 +1,34 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
+
+const BASE = import.meta.env.BASE_URL
+
+/* ─── Reveal on Scroll ─── */
+function Reveal({ children, delay = 0, className = '' }) {
+  const ref = useRef(null)
+  const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setShow(true); obs.disconnect() } },
+      { threshold: 0.1 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className={`reveal ${show ? 'reveal-in' : ''} ${className}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  )
+}
 
 const techStack = [
   'Python', 'LangChain', 'PyTorch', 'FastAPI', 'Docker',
@@ -61,28 +90,28 @@ function Hero() {
   return (
     <section id="hero" className="hero">
       <div className="hero-inner">
-        <div className="hero-left">
-          <img src="/profile.png" alt="Waleed Hassan" className="hero-avatar" />
-        </div>
+        <Reveal className="hero-left">
+          <img src={`${BASE}profile.png`} alt="Waleed Hassan" className="hero-avatar" />
+        </Reveal>
         <div className="hero-right">
-          <p className="hero-greeting">Hi, I&apos;m</p>
-          <h1 className="hero-name">Waleed Hassan</h1>
-          <p className="hero-roles">
+          <Reveal delay={100}><p className="hero-greeting">Hi, I&apos;m</p></Reveal>
+          <Reveal delay={200}><h1 className="hero-name">Waleed Hassan</h1></Reveal>
+          <Reveal delay={300}><p className="hero-roles">
             <span>Agentic AI Developer</span>
             <span className="hero-sep">|</span>
             <span>Digital FTE Creator</span>
             <span className="hero-sep">|</span>
             <span>AI Automation Expert</span>
-          </p>
-          <p className="hero-bio">
+          </p></Reveal>
+          <Reveal delay={400}><p className="hero-bio">
             I design and build autonomous AI systems that don&apos;t just respond — they plan,
             orchestrate, and execute. From multi-agent swarms to intelligent automation workflows,
             every system I build transforms complexity into capability at scale.
-          </p>
-          <div className="hero-btns">
+          </p></Reveal>
+          <Reveal delay={500}><div className="hero-btns">
             <a href="#contact" className="btn">Let&apos;s Talk</a>
-            <a href="/resume.pdf" className="btn btn-outline" target="_blank">My Resume</a>
-          </div>
+            <a href={`${BASE}resume.pdf`} className="btn btn-outline" target="_blank" rel="noreferrer">My Resume</a>
+          </div></Reveal>
         </div>
       </div>
       <div className="tech-marquee">
@@ -123,25 +152,27 @@ function Experience() {
   return (
     <section id="stack" className="section">
       <div className="sec-inner">
-        <div className="sec-side">
-          <p className="sec-label">CAREER</p>
+        <Reveal className="sec-side">
+          <p className="sec-label shimmer-text">CAREER</p>
           <h2>Experience</h2>
           <p className="sec-desc">The path from first prompt to production-grade AI orchestration.</p>
-        </div>
+        </Reveal>
         <div className="sec-main">
           <div className="exp-list">
             {experienceData.map((e, i) => (
-              <div key={i} className={`exp-card ${idx === i ? 'open' : ''}`} onClick={() => setIdx(idx === i ? null : i)}>
-                <div className="exp-top">
-                  <div className="exp-icon">{e.company.split(' ').map(w => w[0]).join('')}</div>
-                  <div className="exp-info">
-                    <h3>{e.role}</h3>
-                    <p>{e.company} &middot; {e.period}</p>
+              <Reveal key={i} delay={i * 100}>
+                <div className={`exp-card ${idx === i ? 'open' : ''}`} onClick={() => setIdx(idx === i ? null : i)}>
+                  <div className="exp-top">
+                    <div className="exp-icon">{e.company.split(' ').map(w => w[0]).join('')}</div>
+                    <div className="exp-info">
+                      <h3>{e.role}</h3>
+                      <p>{e.company} &middot; {e.period}</p>
+                    </div>
+                    <span className="exp-chev">{idx === i ? '−' : '+'}</span>
                   </div>
-                  <span className="exp-chev">{idx === i ? '−' : '+'}</span>
+                  {idx === i && <div className="exp-body"><p>{e.desc}</p></div>}
                 </div>
-                {idx === i && <div className="exp-body"><p>{e.desc}</p></div>}
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -162,16 +193,20 @@ function Process() {
   return (
     <section id="process" className="section">
       <div className="sec-inner">
-        <p className="sec-label">STEPS I FOLLOW</p>
-        <h2>My Design Process</h2>
-        <p className="sec-desc">How I take an idea from concept to production-ready AI system.</p>
+        <Reveal>
+          <p className="sec-label shimmer-text">STEPS I FOLLOW</p>
+          <h2>My Design Process</h2>
+          <p className="sec-desc">How I take an idea from concept to production-ready AI system.</p>
+        </Reveal>
         <div className="process-grid">
-          {steps.map(s => (
-            <div key={s.num} className="step-card">
-              <span className="step-num">{s.num}</span>
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-            </div>
+          {steps.map((s, i) => (
+            <Reveal key={s.num} delay={i * 80}>
+              <div className="step-card">
+                <span className="step-num">{s.num}</span>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -190,16 +225,16 @@ function Community() {
   return (
     <section id="contact" className="section">
       <div className="sec-inner community-layout">
-        <div className="community-cards">
+        <Reveal className="community-cards">
           {communityOffers.map((c, i) => (
             <div key={i} className="community-card">
               <h5>{c.title}</h5>
               <p>{c.desc}</p>
             </div>
           ))}
-        </div>
-        <div className="community-text">
-          <p className="sec-label">COMMUNITY WORK</p>
+        </Reveal>
+        <Reveal delay={200} className="community-text">
+          <p className="sec-label shimmer-text">COMMUNITY WORK</p>
           <h2>Building an AI Engineering Community</h2>
           <p className="sec-desc">
             I&apos;m building a community of AI engineers, automation experts, and creators who share
@@ -211,7 +246,7 @@ function Community() {
             <div><span>3</span><p>Years Active</p></div>
           </div>
           <a href="mailto:vkdeku20@gmail.com" className="btn">Join Community</a>
-        </div>
+        </Reveal>
       </div>
     </section>
   )
@@ -220,11 +255,13 @@ function Community() {
 function Footer() {
   return (
     <footer>
-      <div className="cta">
-        <p className="cta-avail">Available for work</p>
-        <h2>Let&apos;s build your next AI system.</h2>
-        <a href="mailto:vkdeku20@gmail.com" className="btn">Contact Me</a>
-      </div>
+      <Reveal>
+        <div className="cta">
+          <p className="cta-avail shimmer-text">Available for work</p>
+          <h2>Let&apos;s build your next AI system.</h2>
+          <a href="mailto:vkdeku20@gmail.com" className="btn">Contact Me</a>
+        </div>
+      </Reveal>
       <div className="footer-bottom">
         <p>&copy; 2024–2026 Waleed Hassan. All rights reserved.</p>
         <div className="socials">
