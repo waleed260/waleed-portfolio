@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
+import { PrismaHero } from './components/ui/prisma-hero'
 import CoreInitialization from './components/CoreInitialization'
 import NodeBasedArchitecture from './components/NodeBasedArchitecture'
 import TimelineVisualization from './components/TimelineVisualization'
@@ -294,6 +295,9 @@ export default function App() {
           <Cursor />
           <Nav />
           
+          {/* PrismaHero - Feature Hero */}
+          <PrismaHero />
+
           {/* Hero Section with Core Initialization */}
           <CoreInitialization />
           
