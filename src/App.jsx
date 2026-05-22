@@ -229,38 +229,35 @@ function Process() {
   )
 }
 
-const communityOffers = [
-  { title: 'Mentoring', desc: 'Get connected with a mentor to help pave your AI engineering career path.' },
-  { title: 'Opportunities', desc: 'Access internships, freelance gigs, and job opportunities in AI and automation.' },
-  { title: 'Free Resources', desc: 'Get free resources on AI agents, RAG systems, and workflow automation.' },
-  { title: 'Help & Reviews', desc: 'Get your AI projects and portfolios reviewed by industry experts.' },
-]
-
-function Community() {
+function Contact() {
   return (
-    <section id="contact" className="section">
-      <div className="sec-inner community-layout">
-        <Reveal className="community-cards">
-          {communityOffers.map((c, i) => (
-            <div key={i} className="community-card">
-              <h5>{c.title}</h5>
-              <p>{c.desc}</p>
-            </div>
-          ))}
-        </Reveal>
-        <Reveal delay={200} className="community-text">
-          <p className="sec-label shimmer-text">COMMUNITY WORK</p>
-          <h2>Building an AI Engineering Community</h2>
-          <p className="sec-desc">
-            I&apos;m building a community of AI engineers, automation experts, and creators who share
-            knowledge, resources, and opportunities. Let&apos;s grow together.
+    <section id="contact" className="section contact-section">
+      <div className="sec-inner">
+        <Reveal>
+          <p className="sec-label shimmer-text">GET IN TOUCH</p>
+          <h2 className="contact-heading">
+            Have a project, an idea, or a problem that needs <span className="text-highlight">intelligent automation?</span>
+          </h2>
+          <p className="contact-desc">
+            I&apos;m always open to collaborating on ambitious AI projects, discussing agentic systems,
+            or exploring how autonomous workflows can transform your business. Whether you need a
+            custom RAG pipeline, a multi-agent orchestrator, or an end-to-end automation strategy —
+            let&apos;s talk.
           </p>
-          <div className="stats">
-            <div><span>500+</span><p>Community Members</p></div>
-            <div><span>20+</span><p>Events Conducted</p></div>
-            <div><span>3</span><p>Years Active</p></div>
+          <div className="contact-details">
+            <div className="contact-item">
+              <span className="contact-label">Email</span>
+              <a href="mailto:vkdeku20@gmail.com" className="contact-value">vkdeku20@gmail.com</a>
+            </div>
+            <div className="contact-item">
+              <span className="contact-label">LinkedIn</span>
+              <a href="https://linkedin.com/in/waleed-hassan-20438b3a8/" target="_blank" rel="noreferrer" className="contact-value">Waleed Hassan</a>
+            </div>
+            <div className="contact-item">
+              <span className="contact-label">GitHub</span>
+              <a href="https://github.com/waleed260" target="_blank" rel="noreferrer" className="contact-value">waleed260</a>
+            </div>
           </div>
-          <a href="mailto:vkdeku20@gmail.com" className="btn">Join Community</a>
         </Reveal>
       </div>
     </section>
@@ -306,7 +303,7 @@ export default function App() {
           <Hero />
           <Experience />
           <Process />
-          <Community />
+          <Contact />
           <Footer />
         </div>
       )}
