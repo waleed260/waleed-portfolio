@@ -321,8 +321,8 @@ function Footer() {
 function Cursor() {
   const dotRef = useRef(null)
   const ringRef = useRef(null)
-  const pos = useRef({ x: 0, y: 0 })
-  const mouse = useRef({ x: 0, y: 0 })
+  const pos = useRef({ x: -100, y: -100 })
+  const mouse = useRef({ x: -100, y: -100 })
   const raf = useRef(null)
 
   useEffect(() => {
@@ -330,8 +330,17 @@ function Cursor() {
     const ring = ringRef.current
     if (!dot || !ring) return
 
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
-    if (isTouch) return
+    const isFine = window.matchMedia('(pointer: fine)').matches
+    if (!isFine) return
+
+    const cx = window.innerWidth / 2
+    const cy = window.innerHeight / 2
+    pos.current = { x: cx, y: cy }
+    mouse.current = { x: cx, y: cy }
+    dot.style.left = cx + 'px'
+    dot.style.top = cy + 'px'
+    ring.style.left = cx + 'px'
+    ring.style.top = cy + 'px'
 
     const onMove = (e) => {
       mouse.current = { x: e.clientX, y: e.clientY }
@@ -349,6 +358,11 @@ function Cursor() {
       ring.style.opacity = 1
     }
 
+    const hoverTargets = 'a, button, .exp-card, .step-card, .community-card, .contact-icon, input, textarea, .btn, .nav-toggle, .nav-logo'
+
+    const onHoverStart = () => ring.classList.add('hover')
+    const onHoverEnd = () => ring.classList.remove('hover')
+
     const loop = () => {
       pos.current.x += (mouse.current.x - pos.current.x) * 0.12
       pos.current.y += (mouse.current.y - pos.current.y) * 0.12
@@ -358,11 +372,6 @@ function Cursor() {
       ring.style.top = pos.current.y + 'px'
       raf.current = requestAnimationFrame(loop)
     }
-
-    const hoverTargets = 'a, button, .exp-card, .step-card, .community-card, .contact-icon, input, textarea, .btn, .nav-toggle, .nav-logo'
-
-    const onHoverStart = () => ring.classList.add('hover')
-    const onHoverEnd = () => ring.classList.remove('hover')
 
     document.addEventListener('mousemove', onMove)
     document.addEventListener('mouseleave', onLeave)
