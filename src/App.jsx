@@ -114,17 +114,15 @@ function Nav() {
 
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
-      <div className="nav-inner">
-        <a href="#hero" className="nav-logo">WH<span className="dot">.</span></a>
-        <button className={`nav-toggle ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
-          <span /><span /><span />
-        </button>
-        <ul className={`nav-links ${open ? 'open' : ''}`}>
-          {links.map(l => (
-            <li key={l}><a href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}>{l}</a></li>
-          ))}
-        </ul>
-      </div>
+      <a href="#hero" className="nav-logo">WH<span className="dot">.</span></a>
+      <button className={`nav-toggle ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
+        <span /><span /><span />
+      </button>
+      <ul className={`nav-links ${open ? 'open' : ''}`}>
+        {links.map(l => (
+          <li key={l}><a href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}>{l}</a></li>
+        ))}
+      </ul>
     </nav>
   )
 }

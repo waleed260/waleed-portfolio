@@ -114,13 +114,9 @@ a { color: var(--text); text-decoration: none; }
 /* ─── Nav ─── */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; height: 70px;
-  z-index: 100;
-  transition: background 0.3s ease;
-}
-.nav-inner {
-  max-width: 1100px; margin: 0 auto; height: 100%;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 2rem; z-index: 100;
+  transition: background 0.3s ease;
 }
 .nav.scrolled { background: rgba(11, 11, 13, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav-logo { font-size: 1.3rem; font-weight: 600; letter-spacing: 0.03em; }
