@@ -318,6 +318,82 @@ function Footer() {
   )
 }
 
+function Cursor() {
+  const dotRef = useRef(null)
+  const ringRef = useRef(null)
+  const pos = useRef({ x: 0, y: 0 })
+  const mouse = useRef({ x: 0, y: 0 })
+  const raf = useRef(null)
+
+  useEffect(() => {
+    const dot = dotRef.current
+    const ring = ringRef.current
+    if (!dot || !ring) return
+
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    if (isTouch) return
+
+    const onMove = (e) => {
+      mouse.current = { x: e.clientX, y: e.clientY }
+      dot.style.opacity = 1
+      ring.style.opacity = 1
+    }
+
+    const onLeave = () => {
+      dot.style.opacity = 0
+      ring.style.opacity = 0
+    }
+
+    const onEnter = () => {
+      dot.style.opacity = 1
+      ring.style.opacity = 1
+    }
+
+    const loop = () => {
+      pos.current.x += (mouse.current.x - pos.current.x) * 0.12
+      pos.current.y += (mouse.current.y - pos.current.y) * 0.12
+      dot.style.left = mouse.current.x + 'px'
+      dot.style.top = mouse.current.y + 'px'
+      ring.style.left = pos.current.x + 'px'
+      ring.style.top = pos.current.y + 'px'
+      raf.current = requestAnimationFrame(loop)
+    }
+
+    const hoverTargets = 'a, button, .exp-card, .step-card, .community-card, .contact-icon, input, textarea, .btn, .nav-toggle, .nav-logo'
+
+    const onHoverStart = () => ring.classList.add('hover')
+    const onHoverEnd = () => ring.classList.remove('hover')
+
+    document.addEventListener('mousemove', onMove)
+    document.addEventListener('mouseleave', onLeave)
+    document.addEventListener('mouseenter', onEnter)
+    document.querySelectorAll(hoverTargets).forEach(el => {
+      el.addEventListener('mouseenter', onHoverStart)
+      el.addEventListener('mouseleave', onHoverEnd)
+    })
+
+    raf.current = requestAnimationFrame(loop)
+
+    return () => {
+      cancelAnimationFrame(raf.current)
+      document.removeEventListener('mousemove', onMove)
+      document.removeEventListener('mouseleave', onLeave)
+      document.removeEventListener('mouseenter', onEnter)
+      document.querySelectorAll(hoverTargets).forEach(el => {
+        el.removeEventListener('mouseenter', onHoverStart)
+        el.removeEventListener('mouseleave', onHoverEnd)
+      })
+    }
+  }, [])
+
+  return (
+    <>
+      <div className="cursor-dot" ref={dotRef} />
+      <div className="cursor-ring" ref={ringRef} />
+    </>
+  )
+}
+
 export default function App() {
   const [ready, setReady] = useState(false)
 
@@ -331,6 +407,7 @@ export default function App() {
       {!ready && <LoadingScreen done={() => setReady(true)} />}
       {ready && (
         <div className="app">
+          <Cursor />
           <Nav />
           <Hero />
           <Experience />
