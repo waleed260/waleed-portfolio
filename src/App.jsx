@@ -406,7 +406,7 @@ export default function App() {
     <>
       {!ready && <LoadingScreen done={() => setReady(true)} />}
       {ready && (
-        <div className="app">
+        <div className="app no-cursor">
           <Cursor />
           <Nav />
           <Hero />
