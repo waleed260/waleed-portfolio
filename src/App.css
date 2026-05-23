@@ -47,10 +47,12 @@ body.cursor-active textarea, body.cursor-active select { cursor: none; }
   box-shadow: 0 0 20px rgba(181, 255, 109, 0.1);
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
   .cursor-dot, .cursor-ring { display: none !important; }
-  body.cursor-active { cursor: auto; }
-  body.cursor-active a, body.cursor-active button { cursor: auto; }
+  body.cursor-active { cursor: auto !important; }
+  body.cursor-active a, body.cursor-active button,
+  body.cursor-active [role="button"], body.cursor-active input,
+  body.cursor-active textarea, body.cursor-active select { cursor: auto !important; }
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }

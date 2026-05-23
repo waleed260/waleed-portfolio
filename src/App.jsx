@@ -328,7 +328,7 @@ function Cursor() {
   useEffect(() => {
     const dot = dotRef.current
     const ring = ringRef.current
-    if (!dot || !ring || !window.matchMedia('(pointer: fine)').matches) {
+    if (!dot || !ring || !window.matchMedia('(pointer: fine)').matches || window.innerWidth <= 1024) {
       document.body.classList.remove('cursor-active')
       return
     }
