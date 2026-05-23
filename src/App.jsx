@@ -114,15 +114,17 @@ function Nav() {
 
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
-      <a href="#hero" className="nav-logo">WH<span className="dot">.</span></a>
-      <button className={`nav-toggle ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
-        <span /><span /><span />
-      </button>
-      <ul className={`nav-links ${open ? 'open' : ''}`}>
-        {links.map(l => (
-          <li key={l}><a href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}>{l}</a></li>
-        ))}
-      </ul>
+      <div className="nav-inner">
+        <a href="#hero" className="nav-logo">WH<span className="dot">.</span></a>
+        <button className={`nav-toggle ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
+          <span /><span /><span />
+        </button>
+        <ul className={`nav-links ${open ? 'open' : ''}`}>
+          {links.map(l => (
+            <li key={l}><a href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}>{l}</a></li>
+          ))}
+        </ul>
+      </div>
     </nav>
   )
 }
@@ -328,70 +330,62 @@ function Cursor() {
   useEffect(() => {
     const dot = dotRef.current
     const ring = ringRef.current
-    if (!dot || !ring) return
+    if (!dot || !ring || !window.matchMedia('(pointer: fine)').matches) {
+      document.body.classList.remove('cursor-active')
+      return
+    }
 
-    const isFine = window.matchMedia('(pointer: fine)').matches
-    if (!isFine) return
+    document.body.classList.add('cursor-active')
 
     const cx = window.innerWidth / 2
     const cy = window.innerHeight / 2
     pos.current = { x: cx, y: cy }
     mouse.current = { x: cx, y: cy }
-    dot.style.left = cx + 'px'
-    dot.style.top = cy + 'px'
-    ring.style.left = cx + 'px'
-    ring.style.top = cy + 'px'
+    dot.style.transform = `translate(${cx}px, ${cy}px)`
+    ring.style.transform = `translate(${cx}px, ${cy}px)`
+
+    const isHover = (el) => {
+      if (!el || el === document) return false
+      const s = el.matches('a, button, [role="button"], input, textarea, select, .exp-card, .step-card, .community-card, .contact-icon, .btn, .nav-toggle, .nav-logo')
+      if (s) return true
+      return el.closest('a, button, [role="button"], .exp-card, .step-card, .community-card, .contact-icon, .btn, .nav-toggle, .nav-logo') !== null
+    }
 
     const onMove = (e) => {
       mouse.current = { x: e.clientX, y: e.clientY }
-      dot.style.opacity = 1
-      ring.style.opacity = 1
+      dot.style.opacity = ring.style.opacity = 1
     }
 
-    const onLeave = () => {
-      dot.style.opacity = 0
-      ring.style.opacity = 0
-    }
+    const onLeave = () => { dot.style.opacity = ring.style.opacity = 0 }
+    const onEnter = () => { dot.style.opacity = ring.style.opacity = 1 }
 
-    const onEnter = () => {
-      dot.style.opacity = 1
-      ring.style.opacity = 1
-    }
-
-    const hoverTargets = 'a, button, .exp-card, .step-card, .community-card, .contact-icon, input, textarea, .btn, .nav-toggle, .nav-logo'
-
-    const onHoverStart = () => ring.classList.add('hover')
-    const onHoverEnd = () => ring.classList.remove('hover')
+    const onOver = (e) => { if (isHover(e.target)) ring.classList.add('hover') }
+    const onOut = (e) => { if (isHover(e.target)) ring.classList.remove('hover') }
 
     const loop = () => {
       pos.current.x += (mouse.current.x - pos.current.x) * 0.12
       pos.current.y += (mouse.current.y - pos.current.y) * 0.12
-      dot.style.left = mouse.current.x + 'px'
-      dot.style.top = mouse.current.y + 'px'
-      ring.style.left = pos.current.x + 'px'
-      ring.style.top = pos.current.y + 'px'
+      dot.style.transform = `translate(${mouse.current.x}px, ${mouse.current.y}px)`
+      ring.style.transform = `translate(${pos.current.x}px, ${pos.current.y}px)`
       raf.current = requestAnimationFrame(loop)
     }
 
     document.addEventListener('mousemove', onMove)
     document.addEventListener('mouseleave', onLeave)
     document.addEventListener('mouseenter', onEnter)
-    document.querySelectorAll(hoverTargets).forEach(el => {
-      el.addEventListener('mouseenter', onHoverStart)
-      el.addEventListener('mouseleave', onHoverEnd)
-    })
+    document.addEventListener('mouseover', onOver)
+    document.addEventListener('mouseout', onOut)
 
     raf.current = requestAnimationFrame(loop)
 
     return () => {
+      document.body.classList.remove('cursor-active')
       cancelAnimationFrame(raf.current)
       document.removeEventListener('mousemove', onMove)
       document.removeEventListener('mouseleave', onLeave)
       document.removeEventListener('mouseenter', onEnter)
-      document.querySelectorAll(hoverTargets).forEach(el => {
-        el.removeEventListener('mouseenter', onHoverStart)
-        el.removeEventListener('mouseleave', onHoverEnd)
-      })
+      document.removeEventListener('mouseover', onOver)
+      document.removeEventListener('mouseout', onOut)
     }
   }, [])
 
@@ -415,7 +409,7 @@ export default function App() {
     <>
       {!ready && <LoadingScreen done={() => setReady(true)} />}
       {ready && (
-        <div className="app no-cursor">
+        <div className="app">
           <Cursor />
           <Nav />
           <Hero />
